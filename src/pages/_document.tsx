@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {Html, Head, Main, NextScript} from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '@/utility/createEmotionCache';
 import theme from "@/styles/theme"
@@ -7,15 +7,29 @@ import theme from "@/styles/theme"
 export default class MyDocument extends Document {
     render() {
         return (
-            <Html lang="es" >
+            <Html lang="es">
                 <Head>
                     {/* PWA primary color */}
                     <meta charSet="UTF-8"/>
 
-                    <meta name="theme-color" content={theme.palette.primary.main} />
-                    <link rel="shortcut icon" href="/favicon.png" />
-                    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" referrerPolicy="no-referrer" crossOrigin='anonymous' />
+                    <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <meta property="og:title" content="Helpia"/>
+                    <meta property="og:url" content="https://helpia.com"/>
+                    <meta property="og:site_name" content="Helpia"/>
+                    <meta property="og:locale" content="es"/>
+                    <meta property="og:locale:alternate" content="es_AR"/>
+                    <meta name="description" property="og:description"
+                          content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa o emprendimiento. Gestión de cobranzas, preventa, venta y post-venta."/>
+                    <meta property="og:image" content="/favicon.png"/>
+
+                    <link rel="shortcut icon" href="/favicon.png"/>
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                        rel="stylesheet"/>
+                    <link rel="stylesheet"
+                          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+                          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+                          referrerPolicy="no-referrer" crossOrigin='anonymous'/>
 
                     {/*Web Chat Helpia*/}
 
@@ -30,12 +44,10 @@ export default class MyDocument extends Document {
                     {(this.props as any).emotionStyleTags}
                 </Head>
                 <body>
-                <Main />
-                <NextScript />
-
+                <Main/>
+                <NextScript/>
                 {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                <script type="text/javascript" src="/assets/js/web-chat.js" />
-
+                <script type="text/javascript" src="/assets/js/web-chat.js"/>
                 </body>
             </Html>
         );
@@ -72,14 +84,14 @@ MyDocument.getInitialProps = async (ctx) => {
     // You can consider sharing the same emotion cache between all the SSR requests to speed up performance.
     // However, be aware that it can have global side effects.
     const cache = createEmotionCache();
-    const { extractCriticalToChunks } = createEmotionServer(cache);
+    const {extractCriticalToChunks} = createEmotionServer(cache);
 
     /* eslint-disable */
     ctx.renderPage = () =>
         originalRenderPage({
             enhanceApp: (App) =>
                 function EnhanceApp(props) {
-                //@ts-ignore
+                    //@ts-ignore
                     return <App emotionCache={cache} {...props} />;
                 },
         });
@@ -94,7 +106,7 @@ MyDocument.getInitialProps = async (ctx) => {
             data-emotion={`${style.key} ${style.ids.join(' ')}`}
             key={style.key}
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: style.css }}
+            dangerouslySetInnerHTML={{__html: style.css}}
         />
     ));
 

@@ -4,6 +4,8 @@ import Head from "next/head";
 import {useAppContext} from "@/context/app";
 import {Fade, useScrollTrigger, Fab} from "@mui/material";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import FloatPromo from "@/components/FloatPromo";
+import SubscriptionDialog from "@/components/SubscriptionDialog";
 
 type ScrollOnTopProps = {
     window?: () => Window;
@@ -78,6 +80,8 @@ const PageContainer: React.FC<PageContainerProps> = ({children, title}) => {
             <div id="top" />
             {children}
         </Box>
+        <FloatPromo />
+        <SubscriptionDialog />
 
         <ScrollTop >
             <Fab sx={{backgroundColor: "primary.light"}} size="small" aria-label="scroll back to top">

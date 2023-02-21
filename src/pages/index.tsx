@@ -5,7 +5,6 @@ import Image from "next/image";
 import Contact, {ContactContainer} from "@/components/Contact";
 import React from "react";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
-import {toast} from "react-toastify";
 
 
 export const HomeSection1Container = styled(Box)<BoxProps>(() => ({
