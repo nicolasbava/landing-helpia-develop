@@ -45,7 +45,7 @@ if (Twilio) {
     Twilio.FlexWebChat.MessagingCanvas.defaultProps.showTypingIndicator = false;
     Twilio.FlexWebChat.MainHeader.defaultProps.titleText = "Chat de soporte Helpia";
     Twilio.FlexWebChat.MainHeader.defaultProps.showImage = false;
-    Twilio.FlexWebChat.EntryPoint.defaultProps.tagline = "Contáctanos";
+    Twilio.FlexWebChat.EntryPoint.defaultProps.tagline = "";
 
     Twilio.FlexWebChat.createWebChat(appConfig).then(webchat => {
         const {manager} = webchat;

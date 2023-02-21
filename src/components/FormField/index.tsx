@@ -3,7 +3,6 @@ import TextField, { TextFieldProps } from "@mui/material/TextField"
 import Box from "@mui/material/Box"
 import InputLabel, {InputLabelProps} from "@mui/material/InputLabel"
 import {styled} from "@mui/material";
-import Typography, {TypographyProps} from "@mui/material/Typography";
 
 
 
@@ -20,7 +19,33 @@ const StyledInputLabel = styled(InputLabel)<InputLabelProps>(({ theme  }) => ({
 
 const StyledTextField = styled(TextField)<TextFieldProps>(({ theme  }) => ({
     "&.MuiTextField-root": {
-         background: "#EDEDED"
+         background: "#EDEDED",
+
+        '& label.Mui-focused': {
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 16,
+        },
+        '& label': {
+            color: 'theme.palette.primary.light',
+            fontWeight: 'bold',
+            fontSize: 18,
+        },
+        '& .MuiInputBase-input': {
+            color: theme.palette.text.disabled,
+            fontSize: 16
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                border: 'none'
+            },
+            '&:hover fieldset': {
+                border: 'none',
+            },
+            '&.Mui-focused fieldset': {
+                border: 'none',
+            },
+        }
     },
 }))
 
