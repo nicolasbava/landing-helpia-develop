@@ -8,3 +8,9 @@ export type ApiMailUp = {
     subject: string
     body: string
 }
+
+export type ApiNewsletterUp = {
+    email: string,
+    phone?: string
+    whatsapp?: string
+}
