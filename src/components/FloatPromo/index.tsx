@@ -4,6 +4,7 @@ import Box, {BoxProps} from "@mui/material/Box";
 import Link from "next/link";
 import Stack from "@mui/material/Stack";
 import CloseIcon from "@mui/icons-material/Close";
+import useLocalStorage from "@/hooks/use-local-storage";
 
 
 const FloatPromoContainer = styled(Box)<BoxProps>(({theme}) => ({
@@ -25,10 +26,27 @@ const FloatPromoContainer = styled(Box)<BoxProps>(({theme}) => ({
     },
 }))
 
+type FloatPromoStore = {
+    closed: boolean
+}
 const FloatPromo: React.FC = () => {
+    const key = "float_promo"
+    const {getData, putData} =  useLocalStorage()
 
+    const [show, setShow] = React.useState<boolean>(false)
 
-    const [show, setShow] = React.useState<boolean>(true)
+    React.useEffect(()=>{
+        const data = getData<FloatPromoStore>(key)
+        if(!data  || (data && !data.closed)){
+            setShow(true)
+            putData<FloatPromoStore>(key, {closed: false})
+        }
+    },[])
+
+    const handleClose = ()=>{
+        putData<FloatPromoStore>(key, {closed: true})
+        setShow(false)
+    }
 
 
     if(!show){
@@ -37,7 +55,7 @@ const FloatPromo: React.FC = () => {
     return (<FloatPromoContainer>
         <Stack direction="row" justifyContent="flex-end">
 
-        <CloseIcon fontSize="small" sx={{cursor: "pointer"}} onClick={()=>setShow(false)} />
+        <CloseIcon fontSize="small" sx={{cursor: "pointer"}} onClick={handleClose} />
         </Stack>
         <Link href={"https://app.helpia.com/auth/signin"} target="_blank">
             <Typography variant="caption" sx={{fontWeight: "bold"}}>Súmate  a Helpia y recibe  60 días gratis de servicio</Typography>

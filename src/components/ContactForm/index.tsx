@@ -8,20 +8,10 @@ import {useFormik} from "formik";
 import {FormProps} from "@/types/form";
 import FormField from "@/components/FormField";
 import {Button, ButtonProps, styled} from "@mui/material";
+import StyledButton from "@/components/StyledButton";
 
 
-const SubmitButton = styled(Button)<ButtonProps>(({theme}) => ({
-    "&.MuiButton-root": {
-        background: theme.palette.secondary.dark,
-        fontWeight: "bold",
-        color: "#fff",
-        borderRadius: "20px",
-    },
 
-    "&.MuiButton-contained.Mui-disabled": {
-        background: theme.palette.text.disabled,
-    }
-}))
 
 export type ContactFormFields = {
     name: string,
@@ -112,9 +102,9 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <SubmitButton disabled={!isValid || sending} size="large" variant="contained" type="submit">
-                        {sending ? "Enviando": "Enviar"}
-                    </SubmitButton>
+                    <StyledButton disabled={!isValid || sending} size="large" variant="contained" type="submit">
+                        {sending ? "Enviando...": "Enviar"}
+                    </StyledButton>
                 </Grid>
             </Grid>
         </form>
