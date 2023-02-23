@@ -75,7 +75,6 @@ const SubscriptionDialog: React.FC = () => {
             toast.error("Lo sentimos, no pudimos subscribirlo")
         })
     }
-
     const handleClose = () => {
         setOpen(false)
         setLoading(false)
