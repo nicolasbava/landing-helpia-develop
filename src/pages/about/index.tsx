@@ -42,6 +42,9 @@ export const ImageElement = styled('img')(() => ({
     margin:'auto',
     width: 'min(80vw, 350px)',
     height: 'auto',
+    '@media (min-width: 600px)': {
+        margin: 0
+    }
 }))
 
 export const ImageElementValues = styled('img')(() => ({
@@ -134,7 +137,7 @@ export default function AboutUsPage() {
                     </Grid>
                     <Grid item xs={12} md={6} sx={{display: 'flex', mt: 2}}>
                         <RevealRight>
-                            <Box sx={{display: 'flex'}}> 
+                            <Box sx={{display: 'flex', justifyContent: 'flex-end'}}> 
                                 <ImageElement src={"https://statics.helpia.com/landing/somos2.png"}
                                         alt={"Frente_3-1-1.png"} width={380} height={380}  loading="lazy"/>
                             </Box>
@@ -161,7 +164,7 @@ export default function AboutUsPage() {
                         </Grid>
                         <Grid item xs={12} sm={4} sx={boxStyle} py={4} px={2} >
                             <ImageBoxContainer >
-                                <ImageElementValues src={"https://statics.helpia.com/landing/about-vision-2.png"}
+                                <ImageElementValues src={"https://statics.helpia.com/landing/about-vision3.png"}
                                             alt={"Frente_3-1-1.png"} width={75} height={75} loading="lazy"
                                 />
                             </ImageBoxContainer>
