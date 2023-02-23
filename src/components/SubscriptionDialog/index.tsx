@@ -11,7 +11,6 @@ import InvalidIcon from '@mui/icons-material/Cancel';
 import Stack from "@mui/material/Stack";
 import * as yup from "yup";
 import {useFormik} from "formik";
-import StyledButton from "@/components/StyledButton";
 import useHelpiaApi from "@/hooks/use-helpia-api";
 import {toast} from "react-toastify";
 import {ApiNewsletterUp} from "@/types/api";
