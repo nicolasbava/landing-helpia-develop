@@ -31,23 +31,12 @@ export default class MyDocument extends Document {
                           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
                           referrerPolicy="no-referrer" crossOrigin='anonymous'/>
 
-                    {/*Web Chat Helpia*/}
-
-                    {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                    <script
-                        src="https://assets.flex.twilio.com/releases/flex-webchat-ui/2.9.1/twilio-flex-webchat.min.js"
-                        integrity="sha512-yBmOHVWuWT6HOjfgPYkFe70bboby/BTj9TGHXTlEatWnYkW5fFezXqW9ZgNtuRUqHWrzNXVsqu6cKm3Y04kHMA=="
-                        crossOrigin="anonymous">
-                    </script>
-
 
                     {(this.props as any).emotionStyleTags}
                 </Head>
                 <body>
                 <Main/>
                 <NextScript/>
-                {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                <script type="text/javascript" src="/assets/js/web-chat.js"/>
                 </body>
             </Html>
         );

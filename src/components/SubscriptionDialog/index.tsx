@@ -67,7 +67,8 @@ const SubscriptionDialog: React.FC = () => {
     const processSubmit = (email: string)=>{
         setLoading(true)
         apiPost<ApiNewsletterUp>("/newsletter/subscriber", {email}).then(()=>{
-             handleClose()
+            toast.success("Se ha subscrito a nuestro canal de información")
+            handleClose()
             putData<SubscriptionStore>(key, {opened: true, subscribed: true})
 
         }).catch(()=>{
@@ -105,7 +106,7 @@ const SubscriptionDialog: React.FC = () => {
     if (!open) {
         return null;
     }
-    return (<StyledDialog open={open} onClose={handleClose}>
+    return (<StyledDialog open={open}>
 
         <DialogTitle sx={{px: 2}}>
             <Stack>
