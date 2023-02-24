@@ -25,7 +25,11 @@ const PlanCardContainer = styled(Card)<CardProps>(({theme}) => ({
         "&:hover": {
             background: "#c6c2c2",
 
-        }
+        },
+
+        [theme.breakpoints.down('xs')]: {
+            width: '100%',
+        },
     },
 }))
 
@@ -52,7 +56,7 @@ const PlanCard: React.FC<PlanCardProps> = ({plan}) => {
                 fontWeight: 'bold',
                 color: "#fff",
                 background: "#555555"
-            }}>{getPlanFreq(plan.recurrence)}</Typography>
+            }}>{getPlanFreq(plan.frequence)}</Typography>
 
             <Typography sx={{fontWeight: "bold", mt: 1, mb: 2}}>{plan.name}</Typography>
             <Box sx={{height: "100px", width: "100%", wordBreak: "break-word", overflow: "auto"}}>

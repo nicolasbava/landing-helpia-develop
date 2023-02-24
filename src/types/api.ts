@@ -4,7 +4,6 @@ export type ApiVoidResponse = {
 }
 
 export type ApiMailUp = {
-    to: string,
     subject: string
     body: string
 }
