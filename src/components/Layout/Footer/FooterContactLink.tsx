@@ -24,6 +24,8 @@ type FooterContactLinkProps = {
 }
 const FooterContactLink: React.FC<FooterContactLinkProps> = ({type}) => {
 
+
+
     const data: { iconClass: string, href: string, label: string } = React.useMemo(() => {
         switch (type) {
             case "whatsapp":

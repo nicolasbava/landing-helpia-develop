@@ -2,7 +2,7 @@ import React, {forwardRef} from "react"
 import Grid, {GridProps} from "@mui/material/Grid";
 import { Stack, LinearProgress} from "@mui/material";
 import useHelpiaApi from "@/hooks/use-helpia-api";
-import {ApiPlanType} from "@/types/api";
+import {ApiPlanDescription, ApiPlanType} from "@/types/api";
 import PlanCard from "@/components/PlanCard";
 
 
@@ -18,13 +18,17 @@ const Plans = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
         const loadPlans = () => {
             setLoading(true)
             apiGet<Array<ApiPlanType>>("/v2/billing/subscription/types").then((r) => {
-                setPlans(r)
+                setPlans(r.map((x)=>{
+                    return {
+                        ...x,
+                        description: JSON.parse(x.description as string) as ApiPlanDescription
+                    }
+                }))
                 setLoading(false)
             }).catch(() => {
                 setLoading(false)
             })
         }
-
 
         return (<Grid container ref={ref}  spacing={4} justifyContent="center" {...props} >
 

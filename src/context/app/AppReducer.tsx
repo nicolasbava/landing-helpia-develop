@@ -1,8 +1,9 @@
-import { AppContextState } from "./AppContext"
+import { AppContextState, GeoData } from "./AppContext"
 import { Breakpoint } from "@mui/material"
 
 type LayoutAction =
   | { type: "setMenuOpened"; payload: boolean | undefined }
+  | { type: "setGeoData"; payload: GeoData }
   | { type: "setBreakPoint"; payload: Breakpoint }
 
 export const AppReducer = (state: AppContextState, action: LayoutAction): AppContextState => {
@@ -22,7 +23,13 @@ export const AppReducer = (state: AppContextState, action: LayoutAction): AppCon
         breakPoint: action.payload,
       }
 
-    default:
+      case "setGeoData":
+          return {
+              ...state,
+              geoData: action.payload,
+          }
+
+      default:
       return state
   }
 }

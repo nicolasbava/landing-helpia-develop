@@ -14,10 +14,15 @@ export type ApiNewsletterUp = {
     whatsapp?: string
 }
 
+
+export type ApiPlanDescription = {
+    popular: boolean,
+    description: string
+}
 export type ApiPlanType = {
     id: string;
     name: string;
-    description: string;
+    description: ApiPlanDescription | string;
     frequence: number;
     subscription_base_cost: number;
     tax_percentage: string;
