@@ -24,7 +24,8 @@ export const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
         background: theme.palette.secondary.dark,
         width: "100%",
         minHeight: "400px",
-        color: "#fff"
+        color: "#fff",
+        position: 'relative'
     },
 }))
 
@@ -78,6 +79,12 @@ export const ImageElementThird = styled('img')(() => ({
     }
 }))
 
+export const Title = styled(TitleElementStyled)(() =>({
+    paddingTop: '18vh', 
+    color: 'white', 
+    fontSize: 'min(10vw, 44px)'
+})) 
+
 
 export default function HomePage() {
     return (
@@ -85,14 +92,7 @@ export default function HomePage() {
             <HomeSection1Container>
                 <PageSection>
                     <RevealLeft>
-                        {/* <Typography variant="h4" sx={{
-                            color: "#fff",
-                            wordBreak: "break-word",
-                            pt: 20,
-                            ml: {xs: 0, md: 2},
-                            width: {xs: "100%", md: "60%", lg: "40%"}
-                        }}>Somos especialistas en atención al cliente</Typography> */}
-                        <TitleElementStyled>Somos especialistas en atención al cliente</TitleElementStyled>
+                        <Title variant="h1">Somos especialistas en atención al cliente</Title>
                     </RevealLeft>
                 </PageSection>
             </HomeSection1Container>
