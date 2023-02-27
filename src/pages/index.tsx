@@ -6,9 +6,9 @@ import Contact, {ContactContainer} from "@/components/Contact";
 import React from "react";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 
-import TitleElementStyled from "@/components/StyledTitleElement";
 
 import ContactBanner from "@/components/ContactBanner";
+import StyledTitleElement from "@/components/StyledTitleElement";
 
 
 
@@ -69,11 +69,10 @@ export const ImageElementThird = styled('img')(() => ({
     height: 'auto',
     '@media (min-width: 600px)': {
         margin: 0,
-        
     }
 }))
 
-export const Title = styled(TitleElementStyled)(() =>({
+export const Title = styled(StyledTitleElement)(() =>({
     paddingTop: '22vh', 
     color: 'white', 
     '&.MuiTypography-root': {

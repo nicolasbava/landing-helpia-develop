@@ -3,7 +3,7 @@ import PageContainer, { PageSection } from "@/components/PageContainer";
 import { StyledHero } from "@/components/StyledHero";
 import { ImageElement, ImageElementHero } from "../about";
 import { RevealLeft, RevealRight } from "@/components/Reveal";
-import TitleElementStyled from "@/components/StyledTitleElement";
+import StyledTitleElement from "@/components/StyledTitleElement";
 
 export const BenefitsList = styled('ul')(()=> ({
 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
         <PageContainer title={"Servicios"}>
             <StyledHero direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
                 <Box sx={{width: {sm:'100%',md:'40%'}}}>
-                    <Typography variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>Servicio</Typography>
+                    <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>Servicio</StyledTitleElement>
                 </Box>
                 <Box sx={{width: {xs: '100%', sm: '38%'}}}>
                     <ImageElementHero src={"https://statics.helpia.com/landing/banner-servicio.png"} loading="lazy" />
@@ -35,9 +35,9 @@ export default function ServicesPage() {
                                 mt: {xs: 0, md: 3},
                                 textAlign: {xs: "center", md: "left"}
                             }}>
-                                <TitleElementStyled variant="h4" sx={{fontWeight: "bold", mb: 3, mt:{xs: 3, md: 0}}}>
+                                <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 3, mt:{xs: 3, md: 0}}}>
                                     ¿Para qué lo hacemos?
-                                </TitleElementStyled>
+                                </StyledTitleElement>
                                 <Typography mb={3}>
                                     Para cambiar la vida de los emprendedores en un solo click.
                                 </Typography>
@@ -66,6 +66,16 @@ export default function ServicesPage() {
             <PageSection>
                 <Grid container sx={{py: 8, }}>
                     
+                    <Grid item xs={12} md={6}  >
+                        <RevealLeft>
+                                <Box sx={{display: 'flex'}}> 
+                                <ImageElement 
+                                        src="https://statics.helpia.com/landing/servicios-2-new.png"
+                                        alt={"Imagen de dos personas atendiendo callcenter de Helpia"} width={550} height={550} loading="lazy"
+                                />
+                            </Box>
+                        </RevealLeft>
+                    </Grid>
                     <Grid item xs={12} md={6}>
                         <RevealRight>
                             <Box sx={{
@@ -73,9 +83,9 @@ export default function ServicesPage() {
                                 mt: {xs: 0, md: 3},
                                 textAlign: {xs: "center", md: "left"}
                             }}>
-                                <TitleElementStyled variant="h4" sx={{fontWeight: "bold", mb: 3, mt:{xs: 3, md: 0}}}>
+                                <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 3, mt:{xs: 3, md: 0}}}>
                                     Beneficios para ti
-                                </TitleElementStyled>
+                                </StyledTitleElement>
                                 <BenefitsList>
                                     <BenefitsListItem>
                                         <Typography >Primeros 60 días gratis</Typography>
@@ -95,16 +105,6 @@ export default function ServicesPage() {
                                 </BenefitsList>
                             </Box>
                         </RevealRight>
-                    </Grid>
-                    <Grid item xs={12} md={6}  >
-                        <RevealLeft>
-                             <Box sx={{display: 'flex'}}> 
-                                <ImageElement 
-                                        src="https://statics.helpia.com/landing/servicios1.gif"
-                                        alt={"Imagen de dos personas atendiendo callcenter de Helpia"} width={550} height={550} loading="lazy"
-                                />
-                            </Box>
-                        </RevealLeft>
                     </Grid>
                 </Grid>
             </PageSection>  
