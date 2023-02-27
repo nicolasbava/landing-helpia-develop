@@ -2,19 +2,9 @@ import {Box, Grid, Typography, styled, StackProps, Stack} from "@mui/material";
 import PageContainer, { PageSection } from "@/components/PageContainer";
 import { RevealLeft, RevealRight, RevealUp } from "@/components/Reveal";
 import { BoxProps } from "@mui/material/Box";
+import { StyledHero } from "@/components/StyledHero";
 
 
-
-export const HeroAbout = styled(Stack)<StackProps>(({theme}) => ({
-    background: theme.palette.secondary.dark,
-    minHeight: '80vh',
-    color: 'white',
-    paddingInline: '10vw',
-    paddingBlock: '10vh',
-    '@media (min-width: 600px)': {
-        paddingBlock: '5vh'
-    }
-}))
 
 export const ImageBoxContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
@@ -75,10 +65,10 @@ const boxStyle = {
 export default function AboutUsPage() {
     return (
         <PageContainer title={"Quienes somos"}>
-            <HeroAbout direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
+            <StyledHero direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
                 <Typography variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</Typography>
                 <ImageElementHero src={"https://statics.helpia.com/landing/about-hero.png"} loading="lazy" />
-            </HeroAbout>
+            </StyledHero>
             <PageSection>
                 <Grid container sx={{py: 8, }}>
                     <Grid item xs={12} md={6}  >

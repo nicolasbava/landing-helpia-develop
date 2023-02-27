@@ -74,9 +74,14 @@ export const ImageElementThird = styled('img')(() => ({
 }))
 
 export const Title = styled(TitleElementStyled)(() =>({
-    paddingTop: '18vh', 
+    paddingTop: '22vh', 
     color: 'white', 
-    fontSize: 'min(10vw, 44px)'
+    '&.MuiTypography-root': {
+        fontSize: 'min(10vw, 44px)',
+    },
+    '@media (min-width: 600px)':{
+        width: '60%'
+    }    
 })) 
 
 
@@ -86,7 +91,7 @@ export default function HomePage() {
             <HomeSection1Container>
                 <PageSection>
                     <RevealLeft>
-                        <Title variant="h1">Somos especialistas en atención al cliente</Title>
+                        <Title variant="h1" fontSize={'44px'}>Somos especialistas en atención al cliente</Title>
                     </RevealLeft>
                 </PageSection>
             </HomeSection1Container>
