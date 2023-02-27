@@ -4,7 +4,6 @@ export type ApiVoidResponse = {
 }
 
 export type ApiMailUp = {
-    to: string,
     subject: string
     body: string
 }
@@ -14,3 +13,15 @@ export type ApiNewsletterUp = {
     phone?: string
     whatsapp?: string
 }
+
+export type ApiPlanType = {
+    id: string;
+    name: string;
+    description: string;
+    frequence: number;
+    subscription_base_cost: number;
+    tax_percentage: string;
+    currency: number;
+    regular_type: boolean;
+    recurrence: number;
+};

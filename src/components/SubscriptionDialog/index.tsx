@@ -11,7 +11,6 @@ import InvalidIcon from '@mui/icons-material/Cancel';
 import Stack from "@mui/material/Stack";
 import * as yup from "yup";
 import {useFormik} from "formik";
-import StyledButton from "@/components/StyledButton";
 import useHelpiaApi from "@/hooks/use-helpia-api";
 import {toast} from "react-toastify";
 import {ApiNewsletterUp} from "@/types/api";
@@ -67,7 +66,8 @@ const SubscriptionDialog: React.FC = () => {
     const processSubmit = (email: string)=>{
         setLoading(true)
         apiPost<ApiNewsletterUp>("/newsletter/subscriber", {email}).then(()=>{
-             handleClose()
+            toast.success("Se ha subscrito a nuestro canal de información")
+            handleClose()
             putData<SubscriptionStore>(key, {opened: true, subscribed: true})
 
         }).catch(()=>{
@@ -75,7 +75,6 @@ const SubscriptionDialog: React.FC = () => {
             toast.error("Lo sentimos, no pudimos subscribirlo")
         })
     }
-
     const handleClose = () => {
         setOpen(false)
         setLoading(false)
@@ -106,7 +105,7 @@ const SubscriptionDialog: React.FC = () => {
     if (!open) {
         return null;
     }
-    return (<StyledDialog open={open} onClose={handleClose}>
+    return (<StyledDialog open={open}>
 
         <DialogTitle sx={{px: 2}}>
             <Stack>

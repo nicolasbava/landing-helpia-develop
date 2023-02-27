@@ -34,23 +34,12 @@ export default class MyDocument extends Document {
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" /> 
 
-                    {/*Web Chat Helpia*/}
-
-                    {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                    <script
-                        src="https://assets.flex.twilio.com/releases/flex-webchat-ui/2.9.1/twilio-flex-webchat.min.js"
-                        integrity="sha512-yBmOHVWuWT6HOjfgPYkFe70bboby/BTj9TGHXTlEatWnYkW5fFezXqW9ZgNtuRUqHWrzNXVsqu6cKm3Y04kHMA=="
-                        crossOrigin="anonymous">
-                    </script>
-
 
                     {(this.props as any).emotionStyleTags}
                 </Head>
                 <body>
                 <Main/>
                 <NextScript/>
-                {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                <script type="text/javascript" src="/assets/js/web-chat.js"/>
                 </body>
             </Html>
         );

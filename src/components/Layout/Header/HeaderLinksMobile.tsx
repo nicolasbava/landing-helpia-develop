@@ -14,15 +14,15 @@ import StyledLinkText, {StyledLinkTextMarked} from "@/components/Layout/Header/S
 
 const StyledMenuDrawer = styled(Drawer)<DrawerProps & { special?: boolean }>(({theme}) => ({
     "&.MuiDrawer-root": {
-        // background:  `rgba(108, 108, 170, 0.89)`
-
         ".MuiDrawer-paper": {
             padding: "16px",
             minWidth: "256px",
             background: theme.palette.secondary.dark,
             opacity: "0.8",
             color: "#fff"
-        }
+        },
+
+        a: {textDecoration: "none"}
     },
 }))
 
@@ -42,12 +42,14 @@ const HeaderLinksMobile: React.FC = () => {
                     {
                         items.map((menu, key) => {
 
-                            return (<MenuItem key={key} sx={{my: 0.2, a: {textDecoration: "none"}}}>
-                                <Link href={menu.path} target={menu.external ? "_blank" : undefined}>
-                                    {menu.id === "plans" && <StyledLinkTextMarked>{menu.label}</StyledLinkTextMarked>}
-                                    {menu.id !== "plans" && <StyledLinkText>{menu.label}</StyledLinkText>}
+                            return (<Link key={key} href={menu.path} target={menu.external ? "_blank" : undefined}>
+                                    <MenuItem>
+                                        {menu.id === "plans" &&
+                                            <StyledLinkTextMarked>{menu.label}</StyledLinkTextMarked>}
+                                        {menu.id !== "plans" && <StyledLinkText>{menu.label}</StyledLinkText>}
+                                    </MenuItem>
                                 </Link>
-                            </MenuItem>)
+                            )
                         })
                     }
                 </Stack>
@@ -56,4 +58,4 @@ const HeaderLinksMobile: React.FC = () => {
         </StyledMenuDrawer>
     </>)
 }
-export default HeaderLinksMobile
+    export default HeaderLinksMobile

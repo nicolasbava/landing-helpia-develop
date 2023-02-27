@@ -19,7 +19,6 @@ const useMail = (): UseMailHook =>{
 
            const mailMsg: ApiMailUp = {
                 subject: "[Helpia] Nuevo mensaje!",
-                to: data.email,
                 body: `<p style="text-align: justify;"> El siguiente usuario ha enviado un mensaje desde el sitio de Helpia:
                         <br />
                         <br />

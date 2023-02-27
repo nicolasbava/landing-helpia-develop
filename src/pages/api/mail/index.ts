@@ -15,17 +15,22 @@ export default async function handler(
     try {
       const templateId = process.env.NEXT_PUBLIC_SENDGRID_TEMPLATE_ID as string
       const from = process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL as string
-      const {to, subject, body} = JSON.parse(req?.body ?? "") as ApiMailUp
-     await sgMail.send({
-        to,
-        from,
-        templateId,
-        subject,
-        dynamicTemplateData: {
-          subject,
-          body
-        }
-      })
+      const supportEmails = (process.env.NEXT_PUBLIC_SUPPORT_EMAILS as string).split(",")
+      const {subject, body} = JSON.parse(req?.body ?? "") as ApiMailUp
+
+        const sendData = supportEmails.map<sgMail.MailDataRequired>((to)=>{
+            return {
+                to,
+                from,
+                templateId,
+                subject,
+                dynamicTemplateData: {
+                    subject,
+                    body
+                }
+            }
+        })
+     await sgMail.send(sendData)
 
       res.status(200).json({success: true});
     } catch (error) {

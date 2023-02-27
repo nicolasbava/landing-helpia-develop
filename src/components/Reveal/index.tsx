@@ -9,7 +9,8 @@ const RevealContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
         overflow: "hidden",
         width: "100%",
-        display: "inline-block",
+        height: "100%",
+        display: "flex",
         transition: "max-height 1s, max-width 1s",
 
     },
