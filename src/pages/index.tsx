@@ -10,12 +10,12 @@ import TitleElementStyled from "@/components/TitleElementStyled";
 
 export const HomeSection1Container = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
-        backgroundImage: `url("https://dummyimage.com/1800x400/E6E8E9/aa1")`,
+        backgroundImage: `url("https://statics.helpia.com/landing/Banner-home.jpg")`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         width: "100%",
-        minHeight: "400px"
+        minHeight: "90vh"
     },
 }))
 
@@ -50,6 +50,35 @@ export const HomeSection4Container = styled(Box)<BoxProps>(({theme}) => ({
     },
 }))
 
+export const ImageElementFirst = styled('img')(() => ({
+    margin:'auto',
+    width: 'min(80vw, 350px)',
+    height: 'auto',
+    '@media (min-width: 600px)': {
+        margin: 0
+    }
+}))
+
+export const ImageElementSecond = styled('img')(() => ({
+    margin:'auto',
+    width: 'min(80vw, 250px)',
+    height: 'auto',
+    '@media (min-width: 600px)': {
+        margin: 0
+    }
+}))
+
+export const ImageElementThird = styled('img')(() => ({
+    margin:'auto',
+    width: 'min(80vw, 220px)',
+    height: 'auto',
+    '@media (min-width: 600px)': {
+        margin: 0,
+        
+    }
+}))
+
+
 export default function HomePage() {
     return (
         <PageContainer title={"Inicio"}>
@@ -59,7 +88,7 @@ export default function HomePage() {
                         {/* <Typography variant="h4" sx={{
                             color: "#fff",
                             wordBreak: "break-word",
-                            pt: 10,
+                            pt: 20,
                             ml: {xs: 0, md: 2},
                             width: {xs: "100%", md: "60%", lg: "40%"}
                         }}>Somos especialistas en atención al cliente</Typography> */}
@@ -89,8 +118,8 @@ export default function HomePage() {
                     <Grid item xs={12} md={6}>
                         <RevealRight>
                             <Box sx={{display: "flex", justifyContent: "center"}}>
-                                <Image src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Lateral.gif"}
-                                       width={364} height={422}/>
+                                <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Lateral.gif"}
+                                       width={364} height={422} loading="lazy"/>
                             </Box>
                         </RevealRight>
                     </Grid>
@@ -109,7 +138,7 @@ export default function HomePage() {
                                 }}>
                                     <Typography variant="h4" sx={{color: "primary.light", fontWeight: "bold", mb: 2}}>¿Cómo
                                         lo hacemos?</Typography>
-                                    <Typography>Te conectamos a la primera plataforma multicanal,
+                                    <Typography mb={{xs: 3, md: 0}}>Te conectamos a la primera plataforma multicanal,
                                         centralizando todos tus contactos en un solo lugar
                                         donde serán atendidos por cientos
                                         de expertos en atención al cliente.</Typography>
@@ -119,7 +148,7 @@ export default function HomePage() {
                         <Grid item xs={12} md={6}>
                             <RevealRight>
                                 <Box sx={{display: "flex", justifyContent: "center"}}>
-                                    <Image src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
+                                    <ImageElementSecond src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
                                            alt={"Frente_1-1-422x600.png"} width={360} height={511}/>
                                 </Box>
                             </RevealRight>
@@ -134,9 +163,10 @@ export default function HomePage() {
 
                         <Grid item xs={12} md={6}>
                             <RevealLeft>
-                                <Box>
-                                    <Image src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
-                                           alt={"Frente_3-1-1.png"} width={350} height={522}/>
+                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}}}>
+                                    <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
+                                           alt={"Frente_3-1-1.png"} width={350} height={522}
+                                    />
                                 </Box>
                             </RevealLeft>
                         </Grid>
