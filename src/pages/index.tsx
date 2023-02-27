@@ -104,7 +104,7 @@ export default function HomePage() {
                                 mt: {xs: 0, md: 8},
                                 textAlign: {xs: "center", md: "left"}
                             }}>
-                                <Typography variant="h4" sx={{fontWeight: "bold", mb: 2}}>¿Qué hacemos?</Typography>
+                                <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 2}}>¿Qué hacemos?</StyledTitleElement>
                                 <Typography>Brindamos una solución para tu emprendimiento,
                                     proporcionando una plataforma que te ayude
                                     a la gestión de pre venta y post venta,
@@ -134,8 +134,8 @@ export default function HomePage() {
                                     mt: {xs: 0, md: 8},
                                     textAlign: {xs: "center", md: "left"}
                                 }}>
-                                    <Typography variant="h4" sx={{color: "primary.light", fontWeight: "bold", mb: 2}}>¿Cómo
-                                        lo hacemos?</Typography>
+                                    <StyledTitleElement variant="h4" sx={{color: "primary.light", fontWeight: "bold", mb: 2}}>¿Cómo
+                                        lo hacemos?</StyledTitleElement>
                                     <Typography mb={{xs: 3, md: 0}}>Te conectamos a la primera plataforma multicanal,
                                         centralizando todos tus contactos en un solo lugar
                                         donde serán atendidos por cientos
@@ -175,8 +175,8 @@ export default function HomePage() {
                                     mt: {xs: 0, md: 8},
                                     textAlign: {xs: "center", md: "left"}
                                 }}>
-                                    <Typography variant="h4" sx={{fontWeight: "bold", mb: 2}}>Disponibilidad
-                                        24/7</Typography>
+                                    <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 2}}>Disponibilidad
+                                        24/7</StyledTitleElement>
                                     <Typography>Respondemos a todas las consultas de tus clientes
                                         los 365 días del año, mientras vos
                                         conquistas nuevos productos y clientes,
@@ -191,7 +191,7 @@ export default function HomePage() {
 
             <ContactBanner>
                 <PageSection>
-                    <Typography variant="h4" sx={{fontWeight: "bold"}}>Contactanos</Typography>
+                    <StyledTitleElement variant="h4" sx={{fontWeight: "bold"}}>Contactanos</StyledTitleElement>
                 </PageSection>
             </ContactBanner>
 

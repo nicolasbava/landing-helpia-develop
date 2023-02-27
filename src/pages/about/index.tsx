@@ -3,6 +3,7 @@ import PageContainer, { PageSection } from "@/components/PageContainer";
 import { RevealLeft, RevealRight, RevealUp } from "@/components/Reveal";
 import { BoxProps } from "@mui/material/Box";
 import { StyledHero } from "@/components/StyledHero";
+import StyledTitleElement from "@/components/StyledTitleElement";
 
 
 
@@ -67,7 +68,7 @@ export default function AboutUsPage() {
         <PageContainer title={"Quienes somos"}>
             <StyledHero direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
                 <Box sx={{width: {sm:'100%',md:'60%'}}}>
-                    <Typography variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</Typography>
+                    <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</StyledTitleElement>
                 </Box>
                 <ImageElementHero src={"https://statics.helpia.com/landing/about-hero.png"} loading="lazy" />
             </StyledHero>
