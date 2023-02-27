@@ -5,10 +5,14 @@ import Image from "next/image";
 import Contact, {ContactContainer} from "@/components/Contact";
 import React from "react";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
+
 import TitleElementStyled from "@/components/TitleElementStyled";
 
+import ContactBanner from "@/components/ContactBanner";
 
-export const HomeSection1Container = styled(Box)<BoxProps>(() => ({
+
+
+const HomeSection1Container = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
         backgroundImage: `url("https://statics.helpia.com/landing/Banner-home.jpg")`,
         backgroundPosition: "center center",
@@ -19,7 +23,7 @@ export const HomeSection1Container = styled(Box)<BoxProps>(() => ({
     },
 }))
 
-export const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
+const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
         background: theme.palette.secondary.dark,
         width: "100%",
@@ -30,7 +34,7 @@ export const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
 }))
 
 
-export const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
+const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
         background: theme.palette.primary.light,
         width: "100%",
@@ -39,17 +43,7 @@ export const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
     },
 }))
 
-export const HomeSection4Container = styled(Box)<BoxProps>(({theme}) => ({
-    "&.MuiBox-root": {
-        background: theme.palette.secondary.dark,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        width: "100%",
-        minHeight: "150px",
-        color: "#fff"
-    },
-}))
+
 
 export const ImageElementFirst = styled('img')(() => ({
     margin:'auto',
@@ -191,11 +185,11 @@ export default function HomePage() {
                 </PageSection>
             </HomeSection3Container>
 
-            <HomeSection4Container>
+            <ContactBanner>
                 <PageSection>
                     <Typography variant="h4" sx={{fontWeight: "bold"}}>Contactanos</Typography>
                 </PageSection>
-            </HomeSection4Container>
+            </ContactBanner>
 
             <ContactContainer>
                 <PageSection>

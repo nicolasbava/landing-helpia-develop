@@ -1,5 +1,4 @@
 var appConfig = {
-
     accountSid: "ACf582bce82d0cf47ba7fe6ad0d976c054",
     flexFlowSid: "FO842f74b050048b30fc3ce9f25b334abb",
     context: {
