@@ -5,7 +5,11 @@ import Image from "next/image";
 import Contact, {ContactContainer} from "@/components/Contact";
 import React from "react";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
+
+import TitleElementStyled from "@/components/TitleElementStyled";
+
 import ContactBanner from "@/components/ContactBanner";
+
 
 
 const HomeSection1Container = styled(Box)<BoxProps>(() => ({
@@ -75,13 +79,14 @@ export default function HomePage() {
             <HomeSection1Container>
                 <PageSection>
                     <RevealLeft>
-                        <Typography variant="h4" sx={{
+                        {/* <Typography variant="h4" sx={{
                             color: "#fff",
                             wordBreak: "break-word",
                             pt: 20,
                             ml: {xs: 0, md: 2},
                             width: {xs: "100%", md: "60%", lg: "40%"}
-                        }}>Somos especialistas en atención al cliente</Typography>
+                        }}>Somos especialistas en atención al cliente</Typography> */}
+                        <TitleElementStyled>Somos especialistas en atención al cliente</TitleElementStyled>
                     </RevealLeft>
                 </PageSection>
             </HomeSection1Container>
