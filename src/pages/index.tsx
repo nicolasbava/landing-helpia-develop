@@ -6,7 +6,7 @@ import Contact, {ContactContainer} from "@/components/Contact";
 import React from "react";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 
-import TitleElementStyled from "@/components/TitleElementStyled";
+import TitleElementStyled from "@/components/StyledTitleElement";
 
 import ContactBanner from "@/components/ContactBanner";
 
