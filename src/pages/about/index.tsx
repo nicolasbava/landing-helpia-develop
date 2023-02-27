@@ -8,7 +8,7 @@ export default function AboutUsPage() {
     return (
         <PageContainer title={"Quienes somos"} >
             <Typography variant="h2" color="secondary" sx={{textAlign: 'center'}}>Quienes somos</Typography>
-            <PageSection>
+            {/* <PageSection> */}
                 <Grid container sx={{py: 8, }}>
                     <Grid item xs={12} md={6}>
                         <RevealLeft>
@@ -37,9 +37,9 @@ export default function AboutUsPage() {
                         </RevealRight>
                     </Grid>
                 </Grid>
-            </PageSection>
+            {/* </PageSection> */}
             {/* SECTION 2 */}
-            <PageSection> 
+            {/* <PageSection>  */}
                 <Grid container sx={{py: 0, }}>
                     <Grid item xs={12} md={6}>
                         <RevealLeft>
@@ -70,6 +70,6 @@ export default function AboutUsPage() {
                         </RevealRight>
                     </Grid>
                 </Grid>
-            </PageSection>
+            {/* </PageSection> */}
         </PageContainer>)
 }
