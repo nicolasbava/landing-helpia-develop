@@ -22,7 +22,6 @@ const PlansSection1Container = styled(Box)<BoxProps>(({theme}) => ({
 }))
 
 
-
 const StyledImage = styled("img")(() => ({
     width: "250px",
     height: "auto",
@@ -33,9 +32,9 @@ export default function PlansPage() {
             <PlansSection1Container>
                 <PageSection>
                     <Grid container sx={{py: 8}} justifyContent="space-between">
-                        <Grid item xs={12} md={6} >
+                        <Grid item xs={12} md={6}>
                             <RevealLeft>
-                                <Stack sx={{ height: "100%"}} justifyContent="center">
+                                <Stack sx={{height: "100%"}} justifyContent="center">
                                     <Typography variant="h4" sx={{fontWeight: "bold"}}>Planes</Typography>
                                 </Stack>
                             </RevealLeft>
@@ -56,13 +55,15 @@ export default function PlansPage() {
             </PlansSection1Container>
 
             <PageSection>
-                <Plans sx={{my:2}} />
+                <Box sx={{my: 8}}>
+                    <Plans/>
+                </Box>
             </PageSection>
 
 
             <ContactBanner>
                 <PageSection>
-                        <Typography variant="h4" sx={{fontWeight: "bold"}}>Contactanos</Typography>
+                    <Typography variant="h4" sx={{fontWeight: "bold"}}>Contactanos</Typography>
                 </PageSection>
             </ContactBanner>
 

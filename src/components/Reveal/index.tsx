@@ -12,7 +12,6 @@ const RevealContainer = styled(Box)<BoxProps>(() => ({
         height: "100%",
         display: "flex",
         transition: "max-height 1s, max-width 1s",
-
     },
 }))
 
@@ -67,7 +66,7 @@ type RevealProps = {
 }
 
 const defaultDuration = 1000;
-export const RevealLeft: React.FC<RevealProps> = ({children, duration=defaultDuration}) => {
+export const RevealLeft: React.FC<RevealProps> = ({children, duration = defaultDuration}) => {
     return (<RevealContainer>
         <Reveal duration={duration} triggerOnce keyframes={customAnimationLeft}>{children}</Reveal>
     </RevealContainer>)
@@ -80,7 +79,7 @@ export const RevealRight: React.FC<RevealProps> = ({children, duration = default
         </RevealContainer>)
 }
 
-export const RevealUp: React.FC<RevealProps> = ({children, duration=defaultDuration}) => {
+export const RevealUp: React.FC<RevealProps> = ({children, duration = defaultDuration}) => {
     return (
         <RevealContainer>
             <Reveal duration={duration} triggerOnce keyframes={customAnimationUp}>{children}</Reveal>

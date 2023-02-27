@@ -28,9 +28,9 @@ const Plans = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
 
         return (<Grid container ref={ref}  spacing={4} justifyContent="center" {...props} >
 
-            {loading && <Grid item xs={12} >
+            {loading && <Grid item xs={12}>
                 <Stack sx={{p: 8, width: "100%"}} direction="row" justifyContent="center">
-                    <LinearProgress color="primary" sx={{
+                    <LinearProgress color="secondary" sx={{
                         height: "16px",
                         width: {xs: "100%", sm: "80%", md: "70%", lg: "60%"},
                         borderRadius: "8px",

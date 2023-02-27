@@ -41,13 +41,13 @@ export const getPlanCurrency = (freq: number): string => {
         }
 
         case 2: {
-            return 'USD';
+            return 'U$D';
         }
         case 6: {
             return 'MXN';
         }
         default: {
-            return '$';
+            return 'U$D';
         }
     }
 }
