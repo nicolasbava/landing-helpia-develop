@@ -3,6 +3,7 @@ import PageContainer, {PageSection} from "@/components/PageContainer";
 import {BoxProps} from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import React from "react";
+import StyledTitleElement from "@/components/StyledTitleElement";
 
 
 const TermsSection1Container = styled(Box)<BoxProps>(({theme}) => ({
@@ -52,8 +53,8 @@ export default function TermsPage() {
             <TermsSection1Container>
                 <PageSection>
                     <Stack sx={{height: "100%"}} justifyContent="center">
-                        <Typography variant="h4" sx={{fontWeight: "bold"}}>Helpia</Typography>
-                        <Typography sx={{fontWeight: "bold"}}>Especialistas en atención al cliente</Typography>
+                        <StyledTitleElement variant="h2" color="main" sx={{pb:{xs:4, md:0}}}>Helpia</StyledTitleElement>
+                        <StyledTitleElement >Especialistas en atención al cliente</StyledTitleElement>
                     </Stack>
                 </PageSection>
             </TermsSection1Container>
@@ -61,7 +62,7 @@ export default function TermsPage() {
             <PageSection>
                 <StyledBox sx={{ my:  8}}>
 
-                    <Typography variant="h4" sx={{mb:4}}>Términos y Condiciones</Typography>
+                    <StyledTitleElement variant="h4" sx={{mb:4}}>Términos y Condiciones</StyledTitleElement>
 
                     <Typography variant="h6">
                         1. ACEPTACIÓN DE LOS TÉRMINOS Y CONDICIONES:

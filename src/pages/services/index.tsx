@@ -1,4 +1,4 @@
-import {Box, Grid, Typography, styled } from "@mui/material";
+import {Box, Grid, Typography, styled, Stack } from "@mui/material";
 import PageContainer, { PageSection } from "@/components/PageContainer";
 import { StyledHero } from "@/components/StyledHero";
 import { ImageElement, ImageElementHero } from "../about";
@@ -107,6 +107,11 @@ export default function ServicesPage() {
                         </RevealRight>
                     </Grid>
                 </Grid>
+            </PageSection>  
+            <PageSection>
+                <Stack>
+
+                </Stack>
             </PageSection>  
         </PageContainer>
     )
