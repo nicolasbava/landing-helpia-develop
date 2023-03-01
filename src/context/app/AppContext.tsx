@@ -15,8 +15,6 @@ export type GeoData = {
   "country": string,
   "countryName": string,
   "countryCode": string,
-
-
 }
 export interface AppContextState {
   menu: MenuState

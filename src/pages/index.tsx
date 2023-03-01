@@ -19,7 +19,7 @@ const HomeSection1Container = styled(Box)<BoxProps>(() => ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         width: "100%",
-        minHeight: "90vh"
+        minHeight: "90vh",
     },
 }))
 
@@ -96,9 +96,9 @@ export default function HomePage() {
             </HomeSection1Container>
 
             <PageSection>
-                <Grid container sx={{py: 8}}>
+                <Grid container sx={{py: 8}} >
                     <Grid item xs={12} md={6}>
-                        <RevealLeft>
+                        <RevealLeft >
                             <Box sx={{
                                 width: {xs: "100%", md: "80%"},
                                 mt: {xs: 0, md: 8},
@@ -113,10 +113,10 @@ export default function HomePage() {
                             </Box>
                         </RevealLeft>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <RevealRight>
-                            <Box sx={{display: "flex", justifyContent: "center"}}>
-                                <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Lateral.gif"}
+                    <Grid item xs={12} md={6} >
+                        <RevealRight >
+                            <Box sx={{display: "flex", justifyContent: {xs:"center", sm: 'flex-end'}}}>
+                                <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Celular mostrando gráficos y chats mostrando éxito por usar Helpia"}
                                        width={364} height={422} loading="lazy"/>
                             </Box>
                         </RevealRight>
@@ -127,6 +127,15 @@ export default function HomePage() {
             <HomeSection2Container>
                 <PageSection>
                     <Grid container sx={{py: 8}}>
+                        
+                        <Grid item xs={12} md={6} >
+                            <RevealLeft >
+                                <Box sx={{display: "flex", justifyContent: {xs:"center", sm: "flex-start"}}}>
+                                    <ImageElementSecond src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
+                                           alt={"Celular mostrando el inicio de sesión de Helpia"} width={360} height={511}/>
+                                </Box>
+                            </RevealLeft>
+                        </Grid>
                         <Grid item xs={12} md={6}>
                             <RevealLeft>
                                 <Box sx={{
@@ -143,14 +152,6 @@ export default function HomePage() {
                                 </Box>
                             </RevealLeft>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <RevealRight>
-                                <Box sx={{display: "flex", justifyContent: "center"}}>
-                                    <ImageElementSecond src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
-                                           alt={"Frente_1-1-422x600.png"} width={360} height={511}/>
-                                </Box>
-                            </RevealRight>
-                        </Grid>
                     </Grid>
                 </PageSection>
             </HomeSection2Container>
@@ -158,16 +159,6 @@ export default function HomePage() {
             <HomeSection3Container>
                 <PageSection>
                     <Grid container sx={{py: 8}}>
-
-                        <Grid item xs={12} md={6}>
-                            <RevealLeft>
-                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}}}>
-                                    <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
-                                           alt={"Frente_3-1-1.png"} width={350} height={522}
-                                    />
-                                </Box>
-                            </RevealLeft>
-                        </Grid>
                         <Grid item xs={12} md={6}>
                             <RevealRight>
                                 <Box sx={{
@@ -184,7 +175,15 @@ export default function HomePage() {
                                 </Box>
                             </RevealRight>
                         </Grid>
-
+                        <Grid item xs={12} md={6} sx={{textAlign: 'center', justifyContent: 'center' }}>
+                            <RevealRight>
+                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}, justifyContent: {xs: 'center', sm: 'center'}, ml: {xs: 0, sm: 9}}}>
+                                    <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
+                                           alt={"Un hombre dibujado mostrando lo util que seria usar Helpia y como lo ha ayudado en su negocio"} width={350} height={522}
+                                    />
+                                </Box>
+                            </RevealRight>
+                        </Grid>
                     </Grid>
                 </PageSection>
             </HomeSection3Container>
