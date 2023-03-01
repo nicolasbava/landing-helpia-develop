@@ -3,6 +3,8 @@ import Document, {Html, Head, Main, NextScript} from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '@/utility/createEmotionCache';
 import theme from "@/styles/theme"
+import Script from 'next/script'
+
 
 export default class MyDocument extends Document {
     render() {
@@ -34,7 +36,22 @@ export default class MyDocument extends Document {
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" /> 
 
-
+                    {/* <!-- Google Analytics --> */}
+                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                    <Script
+                        src="https://www.googletagmanager.com/gtag/js?id=332918588"
+                        strategy="afterInteractive"
+                    />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){window.dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        
+                        gtag('config', '332918588');
+                        `}
+                    </Script>
+                    {/* <!-- End Google Analytics --> */}
                     {(this.props as any).emotionStyleTags}
                 </Head>
                 <body>
