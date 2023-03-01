@@ -115,7 +115,7 @@ export default function HomePage() {
                     </Grid>
                     <Grid item xs={12} md={6} >
                         <RevealRight >
-                            <Box sx={{display: "flex", justifyContent: {xs:"center", sm: 'flex-end'}}}>
+                            <Box sx={{display: "flex", justifyContent: {xs:"center", md: 'flex-end'}}}>
                                 <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Celular mostrando gráficos y chats mostrando éxito por usar Helpia"}
                                        width={364} height={422} loading="lazy"/>
                             </Box>
@@ -130,7 +130,7 @@ export default function HomePage() {
                         
                         <Grid item xs={12} md={6} >
                             <RevealLeft >
-                                <Box sx={{display: "flex", justifyContent: {xs:"center", sm: "flex-start"}}}>
+                                <Box sx={{display: "flex", justifyContent: {xs:"center", md: "flex-start"}}}>
                                     <ImageElementSecond src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
                                            alt={"Celular mostrando el inicio de sesión de Helpia"} width={360} height={511}/>
                                 </Box>
@@ -166,7 +166,7 @@ export default function HomePage() {
                                     mt: {xs: 0, md: 8},
                                     textAlign: {xs: "center", md: "left"}
                                 }}>
-                                    <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 2}}>Disponibilidad
+                                    <StyledTitleElement variant="h4" sx={{fontWeight: "800", mb: 2}}>Disponibilidad
                                         24/7</StyledTitleElement>
                                     <Typography>Respondemos a todas las consultas de tus clientes
                                         los 365 días del año, mientras vos
@@ -177,7 +177,7 @@ export default function HomePage() {
                         </Grid>
                         <Grid item xs={12} md={6} sx={{textAlign: 'center', justifyContent: 'center' }}>
                             <RevealRight>
-                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}, justifyContent: {xs: 'center', sm: 'center'}, ml: {xs: 0, sm: 9}}}>
+                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}, justifyContent: {xs: 'center', sm: 'center'}, ml: {xs: 0, sm: 9}, mt: {xs: 6, md: 0} }}>
                                     <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
                                            alt={"Un hombre dibujado mostrando lo util que seria usar Helpia y como lo ha ayudado en su negocio"} width={350} height={522}
                                     />
