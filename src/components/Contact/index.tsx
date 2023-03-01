@@ -42,11 +42,7 @@ const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
         return (<Grid container ref={ref}  {...props} >
             <Grid item xs={12}></Grid>
             <Grid item xs={12} md={5}>
-<<<<<<< HEAD
-                <Box sx={{p: {xs: 0, md: 2}, mt: 0}}>
-=======
                 <Box sx={{p: {xs: 0, md: 2}, mb: 5, mt: 2}}>
->>>>>>> abeecefa8866b940fc1476b4b43aded039231517
                     <StyledTitleElement sx={{fontWeight: "bold", mb: 1}}>¿Alguna duda?</StyledTitleElement>
                     <StyledTitleElement variant="h3">Escribinos cuando quieras</StyledTitleElement>
                 </Box>
