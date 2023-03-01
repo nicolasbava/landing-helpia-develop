@@ -76,7 +76,7 @@ export default function AboutUsPage() {
                 <Grid container sx={{py: 8, }}>
                     <Grid item xs={12} md={6}  >
                         <RevealLeft>
-                             <Box sx={{display: 'flex'}}> 
+                             <Box sx={{display: 'flex', justifyContent: {xs:'center', md: 'flex-start'}}}> 
                                 <ImageElement 
                                         src="https://statics.helpia.com/landing/somos.png"
                                         alt={"Frente_3-1-1.png"} width={550} height={550} loading="lazy"
