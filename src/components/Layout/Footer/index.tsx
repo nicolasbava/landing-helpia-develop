@@ -31,7 +31,11 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12}   md={4}>
                         <StyledFooterSection sx={{mt: 4}}>
+<<<<<<< HEAD
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Seguinos</StyledTitleElement>
+=======
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold"}}>Seguinos</StyledTitleElement>
+>>>>>>> abeecefa8866b940fc1476b4b43aded039231517
                             <Stack direction="row" gap={2} sx={{justifyContent: {xs: 'center', sm: 'left'}}}>
                                 <Link href='https://www.facebook.com/somos.helpia' target="_blank">
                                     <StyledFooterIcon className="fab fa-facebook-f"/>
@@ -51,7 +55,11 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12} md={4}>
                         <StyledFooterSection sx={{mt: 4, mx:1}}>
+<<<<<<< HEAD
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Contáctanos</StyledTitleElement>
+=======
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold"}}>Contáctanos</StyledTitleElement>
+>>>>>>> abeecefa8866b940fc1476b4b43aded039231517
 
                             <Box sx={{mb: 2}}>
                                 <FooterContactLink type={"whatsapp"}/>
@@ -70,9 +78,9 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                         <Box sx={{width: "100%", textAlign: "center", a: {textDecoration: "none"}}}>
                             <Divider sx={{mb: 1, background: "#fff"}}/>
                             <Link href='/terms'>
-                                <Typography variant="caption" sx={{color: "primary.dark", fontWeight: "bold"}}>Términos
+                                <StyledTitleElement variant="caption" sx={{color: "primary.dark", fontWeight: "bold"}}>Términos
                                     y
-                                    condiciones</Typography>
+                                    condiciones</StyledTitleElement>
                             </Link>
                         </Box>
                     </Grid>
