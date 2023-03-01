@@ -67,7 +67,7 @@ export default function AboutUsPage() {
     return (
         <PageContainer title={"Quienes somos"}>
             <StyledHero direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
-                <Box sx={{width: {sm:'100%',md:'60%'}}}>
+                <Box sx={{width: {sm:'auto',md:'60%'}}}>
                     <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</StyledTitleElement>
                 </Box>
                 <ImageElementHero src={"https://statics.helpia.com/landing/about-hero.png"} loading="lazy" />
@@ -128,7 +128,7 @@ export default function AboutUsPage() {
                             
                         </RevealLeft>
                     </Grid>
-                    <Grid item xs={12} md={6} sx={{display: 'flex', mt: 2}}>
+                    <Grid item xs={12} md={6} sx={{display: 'flex', mt: 2, justifyContent: {xs: 'center', md: 'flex-end'}}}>
                         <RevealRight>
                             <Box sx={{display: 'flex', justifyContent: 'flex-end'}}> 
                                 <ImageElement src={"https://statics.helpia.com/landing/somos2.png"}
