@@ -20,8 +20,8 @@ export default function ServicesPage() {
                 <Box sx={{width: {sm:'100%',md:'40%'}}}>
                     <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>Servicio</StyledTitleElement>
                 </Box>
-                <Box sx={{width: {xs: '100%', sm: '38%'}}}>
-                    <ImageElementHero src={"https://statics.helpia.com/landing/banner-servicio.png"} loading="lazy" />
+                <Box sx={{width: {xs: 'auto%', md: '38%'}, margin: 'auto'}}>
+                    <ImageElementHero src={"https://statics.helpia.com/landing/banner-servicio.png"} loading="lazy" style={{marginLeft: '8px'}} />
                 </Box>
 
             </StyledHero>
@@ -53,7 +53,7 @@ export default function ServicesPage() {
                     </Grid>
                     <Grid item xs={12} md={6}  >
                         <RevealLeft>
-                             <Box sx={{display: 'flex'}}> 
+                             <Box sx={{display: 'flex', mt: {xs: 6, md: 0}, justifyContent: {xs: 'center', md: 'flex-end'}}}> 
                                 <ImageElement 
                                         src="https://statics.helpia.com/landing/servicios1.gif"
                                         alt={"Imagen de dos personas atendiendo callcenter de Helpia"} width={550} height={550} loading="lazy"
@@ -64,7 +64,7 @@ export default function ServicesPage() {
                 </Grid>
             </PageSection>  
             <PageSection>
-                <Grid container sx={{py: 8, }}>
+                <Grid container sx={{py: {xs: 0, md: 8}, mb: {xs: 8, md: 0} }}>
                     
                     <Grid item xs={12} md={6}  >
                         <RevealLeft>
@@ -79,9 +79,11 @@ export default function ServicesPage() {
                     <Grid item xs={12} md={6}>
                         <RevealRight>
                             <Box sx={{
-                                width: {xs: "100%", md: "100%"},
-                                mt: {xs: 0, md: 3},
-                                textAlign: {xs: "center", md: "left"}
+                                margin: 'auto',
+                                mt: {xs: 'auto', md: 3},
+                                textAlign: {xs: "center", md: "left"},
+                                ml: {xs: 'auto', md: 9},
+                                maxWidth: '350px',
                             }}>
                                 <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 3, mt:{xs: 3, md: 0}}}>
                                     Beneficios para ti
