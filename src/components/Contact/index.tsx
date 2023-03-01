@@ -5,6 +5,7 @@ import ContactForm, {ContactFormFields} from "@/components/ContactForm";
 import {Box, styled, Typography} from "@mui/material";
 import {BoxProps} from "@mui/material/Box";
 import {toast} from "react-toastify";
+import StyledTitleElement from "../StyledTitleElement";
 
 
 export const ContactContainer = styled(Box)<BoxProps>(() => ({
@@ -41,9 +42,9 @@ const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
         return (<Grid container ref={ref}  {...props} >
             <Grid item xs={12}></Grid>
             <Grid item xs={12} md={5}>
-                <Box sx={{p: {xs: 0, md: 2}, mb: 5}}>
-                    <Typography sx={{fontWeight: "bold", mb: 4}}>¿Alguna duda?</Typography>
-                    <Typography variant="h3">Escribinos cuando quieras</Typography>
+                <Box sx={{p: {xs: 0, md: 2}, mt: 0}}>
+                    <StyledTitleElement sx={{fontWeight: "bold", mb: 1}}>¿Alguna duda?</StyledTitleElement>
+                    <StyledTitleElement variant="h3">Escribinos cuando quieras</StyledTitleElement>
                 </Box>
             </Grid>
             <Grid item xs={12} md={7}>
