@@ -137,7 +137,7 @@ export default function HomePage() {
                             </RevealLeft>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <RevealLeft>
+                            <RevealRight>
                                 <Box sx={{
                                     width: {xs: "100%", md: "80%"},
                                     mt: {xs: 0, md: 8},
@@ -150,7 +150,7 @@ export default function HomePage() {
                                         donde serán atendidos por cientos
                                         de expertos en atención al cliente.</Typography>
                                 </Box>
-                            </RevealLeft>
+                            </RevealRight>
                         </Grid>
                     </Grid>
                 </PageSection>
@@ -160,7 +160,7 @@ export default function HomePage() {
                 <PageSection>
                     <Grid container sx={{py: 8}}>
                         <Grid item xs={12} md={6}>
-                            <RevealRight>
+                            <RevealLeft>
                                 <Box sx={{
                                     width: {xs: "100%", md: "80%"},
                                     mt: {xs: 0, md: 8},
@@ -173,7 +173,7 @@ export default function HomePage() {
                                         conquistas nuevos productos y clientes,
                                         nosotros te potenciamos las ventas!!!</Typography>
                                 </Box>
-                            </RevealRight>
+                            </RevealLeft>
                         </Grid>
                         <Grid item xs={12} md={6} sx={{textAlign: 'center', justifyContent: 'center' }}>
                             <RevealRight>

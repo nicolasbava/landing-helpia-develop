@@ -15,14 +15,27 @@ export default class MyDocument extends Document {
                     <meta charSet="UTF-8"/>
 
                     <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <meta property="title" content="Helpia"/>
                     <meta property="og:title" content="Helpia"/>
                     <meta property="og:url" content="https://helpia.com"/>
                     <meta property="og:site_name" content="Helpia"/>
                     <meta property="og:locale" content="es"/>
                     <meta property="og:locale:alternate" content="es_AR"/>
+                    <meta name='author' content='Helpia'  />
+                    <meta name="keywords" content="Atencion al cliente, webchat, whatsapp, facebook, instagram, cliente, clientes, agentes especializados, pyme" 
+                    />
                     <meta name="description" property="og:description"
-                          content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa o emprendimiento. Gestión de cobranzas, preventa, venta y post-venta."/>
+                          content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa. Gestión de cobranzas, preventa, venta y post-venta."/>
                     <meta property="og:image" content="/favicon.png"/>
+
+                    <meta
+                        property="og:description"
+                        content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa. Gestión de cobranzas, preventa, venta y post-venta."
+                        />
+                    <meta
+                        property="og:image"
+                        content="/favicon.png"
+                    />
 
                     <link rel="shortcut icon" href="/favicon.png"/>
                     <link
