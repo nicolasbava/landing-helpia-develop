@@ -19,8 +19,8 @@ export const StyledLinkTextMarked = styled(Typography)<TypographyProps>(({ theme
         fontSize: "12px",
         width: "100%",
         background: theme.palette.primary.dark ,
-        padding:  "5px" ,
-        borderRadius:  "8px" ,
+        padding:  "8px 16px" ,
+        borderRadius:  "21px" ,
         fontWeight: "bold",
         transition: "0.5s",
         "&:hover":{

@@ -22,7 +22,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     <Grid item xs={12}  md={4}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <Link href='/'>
-                                <Logo alt={"footer-logo"} width={180} height={80}/>
+                                <Logo alt={"footer-logo"} width={178} height={80}/>
                             </Link>
                             <Typography variant="caption">Somos especialistas en atención al cliente online.
                                 Conocenos.</Typography>
