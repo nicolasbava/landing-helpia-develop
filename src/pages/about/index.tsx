@@ -67,7 +67,9 @@ export default function AboutUsPage() {
     return (
         <PageContainer title={"Quienes somos"}>
             <StyledHero direction={{xs: "column", md: 'row'}} justifyContent={'space-between'} alignItems={'center'} >
+
                 <Box sx={{width: {sm:'auto',md:'60%'}}}>
+
                     <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</StyledTitleElement>
                 </Box>
                 <ImageElementHero src={"https://statics.helpia.com/landing/about-hero.png"} loading="lazy" />

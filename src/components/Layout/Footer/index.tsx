@@ -31,6 +31,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12}   md={4}>
                         <StyledFooterSection sx={{mt: 4}}>
+
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Seguinos</StyledTitleElement>
                             <Stack direction="row" gap={2} sx={{justifyContent: {xs: 'center', sm: 'left'}}}>
                                 <Link href='https://www.facebook.com/somos.helpia' target="_blank">
@@ -51,7 +52,9 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12} md={4}>
                         <StyledFooterSection sx={{mt: 4, mx:1}}>
+
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Contáctanos</StyledTitleElement>
+
 
                             <Box sx={{mb: 2}}>
                                 <FooterContactLink type={"whatsapp"}/>

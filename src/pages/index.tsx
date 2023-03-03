@@ -177,6 +177,7 @@ export default function HomePage() {
                                     mt: {xs: 0, md: 8},
                                     textAlign: {xs: "center", md: "left"}
                                 }}>
+
                                     <StyledTitleElement variant="h4" sx={{fontWeight: "800", mb: 2}}>Disponibilidad
                                         24/7</StyledTitleElement>
                                     <Typography>Respondemos a todas las consultas de tus clientes
