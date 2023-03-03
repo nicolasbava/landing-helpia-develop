@@ -20,9 +20,9 @@ import useLocalStorage from "@/hooks/use-local-storage";
 const StyledDialog = styled(Dialog)<DialogProps>(({theme}) => ({
     "&.MuiDialog-root": {
         ".MuiDialog-paper": {
-            background: theme.palette.text.secondary,
+            background: '#0a0b1d',
             color: theme.palette.text.disabled,
-            maxWidth: "350px",
+            maxWidth: "368px",
             minWidth: "250px"
         }
     },
@@ -90,6 +90,7 @@ const SubscriptionDialog: React.FC = () => {
             }, 15000)
 
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     /*React.useEffect(() => {
@@ -137,7 +138,7 @@ const SubscriptionDialog: React.FC = () => {
                                }}
                     />
                         <Button disabled={!isValid } size="small" variant="contained" type="submit" sx={{fontWeight: "bold"}}>
-                            {loading ? "Subscribase...": "Subscribase"}
+                            {loading ? "Subscríbase...": "Subscríbase"}
                         </Button>
                     </Stack>
                 </form>

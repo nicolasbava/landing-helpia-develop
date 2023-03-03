@@ -1,16 +1,15 @@
 import React from "react"
 import Reveal from "react-awesome-reveal";
 import {keyframes} from "@emotion/react";
-import {styled} from "@mui/material";
+import {styled, SxProps} from "@mui/material";
 import Box, {BoxProps} from "@mui/material/Box";
 
 
 const RevealContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
         overflow: "hidden",
-        width: "100%",
-        height: "100%",
-        display: "flex",
+        width: "auto",
+        height: "auto",
         transition: "max-height 1s, max-width 1s",
     },
 }))
@@ -62,7 +61,7 @@ const customAnimationDown = keyframes`
 
 type RevealProps = {
     children: React.ReactNode
-    duration?: number
+    duration?: number,
 }
 
 const defaultDuration = 1000;
@@ -72,7 +71,7 @@ export const RevealLeft: React.FC<RevealProps> = ({children, duration = defaultD
     </RevealContainer>)
 }
 
-export const RevealRight: React.FC<RevealProps> = ({children, duration = defaultDuration}) => {
+export const RevealRight: React.FC<RevealProps> = ({ children, duration = defaultDuration }) => {
     return (
         <RevealContainer>
             <Reveal duration={duration} triggerOnce keyframes={customAnimationRight}>{children}</Reveal>
