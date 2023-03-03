@@ -100,8 +100,8 @@ export default function HomePage() {
             <HomeSection1Container>
                 <PageSection>
                     <RevealLeft>
-                        <Title variant="h1" fontSize={'44px'} sx={{}}>Helpia</Title>
-                        <SubTitle variant="h2" fontSize={'28px'}>Somos especialistas en atención al cliente</SubTitle>
+                        <Title variant="h1" fontSize={'44px'} sx={{}}>Somos especialistas en atención al cliente</Title>
+                        {/* <SubTitle variant="h2" fontSize={'28px'}></SubTitle> */}
                     </RevealLeft>
                 </PageSection>
             </HomeSection1Container>
