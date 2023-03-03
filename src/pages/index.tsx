@@ -83,6 +83,16 @@ export const Title = styled(StyledTitleElement)(() =>({
     }    
 })) 
 
+export const SubTitle = styled(StyledTitleElement)(() =>({
+    // paddingTop: '22vh', 
+    color: 'white', 
+    '&.MuiTypography-root': {
+        fontSize: 'min(10vw, 44px)',
+    },
+    '@media (min-width: 600px)':{
+        width: '60%'
+    }    
+})) 
 
 export default function HomePage() {
     return (
@@ -90,7 +100,8 @@ export default function HomePage() {
             <HomeSection1Container>
                 <PageSection>
                     <RevealLeft>
-                        <Title variant="h1" fontSize={'44px'}>Somos especialistas en atención al cliente</Title>
+                        <Title variant="h1" fontSize={'44px'} sx={{}}>Helpia</Title>
+                        <SubTitle variant="h2" fontSize={'28px'}>Somos especialistas en atención al cliente</SubTitle>
                     </RevealLeft>
                 </PageSection>
             </HomeSection1Container>

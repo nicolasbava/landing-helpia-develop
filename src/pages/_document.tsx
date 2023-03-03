@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
                     <meta property="og:locale" content="es"/>
                     <meta property="og:locale:alternate" content="es_AR"/>
                     <meta name='author' content='Helpia'  />
-                    <meta name="keywords" content="Atencion al cliente, webchat, whatsapp, facebook, instagram, cliente, clientes, agentes especializados, pyme" 
+                    <meta name="keywords" content="Atención al cliente, webchat, whatsapp, facebook, instagram, cliente, clientes, agentes especializados, pyme" 
                     />
                     <meta name="description" property="og:description"
                           content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa. Gestión de cobranzas, preventa, venta y post-venta."/>
