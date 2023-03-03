@@ -11,7 +11,6 @@ import InvalidIcon from '@mui/icons-material/Cancel';
 import Stack from "@mui/material/Stack";
 import * as yup from "yup";
 import {useFormik} from "formik";
-import StyledButton from "@/components/StyledButton";
 import useHelpiaApi from "@/hooks/use-helpia-api";
 import {toast} from "react-toastify";
 import {ApiNewsletterUp} from "@/types/api";
@@ -21,9 +20,9 @@ import useLocalStorage from "@/hooks/use-local-storage";
 const StyledDialog = styled(Dialog)<DialogProps>(({theme}) => ({
     "&.MuiDialog-root": {
         ".MuiDialog-paper": {
-            background: theme.palette.text.secondary,
+            background: '#0a0b1d',
             color: theme.palette.text.disabled,
-            maxWidth: "350px",
+            maxWidth: "368px",
             minWidth: "250px"
         }
     },
@@ -67,7 +66,8 @@ const SubscriptionDialog: React.FC = () => {
     const processSubmit = (email: string)=>{
         setLoading(true)
         apiPost<ApiNewsletterUp>("/newsletter/subscriber", {email}).then(()=>{
-             handleClose()
+            toast.success("Se ha subscrito a nuestro canal de información")
+            handleClose()
             putData<SubscriptionStore>(key, {opened: true, subscribed: true})
 
         }).catch(()=>{
@@ -75,7 +75,6 @@ const SubscriptionDialog: React.FC = () => {
             toast.error("Lo sentimos, no pudimos subscribirlo")
         })
     }
-
     const handleClose = () => {
         setOpen(false)
         setLoading(false)
@@ -91,6 +90,7 @@ const SubscriptionDialog: React.FC = () => {
             }, 15000)
 
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     /*React.useEffect(() => {
@@ -106,7 +106,7 @@ const SubscriptionDialog: React.FC = () => {
     if (!open) {
         return null;
     }
-    return (<StyledDialog open={open} onClose={handleClose}>
+    return (<StyledDialog open={open}>
 
         <DialogTitle sx={{px: 2}}>
             <Stack>
@@ -138,7 +138,7 @@ const SubscriptionDialog: React.FC = () => {
                                }}
                     />
                         <Button disabled={!isValid } size="small" variant="contained" type="submit" sx={{fontWeight: "bold"}}>
-                            {loading ? "Subscribase...": "Subscribase"}
+                            {loading ? "Subscríbase...": "Subscríbase"}
                         </Button>
                     </Stack>
                 </form>

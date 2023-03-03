@@ -10,6 +10,7 @@ import StyledFooterSection from "@/components/Layout/Footer/StyledFooterSection"
 import Logo from "@/components/Logo";
 import StyledFooterIcon from "@/components/Layout/Footer/StyledFooterIcon";
 import FooterContactLink from "@/components/Layout/Footer/FooterContactLink";
+import StyledTitleElement from '@/components/StyledTitleElement';
 
 const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
@@ -30,7 +31,8 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12}   md={4}>
                         <StyledFooterSection sx={{mt: 4}}>
-                            <Typography variant='h6' mb={2} sx={{fontWeight: "bold"}}>Seguinos</Typography>
+
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Seguinos</StyledTitleElement>
                             <Stack direction="row" gap={2} sx={{justifyContent: {xs: 'center', sm: 'left'}}}>
                                 <Link href='https://www.facebook.com/somos.helpia' target="_blank">
                                     <StyledFooterIcon className="fab fa-facebook-f"/>
@@ -50,7 +52,9 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
                     <Grid item xs={12} md={4}>
                         <StyledFooterSection sx={{mt: 4, mx:1}}>
-                            <Typography variant='h6' mb={2} sx={{fontWeight: "bold"}}>Contáctanos</Typography>
+
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Contáctanos</StyledTitleElement>
+
 
                             <Box sx={{mb: 2}}>
                                 <FooterContactLink type={"whatsapp"}/>
@@ -69,9 +73,9 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                         <Box sx={{width: "100%", textAlign: "center", a: {textDecoration: "none"}}}>
                             <Divider sx={{mb: 1, background: "#fff"}}/>
                             <Link href='/terms'>
-                                <Typography variant="caption" sx={{color: "primary.dark", fontWeight: "bold"}}>Términos
+                                <StyledTitleElement variant="caption" sx={{color: "primary.dark", fontWeight: "bold"}}>Términos
                                     y
-                                    condiciones</Typography>
+                                    condiciones</StyledTitleElement>
                             </Link>
                         </Box>
                     </Grid>

@@ -16,6 +16,7 @@ const FloatPromoContainer = styled(Box)<BoxProps>(({theme}) => ({
         bottom: "50%",
         borderRadius: "16px 0",
         opacity: "0.5",
+        zIndex: 9999,
         right: 0,
         padding: "8px",
         a: {textDecoration: "none"},

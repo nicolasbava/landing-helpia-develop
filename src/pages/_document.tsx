@@ -3,6 +3,8 @@ import Document, {Html, Head, Main, NextScript} from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '@/utility/createEmotionCache';
 import theme from "@/styles/theme"
+import Script from 'next/script'
+
 
 export default class MyDocument extends Document {
     render() {
@@ -13,14 +15,27 @@ export default class MyDocument extends Document {
                     <meta charSet="UTF-8"/>
 
                     <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <meta property="title" content="Helpia"/>
                     <meta property="og:title" content="Helpia"/>
                     <meta property="og:url" content="https://helpia.com"/>
                     <meta property="og:site_name" content="Helpia"/>
                     <meta property="og:locale" content="es"/>
                     <meta property="og:locale:alternate" content="es_AR"/>
+                    <meta name='author' content='Helpia'  />
+                    <meta name="keywords" content="Atención al cliente, webchat, whatsapp, facebook, instagram, cliente, clientes, agentes especializados, pyme" 
+                    />
                     <meta name="description" property="og:description"
-                          content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa o emprendimiento. Gestión de cobranzas, preventa, venta y post-venta."/>
+                          content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa. Gestión de cobranzas, preventa, venta y post-venta."/>
                     <meta property="og:image" content="/favicon.png"/>
+
+                    <meta
+                        property="og:description"
+                        content="Ofrecemos servicios de atención al cliente online, sin elevar los costos fijos de tu empresa. Gestión de cobranzas, preventa, venta y post-venta."
+                        />
+                    <meta
+                        property="og:image"
+                        content="/favicon.png"
+                    />
 
                     <link rel="shortcut icon" href="/favicon.png"/>
                     <link
@@ -30,24 +45,31 @@ export default class MyDocument extends Document {
                           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
                           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
                           referrerPolicy="no-referrer" crossOrigin='anonymous'/>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" /> 
 
-                    {/*Web Chat Helpia*/}
-
-                    {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                    <script
-                        src="https://assets.flex.twilio.com/releases/flex-webchat-ui/2.9.1/twilio-flex-webchat.min.js"
-                        integrity="sha512-yBmOHVWuWT6HOjfgPYkFe70bboby/BTj9TGHXTlEatWnYkW5fFezXqW9ZgNtuRUqHWrzNXVsqu6cKm3Y04kHMA=="
-                        crossOrigin="anonymous">
-                    </script>
-
-
+                    {/* <!-- Google Analytics --> */}
+                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                    <Script
+                        src="https://www.googletagmanager.com/gtag/js?id=332918588"
+                        strategy="afterInteractive"
+                    />
+                    <Script id="google-analytics" strategy="afterInteractive">
+                        {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){window.dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        
+                        gtag('config', '332918588');
+                        `}
+                    </Script>
+                    {/* <!-- End Google Analytics --> */}
                     {(this.props as any).emotionStyleTags}
                 </Head>
                 <body>
                 <Main/>
                 <NextScript/>
-                {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                <script type="text/javascript" src="/assets/js/web-chat.js"/>
                 </body>
             </Html>
         );

@@ -1,20 +1,27 @@
 import { createContext } from "react"
 import { Breakpoint } from "@mui/material"
 import {AppMenuItem} from "@/types/menu";
-import {ResponsiveStyleValue} from "@mui/system";
-import {Property} from "csstype";
-
 
 
 export type MenuState = {
   open: boolean
   items: Array<AppMenuItem>
 }
+
+export type GeoData = {
+  "ip": string,
+  "version": string,
+  "city": string,
+  "country": string,
+  "countryName": string,
+  "countryCode": string,
+}
 export interface AppContextState {
   menu: MenuState
   breakPoint: Breakpoint
   px:  any
-  toggleMenu: (value?: boolean) => void
+  toggleMenu: (value?: boolean) => void,
+  geoData: GeoData | null
 }
 
 export const INITIAL_STATE: AppContextState = {
@@ -29,6 +36,7 @@ export const INITIAL_STATE: AppContextState = {
   },
   px: {xs: 1, md:8, lg:32},
   breakPoint: "lg",
+  geoData: null
 
 } as AppContextState
 

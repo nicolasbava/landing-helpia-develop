@@ -9,7 +9,7 @@ type AppProviderProps = {
 }
 
 const AppProvider = ({children}: AppProviderProps) => {
-    const [{breakPoint, menu, px}, dispatch] = useReducer(AppReducer, INITIAL_STATE)
+    const [{geoData, breakPoint, menu, px}, dispatch] = useReducer(AppReducer, INITIAL_STATE)
 
     const toggleMenu = (payload?: boolean) => {
         dispatch({type: "setMenuOpened", payload})
@@ -26,6 +26,23 @@ const AppProvider = ({children}: AppProviderProps) => {
         );
     }
 
+    React.useEffect(() => {
+        fetch("https://ipapi.co/json/", {method: "get"}).then(async (r) => {
+            const rawData: any = await r.json()
+            dispatch({
+                type: "setGeoData", payload: {
+                    city: rawData.city,
+                    country: rawData.country,
+                    countryCode: rawData.country_code,
+                    countryName: rawData.country_name,
+                    ip: rawData.version,
+                    version: rawData.version
+                }
+            })
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }, [])
     const width = useWidth()
     React.useEffect(() => {
         dispatch({type: "setBreakPoint", payload: width})
@@ -35,6 +52,7 @@ const AppProvider = ({children}: AppProviderProps) => {
         <AppContext.Provider
             value={{
                 px,
+                geoData,
                 breakPoint,
                 menu,
                 toggleMenu,

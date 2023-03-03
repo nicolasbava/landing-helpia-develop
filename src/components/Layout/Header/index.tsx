@@ -32,7 +32,7 @@ const Header = forwardRef<any, Omit<AppBarProps, "position">>((props, ref) => {
     return (<HideOnScroll>
         <StyledAppBar ref={ref} position="sticky" {...props} >
             <Link href='/'>
-                <Logo alt="Logo Helpia" height={50} width={150}/>
+                <Logo alt="Helpia Logo" height={50} width={150}/>
             </Link>
             <Stack sx={{ml: {xs: 2, md: 4, lg: 16}, display: {xs: "none", md: "flex"}}}>
                 <HeaderLinks/>
