@@ -70,7 +70,7 @@ export default function AboutUsPage() {
 
                 <Box sx={{width: {sm:'auto',md:'60%'}}}>
 
-                    <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quienes somos?</StyledTitleElement>
+                    <StyledTitleElement variant="h2" color="main" sx={{textAlign: 'center', pb:{xs:4, md:0}}}>¿Quiénes somos?</StyledTitleElement>
                 </Box>
                 <ImageElementHero src={"https://statics.helpia.com/landing/about-hero.png"} loading="lazy" />
             </StyledHero>
