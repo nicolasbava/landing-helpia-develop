@@ -1,22 +1,25 @@
 import { styled } from '@mui/material'
 import React from 'react'
-import { RevealLeft } from '@/components/Reveal';
+import Link from 'next/link';
 
 
-export const ElementWhatsappAnchor = styled('img')(() => ({
+const ElementWhatsappAnchor = styled('img')(() => ({
     position: 'fixed',
     bottom: '75px',
     right: '22px',
     transition: '250ms all ease',
     '&:hover': {
-        transform: 'scale(1.025)'
+        transform: 'scale(1.025)',
+        opacity: "0.6"
     }
 }))
 
-export const StyledWhatsappAnchor: React.FC = () => {
+const StyledWhatsappAnchor: React.FC = () => {
     return (
-        <a href="https://wa.me/5491131004593" target="_blank" rel="noreferrer">
+        <Link href="https://wa.me/5491131004593" target="_blank" rel="noreferrer">
                 <ElementWhatsappAnchor src={"https://statics.helpia.com/landing/whatsapp-icon.png"}  alt="whatsapp" width="48" height="48"/>
-        </a>
+        </Link>
     )
 }
+
+export default StyledWhatsappAnchor
