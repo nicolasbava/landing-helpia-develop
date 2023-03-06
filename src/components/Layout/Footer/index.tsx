@@ -17,11 +17,12 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
     return (
         <Box>
+            <StyledWhatsappAnchor />
+
             <StyledFooterContainer ref={ref} {...props}>
-                       <StyledWhatsappAnchor />
                 <Grid container columnSpacing={{xs: 0, md: 2, lg:0}}
                       justifyContent={{xs: "center", md: "space-evenly", lg: "space-between"}}>
-                    <Grid item xs={12}  md={4}>
+                    <Grid item xs={12}  md={3}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <Link href='/'>
                                 <Logo alt={"footer-logo"} width={178} height={80}/>
@@ -31,51 +32,73 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                         </StyledFooterSection>
                     </Grid>
 
-                    <Grid item xs={12}   md={4}>
-                        <StyledFooterSection sx={{mt: 4}}>
-
-                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Seguinos</StyledTitleElement>
-                            <Stack direction="row" gap={2} sx={{justifyContent: {xs: 'center', sm: 'left'}}}>
-                                <Link href='https://www.facebook.com/somos.helpia' target="_blank">
-                                    <StyledFooterIcon className="fab fa-facebook-f"/>
-                                </Link>
-                                <Link href='https://twitter.com/helpia_latam' target='_blank'>
-                                    <StyledFooterIcon className="fab fa-twitter"/>
-                                </Link>
-                                <Link href='https://www.linkedin.com/company/helpia-latam/about/' target='_blank'>
-                                    <StyledFooterIcon className="fa-brands fa-linkedin-in"/>
-                                </Link>
-                                <Link href='https://www.instagram.com/helpia_latam/?hl=es' target='_blank'>
-                                    <StyledFooterIcon className="fab fa-instagram"/>
-                                </Link>
-                            </Stack>
-                        </StyledFooterSection>
-                    </Grid>
-
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={3}>
                         <StyledFooterSection sx={{mt: 4, mx:1}}>
 
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Contáctanos</StyledTitleElement>
 
 
                             <Box sx={{mb: 2}}>
-                                <FooterContactLink type={"whatsapp"}/>
+                                <Typography sx={{fontWeight: 'bold'}}>{"Whatsapp"}:</Typography>
+
+                                <FooterContactLink type={"whatsapp"} flag="ar" label="+549 11 310 04593" href="https://wa.me/5491131004593"  />
+                                <FooterContactLink type={"whatsapp"} flag="uy" label="+598 94 602 736" href="https://wa.me/59894602736"  />
+
                             </Box>
                             <Box sx={{mb: 2}}>
-                                <FooterContactLink type={"phone"}/>
+                                <Typography sx={{fontWeight: 'bold'}}>{"Teléfono"}:</Typography>
+
+                                <FooterContactLink type={"phone"} flag="ar" label="+549 11 310 04593" href="tel:+5491131004593"  />
+                                <FooterContactLink type={"phone"} flag="uy" label="+598 94 602 736" href="tel+59894602736"  />
                             </Box>
 
                             <Box sx={{mb: 0}}>
-                                <FooterContactLink type={"mail"}/>
+                                <FooterContactLink type={"mail"} label="info@helpia.com" href="mailto:info@helpia.com"/>
                             </Box>
                         </StyledFooterSection>
                     </Grid>
 
-                    <Grid item xs={12} sx={{mt: {xs: 4, md: 8, lg: 16}, mb: 8}}>
+                    <Grid item xs={12}   md={3}>
+                        <StyledFooterSection sx={{mt: 4}}>
+
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Seguinos</StyledTitleElement>
+                            <Stack direction="row" gap={2} sx={{justifyContent: {xs: 'center', sm: 'left'}}}>
+                                <Link href='https://www.facebook.com/somos.helpia' target="_blank">
+                                    <StyledFooterIcon className="fa-brands fa-facebook"/>
+                                </Link>
+                                <Link href='https://twitter.com/helpia_latam' target='_blank'>
+                                    <StyledFooterIcon className="fab fa-twitter"/>
+                                </Link>
+                                <Link href='https://www.linkedin.com/company/helpia-latam/about/' target='_blank'>
+                                    <StyledFooterIcon className="fa-brands fa-linkedin"/>
+                                </Link>
+                                <Link href='https://www.instagram.com/helpia_latam/?hl=es' target='_blank'>
+                                    <StyledFooterIcon className="fa-brands fa-square-instagram"/>
+                                </Link>
+                            </Stack>
+                        </StyledFooterSection>
+                    </Grid>
+
+
+                    <Grid item xs={12}  md={3}>
+                        <StyledFooterSection sx={{mt: 4}}>
+                            <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Trabajá con nosotros</StyledTitleElement>
+                            <Typography variant="caption" sx={{mb:2}}>Si te interesa formar parte de nuestro equipo, envianos tu CV</Typography>
+
+                            <FooterContactLink type="mail" label="vacantes@helpia.com"  href="mailto:vacantes@helpia.com" />
+
+                        </StyledFooterSection>
+                    </Grid>
+
+
+
+
+
+                    <Grid item xs={12} sx={{mt: {xs: 2, md: 4}, mb: 4}}>
                         <Box sx={{width: "100%", textAlign: "center", a: {textDecoration: "none"}}}>
-                            <Divider sx={{mb: 1, background: "#fff"}}/>
+                            <Divider sx={{mb: 2, background: "#fff"}}/>
                             <Link href='/terms'>
-                                <StyledTitleElement variant="caption" sx={{color: "primary.dark", fontWeight: "bold"}}>Términos
+                                <StyledTitleElement variant="caption" sx={{color: "text.disabled", fontWeight: "bold"}}>Términos
                                     y
                                     condiciones</StyledTitleElement>
                             </Link>
@@ -83,7 +106,6 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     </Grid>
                 </Grid>
             </StyledFooterContainer>
-            <Box sx={{ backgroundColor: "primary.light", width: "100%", height: "32px"}}/>
         </Box>
     )
 })

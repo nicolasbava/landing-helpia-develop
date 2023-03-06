@@ -28,13 +28,16 @@ export const INITIAL_STATE: AppContextState = {
   menu: {
      open: false,
       items: [  {id: "home", label: "Inicio", path: "/" },
-        {id: "services", label: "Servicios", path: "/services" },
         {id: "about_us", label: "¿Quiénes Somos?", path: "/about" },
+        {id: "services", label: "Conócenos", path: "/know_us" },
+        {id: "plans", label: "Planes", path: "/plans" },
         {id: "contact", label: "Contacto", path: "/contact" },
-        {id: "plans", label: "PLANES", path: "/plans" },
-        {id: "sign_in", label: "Iniciar Sesión", path: "https://app.helpia.com/auth/signin", external: true  },]
+      //  {id: "sign_in", label: "Iniciar Sesión", path: "https://app.helpia.com/auth/signin", external: true  },
+      //  {id: "sign_up", label: "registrarsen", path: "https://app.helpia.com/auth/signup", external: true  },
+
+      ]
   },
-  px: {xs: 1, md:8, lg:32},
+  px: {xs: 1, md:4, lg:8},
   breakPoint: "lg",
   geoData: null
 

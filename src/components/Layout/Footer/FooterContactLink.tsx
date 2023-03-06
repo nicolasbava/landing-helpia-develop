@@ -4,7 +4,7 @@ import {Stack, StackProps, styled, Typography} from "@mui/material";
 import Icon from "@mui/material/Icon";
 import Link from "next/link";
 
-const StyledStack = styled(Stack)<StackProps>(() => ({
+const StyledStack = styled(Stack)<StackProps>(({theme}) => ({
     minWidth: "54px",
     color: "#fff",
     fontSize: "14px",
@@ -14,75 +14,93 @@ const StyledStack = styled(Stack)<StackProps>(() => ({
     },
     ".MuiIcon-root": {
         fontSize: "18px",
+        color: theme.palette.primary.light
     }
 
 }))
 
-const StyledFlag = styled('img')(() => ({
-
-}))
+const StyledFlag = styled('img')(() => ({}))
 
 
 type FooterContactLinkProps = {
     type: "whatsapp" | "mail" | "phone"
+    label: string
+    href: string
+    flag?: "uy" | "ar"
 }
-const FooterContactLink: React.FC<FooterContactLinkProps> = ({type}) => {
-
+const FooterContactLink: React.FC<FooterContactLinkProps> = ({type, flag, label, href}) => {
 
 
     const data: {
-        img: string | undefined; 
-        iconClass: string, 
-        href: string, label: 
-        string, 
-        alt: string | undefined; 
-        title: string;
-} = React.useMemo(() => {
+        iconClass: string,
+        href: string,
+        label: string,
+
+        alt?: string;
+        src?: string;
+    } = React.useMemo(() => {
+
+        let countryData: any = {
+            src: undefined,
+            alt: undefined,
+        }
+
+        switch (flag) {
+            case "uy":
+                countryData.src = "https://statics.helpia.com/landing/flag-uru.png";
+                countryData.alt = "Bandera de Uruguay redonda";
+                break
+
+            case "ar":
+                countryData.src = "https://statics.helpia.com/landing/flag-arg.png";
+                countryData.alt = "Bandera de Argentina redonda";
+                break
+
+            default: {
+                countryData = undefined
+            }
+        }
+
+
         switch (type) {
             case "whatsapp":
                 return {
                     iconClass: "fa-brands fa-whatsapp",
-                    label: "+549 11 310 04593",
-                    href: "https://wa.me/5491131004593",
-                    img: "https://statics.helpia.com/landing/flag-arg.png",
-                    alt: "Bandera de Argentina redonda",
-                    title: "Whatsapp"
+                    label,
+                    href,
+                    ...countryData
                 }
 
             case "mail":
                 return {
-                    iconClass: "fa-regular fa-envelope",
-                    label: "info@helpia.com",
-                    href: "mailto:info@helpia.com",
-                    img: "",
-                    alt: "",
-                    title: "E-mail"
+                    iconClass: "fa-solid fa-envelope",
+                    label,
+                    href,
+                    ...countryData
 
                 }
 
             case "phone":
                 return {
                     iconClass: "fa-solid fa-phone",
-                    label: "+598 94 602 736",
-                    href: "tel:+59894602736",
-                    img: "https://statics.helpia.com/landing/flag-uru.png",
-                    alt: "Bandera de Uruguay redonda",
-                    title: "Teléfono"
+                    label,
+                    href,
+                    ...countryData
 
                 }
 
         }
     }, [type])
 
+    const hasFlag = data.src && data.alt
 
 
     return (
         <Link href={data.href} target='_blank'>
-            <Typography pb={1} variant='body1' style={{color: 'white'}}>{ data.title }:</Typography>
             <StyledStack direction="row" gap={1} alignItems="center">
-                {/* <Icon className={data.iconClass}/> */}
-                {data.img && data.alt !== '' && 
-                    <StyledFlag src={data.img} width={20} height={20} alt={data.alt} />
+                {!hasFlag && <Icon className={data.iconClass}/>}
+                {hasFlag &&
+                    <StyledFlag src={data.src} width={20} height={20} alt={data.alt}/>
                 }
                 <Typography>{data.label}</Typography>
             </StyledStack>

@@ -3,7 +3,7 @@ import Typography, {TypographyProps} from "@mui/material/Typography";
 
 const StyledLinkText = styled(Typography)<TypographyProps>(({ theme  }) => ({
     "&.MuiTypography-root": {
-        color: "#fff",
+        color: theme.palette.text.disabled,
         fontSize: "12px",
         width: "100%",
         fontWeight: "bold",
