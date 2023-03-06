@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import {useAppContext} from "@/context/app";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
-import {Drawer, DrawerProps, styled} from "@mui/material";
+import {Button, Drawer, DrawerProps, styled} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import StyledLinkText, {StyledLinkTextMarked} from "@/components/Layout/Header/StyledLinkText";
 
@@ -42,16 +42,29 @@ const HeaderLinksMobile: React.FC = () => {
                     {
                         items.map((menu, key) => {
 
+
+
                             return (<Link key={key} href={menu.path} target={menu.external ? "_blank" : undefined}>
                                     <MenuItem>
-                                        {menu.id === "plans" &&
-                                            <StyledLinkTextMarked>{menu.label}</StyledLinkTextMarked>}
-                                        {menu.id !== "plans" && <StyledLinkText>{menu.label}</StyledLinkText>}
+                                        <StyledLinkText>{menu.label}</StyledLinkText>
                                     </MenuItem>
                                 </Link>
                             )
                         })
                     }
+                </Stack>
+
+
+                <Stack gap={1} sx={{mt:1}}>
+                    <Link href="https://app.helpia.com/auth/signin" target={"_blank"}>
+                        <Button size="small" variant="contained" sx={{backgroundColor: "primary.light", width:"200px"}}>INICIAR SESSIÓN</Button>
+
+                    </Link>
+
+                    <Link href="https://app.helpia.com/auth/signup" target={"_blank"}>
+                        <Button size="small" variant="outlined" sx={{color: "primary.light", width:"200px"}}>REGÍSTRATE</Button>
+                    </Link>
+
                 </Stack>
             </Stack>
 
