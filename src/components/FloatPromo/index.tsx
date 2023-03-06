@@ -16,7 +16,7 @@ const FloatPromoContainer = styled(Box)<BoxProps>(({theme}) => ({
         bottom: "50%",
         borderRadius: "16px 0",
         opacity: "0.5",
-        zIndex: 9999,
+        zIndex: 99,
         right: 0,
         padding: "8px",
         a: {textDecoration: "none"},
@@ -42,6 +42,7 @@ const FloatPromo: React.FC = () => {
             setShow(true)
             putData<FloatPromoStore>(key, {closed: false})
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const handleClose = ()=>{

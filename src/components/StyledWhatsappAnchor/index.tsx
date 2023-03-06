@@ -1,6 +1,6 @@
 import { styled } from '@mui/material'
 import React from 'react'
-import { RevealLeft } from '@/components/Reveal';
+import Link from 'next/link';
 
 
 export const ElementWhatsappAnchor = styled('img')(() => ({
@@ -15,8 +15,8 @@ export const ElementWhatsappAnchor = styled('img')(() => ({
 
 export const StyledWhatsappAnchor: React.FC = () => {
     return (
-        <a href="https://wa.me/5491131004593" target="_blank" rel="noreferrer">
+        <Link href="https://wa.me/5491131004593" target="_blank" rel="noreferrer">
                 <ElementWhatsappAnchor src={"https://statics.helpia.com/landing/whatsapp-icon.png"}  alt="whatsapp" width="48" height="48"/>
-        </a>
+        </Link>
     )
 }

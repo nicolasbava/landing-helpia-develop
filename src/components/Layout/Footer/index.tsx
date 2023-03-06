@@ -12,13 +12,16 @@ import StyledFooterIcon from "@/components/Layout/Footer/StyledFooterIcon";
 import FooterContactLink from "@/components/Layout/Footer/FooterContactLink";
 import StyledTitleElement from '@/components/StyledTitleElement';
 import { StyledWhatsappAnchor } from '@/components/StyledWhatsappAnchor';
+import { RevealUp } from '@/components/Reveal';
 
 const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
     return (
         <Box>
             <StyledFooterContainer ref={ref} {...props}>
-                <StyledWhatsappAnchor />
+                {/* <RevealUp> */}
+                    <StyledWhatsappAnchor />
+                {/* </RevealUp> */}
                 <Grid container columnSpacing={{xs: 0, md: 2, lg:0}}
                       justifyContent={{xs: "center", md: "space-evenly", lg: "space-between"}}>
                     <Grid item xs={12}  md={4}>
