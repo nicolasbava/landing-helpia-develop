@@ -10,6 +10,7 @@ import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
 import StyledButton from "@/components/StyledButton";
+import { StyledHeroImg } from "@/components/StyledHeroImg";
 
 
 
@@ -20,35 +21,6 @@ const HomeSection1Container = styled(Stack)<StackProps>(() => ({
         minHeight: "90vh",
        
 }));
-
-const BoxContainerImageElement = styled(Box)(() => ({
-    border: '2px #22AD00 solid',
-    borderRadius: '15px',
-    width: '85%',
-    marginRight: 'auto',
-    marginLeft: '7vw',
-    marginTop: '10vw',
-    position: 'relative',
-}))
-
-
-const ImageElement = styled('img')(() => ({
-    width: '100%',
-    height:'auto',
-    objectFit: 'contain',
-    marginTop: '-12px',
-    marginLeft: '-10px',
-    transition: '250ms all ease'
-    // position: 'absolute',
-    // top:'-8px',
-    // left: '-8px'
-}))
-
-
-
-
-
-
 
 
 const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
@@ -99,7 +71,7 @@ export const ImageElementThird = styled('img')(() => ({
 }))
 
 export const Title = styled(StyledTitleElement)(() =>({
-    paddingTop: '22vh', 
+    // paddingTop: '22vh', 
     color: 'white', 
     '&.MuiTypography-root': {
         fontSize: 'min(10vw, 44px)',
@@ -120,26 +92,25 @@ export const SubTitle = styled(StyledTitleElement)(() =>({
     }    
 })) 
 
-
+const images = [
+    {
+        url: 'https://statics.helpia.com/landing/home-1-min.jpg',
+        alt: 'alt 1'
+    },
+    {
+        url: 'https://statics.helpia.com/landing/home-2-min.jpg',
+        alt: 'alt 2'
+    },
+    {
+        url: 'https://statics.helpia.com/landing/home-3-min.jpg',
+        alt: 'alt 3'
+    },
+]
 
 
 
 
 export default function NewHomePage() {
-    const [ imgCount, setImgCount ] = useState(1)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if(imgCount < 3){
-                setImgCount(imgCount + 1)
-            }else{
-                setImgCount(1)
-            }
-        }, 5000);
-    
-        return () => clearInterval(interval);
-    
-    })
 
     return (
         <>
@@ -152,11 +123,7 @@ export default function NewHomePage() {
                         <StyledButton>VER PLANES</StyledButton>
                     </RevealLeft>
                     <RevealRight>
-                        <BoxContainerImageElement>
-
-                            <ImageElement src={`https://statics.helpia.com/landing/home-${imgCount}-min.jpg`} width='250' height='200' alt='..' />
-                        </BoxContainerImageElement>
-                            
+                        <StyledHeroImg images={images} />
                     </RevealRight>
 
                 {/* </PageSection> */}
