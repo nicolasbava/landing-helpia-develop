@@ -76,7 +76,7 @@ const PageContainer: React.FC<PageContainerProps> = ({children, title}) => {
         <Head>
             <title>{`Helpia - ${title}`}</title>
         </Head>
-        <Box sx={{minHeight: "450px"}}>
+        <Box sx={{minHeight: "450px", overflowX: "hidden"}}>
             <div id="top" />
             {children}
         </Box>

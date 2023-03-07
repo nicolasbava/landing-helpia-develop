@@ -37,7 +37,7 @@ export const INITIAL_STATE: AppContextState = {
 
       ]
   },
-  px: {xs: 1, md:4, lg:8},
+  px: {xs: 1, md:6, lg:10},
   breakPoint: "lg",
   geoData: null
 
