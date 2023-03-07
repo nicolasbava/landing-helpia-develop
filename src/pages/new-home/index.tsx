@@ -92,20 +92,7 @@ export const SubTitle = styled(StyledTitleElement)(() =>({
     }    
 })) 
 
-const images = [
-    {
-        url: 'https://statics.helpia.com/landing/home-1-min.jpg',
-        alt: 'alt 1'
-    },
-    {
-        url: 'https://statics.helpia.com/landing/home-2-min.jpg',
-        alt: 'alt 2'
-    },
-    {
-        url: 'https://statics.helpia.com/landing/home-3-min.jpg',
-        alt: 'alt 3'
-    },
-]
+
 
 
 
@@ -115,15 +102,15 @@ export default function NewHomePage() {
     return (
         <>
         {/* <PageContainer title={"InicioNuevo"}> */}
-            <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={'flex-end'} >
+            <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={'center'} alignItems='center' >
                 {/* <PageSection> */}
                     <RevealLeft>
-                        <Typography>ATENCIÓN 24/7</Typography>
-                        <Title variant="h1" fontSize={'44px'} sx={{}}>Especialistas en atención al cliente</Title>
+                        <Typography sx={{color: '#22AD00', textTransform: 'uppercase'}}>ATENCIÓN 24/7</Typography>
+                        <Title variant="h1" fontSize={'44px'} sx={{color: '#000'}}>Especialistas en atención al cliente</Title>
                         <StyledButton>VER PLANES</StyledButton>
                     </RevealLeft>
                     <RevealRight>
-                        <StyledHeroImg images={images} />
+                        <StyledHeroImg />
                     </RevealRight>
 
                 {/* </PageSection> */}
