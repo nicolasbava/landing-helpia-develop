@@ -102,13 +102,15 @@ export default function NewHomePage() {
     return (
         <>
         {/* <PageContainer title={"InicioNuevo"}> */}
-            <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={'center'} alignItems='center' >
+            <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={{xs: 'flex-end', sm:'center'}} alignItems='center' >
                 {/* <PageSection> */}
-                    <RevealLeft>
-                        <Typography sx={{color: '#22AD00', textTransform: 'uppercase'}}>ATENCIÓN 24/7</Typography>
-                        <Title variant="h1" fontSize={'44px'} sx={{color: '#000'}}>Especialistas en atención al cliente</Title>
-                        <StyledButton>VER PLANES</StyledButton>
-                    </RevealLeft>
+                    <Box mt={6} ml={3}>
+                        <RevealLeft>
+                            <Typography sx={{color: '#22AD00', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '1.2rem'}}>ATENCIÓN 24/7</Typography>
+                            <Title variant="h1" fontSize={'44px'} sx={{color: '#000'}}>Especialistas en atención al cliente</Title>
+                            <StyledButton>VER PLANES</StyledButton>
+                        </RevealLeft>
+                    </Box>
                     <RevealRight>
                         <StyledHeroImg />
                     </RevealRight>
@@ -117,7 +119,7 @@ export default function NewHomePage() {
             </HomeSection1Container>
 
             <PageSection>
-                <Grid container sx={{py: 8}} >
+                <Grid container sx={{py: 8, }} >
                     <Grid item xs={12} md={6}>
                         <RevealLeft >
                             <Box sx={{
@@ -136,7 +138,7 @@ export default function NewHomePage() {
                     </Grid>
                     <Grid item xs={12} md={6} >
                         <RevealRight >
-                            <Box sx={{display: "flex", justifyContent: {xs:"center", md: 'flex-end'}}}>
+                            <Box sx={{display: "flex", justifyContent: {xs:"center", md: 'flex-end'}, alignItems: {xs:'flex-start', sm: 'center'}}}>
                                 <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"} alt={"Celular mostrando gráficos y chats mostrando éxito por usar Helpia"}
                                        width={364} height={422} loading="lazy"/>
                             </Box>

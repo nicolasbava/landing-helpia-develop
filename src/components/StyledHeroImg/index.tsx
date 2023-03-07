@@ -1,41 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { Box, styled } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {  Autoplay } from 'swiper';
 import 'swiper/css';
-import Image from 'next/image';
+import 'swiper/css/autoplay';
 
 
 const BoxContainerImageElement = styled(Box)(() => ({
     "&.MuiBox-root": {
         border: '2px #22AD00 solid',
         borderRadius: '15px',
-        width: '85%',
+        width: '80vw',
         marginRight: 'auto',
         marginLeft: '7vw',
         marginTop: '10vw',
         position: 'relative',
     }
-}))
-
-
-
+}));
 
 const ImageElement = styled('img')(() => ({
-    width: '100%',
-    height:'auto',
-    objectFit: 'contain',
-    marginTop: '-12px',
-    marginLeft: '-10px',
-    transition: '250ms all ease'
-    // position: 'absolute',
-    // top:'-8px',
-    // left: '-8px'
+    maxWidth: '80vw',
+    height: 'auto',
 }))
-
-type ImagesType = {
-    url: string,
-    alt: string
-}[];
 
 const images = [
     {
@@ -53,37 +39,40 @@ const images = [
 ];
 
 export const StyledHeroImg: React.FC = () => {
-    // const [ imgCount, setImgCount ] = useState(0)
-
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         if(imgCount < 2){
-    //             setImgCount(imgCount + 1)
-    //         }else{
-    //             setImgCount(0)
-    //         }
-    //     }, 5000);
-    
-    //     return () => clearInterval(interval);
-    // })
-
-    // const swiper = new Swiper('.swiperClass', {
-    //     autoplay: {
-    //         delay: 1000,
-    //       },
-    //   });
 
     return (
         <BoxContainerImageElement>
-           
-                        <Image src={'https://statics.helpia.com/landing/home-1-min.jpg'} alt={'alt img de fondo'} height='350' width='450' />
-                    {/* </SwiperSlide> */}
-                {/* })} */}
-            {/* </Swiper> */}
+            <Box sx={{marginLeft: '-10px', marginTop: '-10px'}}>
+                <Swiper 
+                    modules={[Autoplay]}
+                    autoplay={{
+                        delay: 1000
+                    }}
+                >
+                    {/* {images.map( (img, index) => {
+                        return (
+                            <SwiperSlide >
+                                <ImageElement src={img?.url} alt={'alt img de fondo'} height='350' width='450' loading='lazy' />
+                            </SwiperSlide>
+                        )
+                    })} */}
+                        <SwiperSlide >
+                            <ImageElement src={'https://statics.helpia.com/landing/home-1-min.jpg'} alt={'alt img de fondo'} height='350' width='450' loading='lazy' />
+                        </SwiperSlide>
+                        <SwiperSlide >
+                            <ImageElement src={'https://statics.helpia.com/landing/home-2-min.jpg'} alt={'alt img de fondo'} height='350' width='450' loading='lazy' />
+                        </SwiperSlide>
+                </Swiper> 
+            </Box>
+            {/* <ImageElement src={'https://statics.helpia.com/landing/home-2-min.jpg'} alt={'alt img de fondo'} height='350' width='450' loading='lazy' /> */}
+
         </BoxContainerImageElement>
     )
 }
 
- {/* <Swiper > */}
-                {/* {images?.map( (image) => { */}
-                    {/* <SwiperSlide > */}
+
+type ImagesType = {
+    url: string,
+    alt: string
+}[];
+
