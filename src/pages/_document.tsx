@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
                     {/* <!-- Google Analytics --> */}
                     {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
                     <Script
-                        src="https://www.googletagmanager.com/gtag/js?id=332918588"
+                        src="https://www.googletagmanager.com/gtag/js?id=G-5R4V49722B"
                         strategy="afterInteractive"
                     />
                     <Script id="google-analytics" strategy="afterInteractive">
@@ -61,7 +61,7 @@ export default class MyDocument extends Document {
                         function gtag(){window.dataLayer.push(arguments);}
                         gtag('js', new Date());
                         
-                        gtag('config', '332918588');
+                        gtag('config', 'G-5R4V49722B');
                         `}
                     </Script>
                     {/* <!-- End Google Analytics --> */}

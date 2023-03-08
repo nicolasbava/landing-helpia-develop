@@ -1,4 +1,4 @@
-import {Box, Grid, styled, Typography} from "@mui/material";
+import {Box, Button, Grid, styled, Typography} from "@mui/material";
 import PageContainer, {PageSection} from "@/components/PageContainer";
 import {BoxProps} from "@mui/material/Box";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 
 import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
+import StyledHeroImg from "@/components/StyledHeroImg";
 
 
 
@@ -72,39 +73,48 @@ export const ImageElementThird = styled('img')(() => ({
     }
 }))
 
-export const Title = styled(StyledTitleElement)(() =>({
-    paddingTop: '22vh', 
-    color: 'white', 
-    '&.MuiTypography-root': {
-        fontSize: 'min(10vw, 44px)',
-    },
-    '@media (min-width: 600px)':{
-        width: '60%'
-    }    
-})) 
 
-export const SubTitle = styled(StyledTitleElement)(() =>({
-    // paddingTop: '22vh', 
-    color: 'white', 
-    '&.MuiTypography-root': {
-        fontSize: 'min(10vw, 44px)',
-    },
-    '@media (min-width: 600px)':{
-        width: '60%'
-    }    
-})) 
 
 export default function HomePage() {
     return (
         <PageContainer title={"Inicio"}>
-            <HomeSection1Container>
                 <PageSection>
-                    <RevealLeft>
-                        <Title variant="h1" fontSize={'44px'} sx={{}}>Somos especialistas en atención al cliente</Title>
-                        {/* <SubTitle variant="h2" fontSize={'28px'}></SubTitle> */}
-                    </RevealLeft>
+
+                    <Grid container sx={{py: 8}} rowSpacing={4} >
+                        <Grid item xs={12} md={8}>
+                            <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}}}>
+                                <Typography sx={{color: "primary.dark", fontWeight:"bold", mb:2}}>Atención 24/7</Typography>
+                                <Typography variant="h2" sx={{ mb:4}}>Especialistas
+                                    en atención al cliente</Typography>
+
+                                <Button size="small" variant="contained" sx={{width: "128px", fontWeight:"bold", backgroundColor: "primary.light"}}>Ver planes</Button>
+                            </Box>
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Box sx={{ display: "flex",
+                                width: "100%", flexDirection: "row", justifyContent: {xs: "flex-start", md: "flex-end"}}} >
+
+                                <StyledHeroImg images={[
+                                    {
+                                        src: 'https://statics.helpia.com/landing/home-1-min.jpg',
+                                        alt: 'alt 1'
+                                    },
+                                    {
+                                        src: 'https://statics.helpia.com/landing/home-2-min.jpg',
+                                        alt: 'alt 2'
+                                    },
+                                    {
+                                        src: 'https://statics.helpia.com/landing/home-3-min.jpg',
+                                        alt: 'alt 3'
+                                    },
+
+                                ]} />
+                            </Box>
+                        </Grid>
+                    </Grid>
+
                 </PageSection>
-            </HomeSection1Container>
 
             <PageSection>
                 <Grid container sx={{py: 8}} >

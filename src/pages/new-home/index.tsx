@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import {Box, Grid, styled, Typography, Stack, StackProps} from "@mui/material";
 import PageContainer, {PageSection} from "@/components/PageContainer";
 import {BoxProps} from "@mui/material/Box";
-import Contact, {ContactContainer} from "@/components/Contact";
+import Image from "next/image";
+import Contact, {ContactContainer, NewContact, NewContactContainer} from "@/components/Contact";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 
-import {Button} from "@mui/material";
+
 import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
-import { StyledHeroImg } from "@/components/StyledHeroImg";
+import StyledButton from "@/components/StyledButton";
+// import { StyledHeroImg } from "@/components/StyledHeroImg";
 
 
 
@@ -99,21 +101,23 @@ export default function NewHomePage() {
 
     return (
         <>
+        {/* <PageContainer title={"InicioNuevo"}> */}
             <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={{xs: 'flex-end', sm:'center'}} alignItems='center' >
+                {/* <PageSection> */}
                     <Box mt={6} ml={3}>
                         <RevealLeft>
                             <Typography sx={{color: '#22AD00', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '1.2rem'}}>ATENCIÓN 24/7</Typography>
                             <Title variant="h1" fontSize={'44px'} sx={{color: '#000'}}>Especialistas en atención al cliente</Title>
-                            <Button size="small" variant="contained" sx={{backgroundColor: "primary.light", width: "125px"}}>VER PLANES</Button>
-
+                            <StyledButton>VER PLANES</StyledButton>
                         </RevealLeft>
                     </Box>
-                    <RevealRight>
+                    {/* <RevealRight>
                         <StyledHeroImg />
-                    </RevealRight>
+                    </RevealRight> */}
+
+                {/* </PageSection> */}
             </HomeSection1Container>
 
-        {/* <PageContainer title={"InicioNuevo"}> */}
             <PageSection>
                 <Grid container sx={{py: 8, }} >
                     <Grid item xs={12} md={6}>
@@ -214,13 +218,14 @@ export default function NewHomePage() {
                 </PageSection>
             </ContactBanner>
 
-            <ContactContainer>
-                <PageSection>
+            <NewContactContainer>
+                <PageSection >
                     <RevealUp>
-                        <Contact sx={{py: 4}}/>
+                        {/* <Contact sx={{py: 4}}/> */}
+                        <NewContact />
                     </RevealUp>
                 </PageSection>
-            </ContactContainer>
+            </NewContactContainer>
 
         {/* </PageContainer> */}
     </>    

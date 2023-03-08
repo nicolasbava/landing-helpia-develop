@@ -11,7 +11,12 @@ import {Button, ButtonProps, styled} from "@mui/material";
 import StyledButton from "@/components/StyledButton";
 
 
+export const StyledFormField = styled(FormField)(() => ({
 
+    "&.MuiTextField-root": {
+        background: 'black'
+    }
+}))
 
 export type ContactFormFields = {
     name: string,
@@ -53,9 +58,16 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         onChange={handleChange}
                         value={values.name}
                         required
-                        label={"Nombre"}
+                        // label={"Nombre"}
                         placeholder={"Nombre y apellidos"}
                         error={!values.name}
+                        inputProps={{
+                            style: {
+                                background: '#D9D9D9',
+                                color: '#1E1E1E',
+                                borderRadius: '5px'
+                            }
+                        }}
                     />
                 </Grid>
 
@@ -66,9 +78,16 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         onChange={handleChange}
                         value={values.email}
                         required
-                        label={"Correo"}
+                        // label={"Correo"}
                         placeholder={"Correo"}
                         error={!values.email}
+                        inputProps={{
+                            style: {
+                                background: '#D9D9D9',
+                                color: '#1E1E1E',
+                                borderRadius: '5px'
+                            }
+                        }}
                     />
                 </Grid>
 
@@ -79,10 +98,16 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         onChange={handleChange}
                         value={values.phone}
                         required
-                        label={"Teléfono"}
+                        // label={"Teléfono"}
                         placeholder={"Teléfono"}
                         error={!values.phone}
-
+                        inputProps={{
+                            style: {
+                                background: '#D9D9D9',
+                                color: '#1E1E1E',
+                                borderRadius: '5px'
+                            }
+                        }}
                     />
                 </Grid>
 
@@ -95,16 +120,23 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         onChange={handleChange}
                         value={values.message}
                         required
-                        label={"Mensaje"}
+                        // label={"Mensaje"}
                         placeholder={"Tu Mensage"}
                         error={!values.message}
+                        inputProps={{
+                            style: {
+                                background: '#D9D9D9',
+                                color: '#1E1E1E',
+                                borderRadius: '5px'
+                            }
+                        }}
                     />
                 </Grid>
 
                 <Grid item xs={12}>
-                    <StyledButton disabled={!isValid || sending} size="large" variant="contained" type="submit">
+                    <Button disabled={!isValid || sending} sx={{background: '#94FF7A'}} size="large" variant="contained" type="submit">
                         {sending ? "Enviando...": "Enviar"}
-                    </StyledButton>
+                    </Button>
                 </Grid>
             </Grid>
         </form>

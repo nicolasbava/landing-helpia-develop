@@ -1,7 +1,7 @@
 import React from "react"
 import Reveal from "react-awesome-reveal";
 import {keyframes} from "@emotion/react";
-import {styled, SxProps} from "@mui/material";
+import {styled} from "@mui/material";
 import Box, {BoxProps} from "@mui/material/Box";
 
 
