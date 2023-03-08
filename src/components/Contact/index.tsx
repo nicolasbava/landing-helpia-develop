@@ -59,3 +59,8 @@ const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
 )
 Contact.displayName = "Contact";
 export default Contact
+
+
+export const NewContact = () => {
+    
+}
