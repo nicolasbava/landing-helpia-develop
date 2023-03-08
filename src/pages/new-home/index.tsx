@@ -10,7 +10,9 @@ import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
 import StyledButton from "@/components/StyledButton";
-import { StyledHeroImg } from "@/components/StyledHeroImg";
+import  StyledHeroImg  from "@/components/StyledHeroImg";
+import BeneficesSection from "@/components/benefices/benefices-section";
+import ImageWithInfo from "@/components/atoms/image-with-info";
 
 
 
@@ -42,6 +44,17 @@ const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
         color: theme.palette.secondary.dark
     },
 }))
+
+const HomeSection2Box = styled(Box)<BoxProps>(({ theme }) => ({
+    "&.MuiBox-root": {
+        display: "grid",
+        gridTemplateColumns: "33% 33% 33%",
+        columnGap: "1%",
+        textAlign: "center",
+        justifyContent: "center",
+        marginTop: "6%",
+    },
+}));
 
 export const ImageElementFirst = styled('img')(() => ({
     margin:'auto',
@@ -90,36 +103,29 @@ export const SubTitle = styled(StyledTitleElement)(() =>({
     '@media (min-width: 600px)':{
         width: '60%'
     }    
-})) 
+}))
 
 
 
 
+const titleLeft = "¿Qué hacemos?";
+const textLeft =
+    "Te proporcionamos una plataforma que te ayude a la gestión de pre venta y post venta, minimizando los tiempos de respuesta y masificando tus ingresos.";
 
+const titleCenter = "¿Cómo lo hacemos?";
+const textCenter =
+    "Te conectamos a la primera plataforma   multicanal, centralizando todos tus contactos en un solo lugar donde serán atendidos por cientos de expertos en atención al cliente.";
+
+const titleRight = "¿Para qué lo hacemos?";
+const textRight =
+    "Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atendelos con Helpia los 365 días del año y sigamos creciendo juntos.";
 
 export default function NewHomePage() {
 
-    return (
-        <>
-        {/* <PageContainer title={"InicioNuevo"}> */}
-            <HomeSection1Container direction={{xs:'column-reverse', md: 'row'}} justifyContent={{xs: 'flex-end', sm:'center'}} alignItems='center' >
-                {/* <PageSection> */}
-                    <Box mt={6} ml={3}>
-                        <RevealLeft>
-                            <Typography sx={{color: '#22AD00', textTransform: 'uppercase', fontWeight: 'bold', fontSize: '1.2rem'}}>ATENCIÓN 24/7</Typography>
-                            <Title variant="h1" fontSize={'44px'} sx={{color: '#000'}}>Especialistas en atención al cliente</Title>
-                            <StyledButton>VER PLANES</StyledButton>
-                        </RevealLeft>
-                    </Box>
-                    <RevealRight>
-                        <StyledHeroImg />
-                    </RevealRight>
 
-                {/* </PageSection> */}
-            </HomeSection1Container>
   return (
     <>
-      {/* <PageContainer title={"InicioNuevo"}> */}
+      <PageContainer title={"InicioNuevo"}>
       <HomeSection1Container
         direction={{ xs: "column-reverse", md: "row" }}
         justifyContent={"center"}
@@ -136,7 +142,7 @@ export default function NewHomePage() {
           <StyledButton>VER PLANES</StyledButton>
         </RevealLeft>
         <RevealRight>
-          <StyledHeroImg />
+            {/*<StyledHeroImg /> */}
         </RevealRight>
         {/* </PageSection> */}
       </HomeSection1Container>
@@ -294,13 +300,10 @@ export default function NewHomePage() {
             </Grid>
           </Grid>
         </PageSection>
+
       </HomeSection3Container>
 
-            <ContactBanner>
-                <PageSection>
-                    <StyledTitleElement variant="h4" sx={{fontWeight: "bold"}}>Contactanos</StyledTitleElement>
-                </PageSection>
-            </ContactBanner>
+
 
             <ContactContainer>
                 <PageSection>
@@ -310,7 +313,7 @@ export default function NewHomePage() {
                 </PageSection>
             </ContactContainer>
 
-        {/* </PageContainer> */}
-    </>    
+        <PageContainer />
+    </>
     )
 }
