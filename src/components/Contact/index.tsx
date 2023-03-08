@@ -10,7 +10,7 @@ import StyledTitleElement from "../StyledTitleElement";
 
 const ImageElement = styled('img')(() => ({
     margin: 'auto',
-    
+    maxWidth: '37vw'
 }))
 
 
@@ -99,11 +99,11 @@ export const NewContact = () => {
         }
 
     return (
-        <Stack mt={4}>
-            <Typography variant='h4' sx={{textAlign: {xs: 'center', md: 'left'}, fontSize: '1.5rem', fontWeight: '500',}}>
+        <Stack my={5} >
+            <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}}>
                 Contacto
             </Typography>
-            <Grid container mt={4}>
+            <Grid  sx={{ justifyContent: 'space-between'}} container mt={5}>
                 
                 <Grid item xs={12} md={5}>
                     <Typography mb={2} sx={{fontWeight: '600', fontSize: '1.2rem'}}>¿Alguna duda?</Typography>
@@ -111,9 +111,7 @@ export const NewContact = () => {
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  
                 </Grid>
                 <Grid item xs={12} md={5} sx={{display: {xs: 'none', md: 'block'}}}>
-                    <Box>
-
-                    </Box>
+                        <ImageElement src={'https://statics.helpia.com/landing/contact-img.png'} />
                 </Grid>
             </Grid>
         </Stack>

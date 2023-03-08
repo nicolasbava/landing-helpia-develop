@@ -40,7 +40,7 @@ const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
         background: theme.palette.primary.light,
         width: "100%",
-        minHeight: "400px",
+        minHeight: "100px",
         color: theme.palette.secondary.dark
     },
 }))
