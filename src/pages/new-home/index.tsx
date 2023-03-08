@@ -117,6 +117,29 @@ export default function NewHomePage() {
 
                 {/* </PageSection> */}
             </HomeSection1Container>
+  return (
+    <>
+      {/* <PageContainer title={"InicioNuevo"}> */}
+      <HomeSection1Container
+        direction={{ xs: "column-reverse", md: "row" }}
+        justifyContent={"center"}
+        alignItems="center"
+      >
+        {/* <PageSection> */}
+        <RevealLeft>
+          <Typography sx={{ color: "#22AD00", textTransform: "uppercase" }}>
+            ATENCIÓN 24/7
+          </Typography>
+          <Title variant="h1" fontSize={"44px"} sx={{ color: "#000" }}>
+            Especialistas en atención al cliente
+          </Title>
+          <StyledButton>VER PLANES</StyledButton>
+        </RevealLeft>
+        <RevealRight>
+          <StyledHeroImg />
+        </RevealRight>
+        {/* </PageSection> */}
+      </HomeSection1Container>
 
             <PageSection>
                 <Grid container sx={{py: 8, }} >
@@ -178,39 +201,100 @@ export default function NewHomePage() {
                     </Grid>
                 </PageSection>
             </HomeSection2Container>
+      <HomeSection2Container>
+        <Typography
+          sx={{
+            fontSize: "36px",
+            mb: -4,
+            fontFamily: "Poppins",
+            color: "#FFFFFF",
+          }}
+        >
+          La solución para tu Empresa
+        </Typography>
+        <HomeSection2Box>
+          <RevealLeft>
+            <ImageWithInfo
+              urlImage="https://statics.helpia.com/landing/Lateral.gif"
+              title={titleLeft}
+              text={textLeft}
+              cssImage={{ marginTop: "0%", marginBottom: "-2%", width: "50%" }}
+            />
+          </RevealLeft>
+          <RevealUp>
+            <ImageWithInfo
+              urlImage="https://statics.helpia.com/landing/seccion-2-2.png"
+              title={titleCenter}
+              text={textCenter}
+              cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
+            />
+          </RevealUp>
+          <RevealRight>
+            <ImageWithInfo
+              urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
+              title={titleRight}
+              text={textRight}
+            />
+          </RevealRight>
+        </HomeSection2Box>
 
-            <HomeSection3Container>
-                <PageSection>
-                    <Grid container sx={{py: 8}}>
-                        <Grid item xs={12} md={6}>
-                            <RevealLeft>
-                                <Box sx={{
-                                    width: {xs: "100%", md: "80%"},
-                                    mt: {xs: 0, md: 8},
-                                    textAlign: {xs: "center", md: "left"}
-                                }}>
+        <BeneficesSection />
+      </HomeSection2Container>
 
-                                    <StyledTitleElement variant="h4" sx={{fontWeight: "800", mb: 2}}>Disponibilidad
-                                        24/7</StyledTitleElement>
-                                    <Typography>Respondemos a todas las consultas de tus clientes
-                                        los 365 días del año, mientras vos
-                                        conquistas nuevos productos y clientes,
-                                        nosotros te potenciamos las ventas!!!</Typography>
-                                </Box>
-                            </RevealLeft>
-                        </Grid>
-                        <Grid item xs={12} md={6} sx={{textAlign: 'center', justifyContent: 'center' }}>
-                            <RevealRight>
-                                <Box sx={{display: 'flex', mb: {xs: 4, md:0}, justifyContent: {xs: 'center', sm: 'center'}, ml: {xs: 0, sm: 9}, mt: {xs: 6, md: 0} }}>
-                                    <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
-                                           alt={"Un hombre dibujado mostrando lo util que seria usar Helpia y como lo ha ayudado en su negocio"} width={350} height={522}
-                                    />
-                                </Box>
-                            </RevealRight>
-                        </Grid>
-                    </Grid>
-                </PageSection>
-            </HomeSection3Container>
+      <HomeSection3Container>
+        <PageSection>
+          <Grid container sx={{ py: 8 }}>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  width: { xs: "100%", md: "80%" },
+                  mt: { xs: 0, md: 8 },
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
+                <StyledTitleElement
+                  variant="h4"
+                  sx={{ fontWeight: "800", mb: 2 }}
+                >
+                  Disponibilidad 24/7
+                </StyledTitleElement>
+                <Typography>
+                  Respondemos a todas las consultas de tus clientes los 365 días
+                  del año, mientras vos conquistas nuevos productos y clientes,
+                  nosotros te potenciamos las ventas!!!
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{ textAlign: "center", justifyContent: "center" }}
+            >
+              <RevealRight>
+                <Box
+                  sx={{
+                    display: "flex",
+                    mb: { xs: 4, md: 0 },
+                    justifyContent: { xs: "center", sm: "center" },
+                    ml: { xs: 0, sm: 9 },
+                    mt: { xs: 6, md: 0 },
+                  }}
+                >
+                  <ImageElementThird
+                    src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
+                    alt={
+                      "Un hombre dibujado mostrando lo util que seria usar Helpia y como lo ha ayudado en su negocio"
+                    }
+                    width={350}
+                    height={522}
+                  />
+                </Box>
+              </RevealRight>
+            </Grid>
+          </Grid>
+        </PageSection>
+      </HomeSection3Container>
 
             <ContactBanner>
                 <PageSection>
