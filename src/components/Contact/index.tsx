@@ -8,6 +8,12 @@ import {toast} from "react-toastify";
 import StyledTitleElement from "../StyledTitleElement";
 
 
+const ImageElement = styled('img')(() => ({
+    margin: 'auto',
+    
+}))
+
+
 export const ContactContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
         backgroundImage: `url("https://statics.helpia.com/landing/Group-8-1-scaled.jpg")`,
@@ -66,6 +72,9 @@ const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
     }
 )
 Contact.displayName = "Contact";
+
+
+
 export default Contact
 
 
@@ -102,7 +111,9 @@ export const NewContact = () => {
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  
                 </Grid>
                 <Grid item xs={12} md={5} sx={{display: {xs: 'none', md: 'block'}}}>
-                    aca va la foto
+                    <Box>
+
+                    </Box>
                 </Grid>
             </Grid>
         </Stack>
