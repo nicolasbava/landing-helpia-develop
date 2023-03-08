@@ -1,52 +1,27 @@
-import React, {forwardRef, useMemo} from 'react'
-import {Badge, BadgeOrigin, BadgeProps, Box, styled} from '@mui/material';
+import React, {forwardRef, useEffect, useState, useCallback, memo} from 'react'
+import {Badge, BadgeProps, Box, styled} from '@mui/material';
 import {BoxProps} from "@mui/material/Box";
+import {keyframes} from "@emotion/react";
 
 
-type DotsOrientation = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "mobile"
+type DotsOrientation = {
+    vertical: 'top' | 'bottom';
+    horizontal: 'left' | 'right';
+    orientation?: "normal" | "landscape"
+}
 
+const StyledBadge = styled(Badge)<BadgeProps>(({theme}) => ({
+    '& .MuiBadge-badge': {
+        zIndex: 0,
+        right: 20,
+        bottom: 65,
+        [theme.breakpoints.down("md")]: {
+            right: 100,
+            bottom: 40,
 
-const StyledBadge = styled(Badge)<BadgeProps & { dots: DotsOrientation }>(({dots}) => {
-    const styles: {
-        right?: number | string,
-        left?: number | string,
-        bottom?: number | string,
-        top?: number | string
-    } = {}
-    switch (dots) {
-        case "bottom-right": {
-            styles.right = 20
-            styles.bottom = 65
-            break
         }
-
-        case "bottom-left": {
-            styles.right = 20
-            styles.bottom = 65
-            break
-        }
-
-        case "top-right": {
-            styles.right = 5
-            styles.top =70
-            break
-        }
-
-        case "top-left": {
-            styles.right = 10
-            styles.top = 70
-            break
-        }
-    }
-
-
-    return {
-        '& .MuiBadge-badge': {
-            zIndex: 0,
-            ...styles
-        },
-    }
-});
+    },
+}));
 
 
 const ImageDots = forwardRef<any, Omit<BoxProps, "children">>((props, ref) => {
@@ -110,39 +85,28 @@ const ImageDots = forwardRef<any, Omit<BoxProps, "children">>((props, ref) => {
 ImageDots.displayName = "ImageDots"
 
 
-
-
-
 const BoxContainer = styled(Box)<BoxProps & {
     dots: DotsOrientation
-}>(({ dots}) => {
+}>(({theme, dots: {horizontal, vertical}}) => {
 
     const padding1 = "90px"
     const padding2 = "55px"
 
     let padding = padding1;
+    if (horizontal === "right" && vertical === "bottom") {
+         padding = `0px ${padding2} ${padding1} 0px`
+    }
 
-    switch (dots) {
-        case "bottom-right":
-            padding = `0px ${padding2} ${padding1} 0px`
-            break;
+    if (horizontal === "right" && vertical === "top") {
+        padding = `${padding1} ${padding1} 0px 0px`
+    }
 
-        case "bottom-left":
-            padding = `0px 0px ${padding1} ${padding1}`
-            break;
+    if (horizontal === "left" && vertical === "bottom") {
+        padding = `0px 0px ${padding1} ${padding1}`
+    }
 
-        case "top-right":
-            padding = `${padding1} ${padding1} 0px 0px`
-            break;
-
-        case "top-left":
-            padding = `${padding1} 0px 0px ${padding1}`
-
-            break;
-
-        case "mobile":
-            padding = `0px 0px ${padding1} ${padding1}`
-            break;
+    if (horizontal === "left" && vertical === "top") {
+        padding = `${padding1} 0px 0px ${padding1}`
     }
 
 
@@ -152,8 +116,7 @@ const BoxContainer = styled(Box)<BoxProps & {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            //background: "yellow",
-
+            background: "yellow",
             padding,
             /*[theme.breakpoints.down("md")]: {
                 width: "550px",
@@ -168,108 +131,107 @@ const BoxContainer = styled(Box)<BoxProps & {
 });
 
 
-const BoxContainerImageElement = styled(Box)(({theme}) => {
-
-    const factor = 1.41
-    const width = 350
-    return {
+const BoxContainerImageElement = styled(Box)(({theme}) => ({
     "&.MuiBox-root": {
         border: '4px #22AD00 solid',
         borderRadius: '8px',
-        width,
-        minHeight: width * factor,
+        width: '452px',
+        minHeight: '655px',
         display: "flex",
         zIndex: 1,
 
-        [theme.breakpoints.down("md")]: {
-            width: "550px",
-            minHeight: "225px",
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "350px",
-            minHeight: "175px",
+         [theme.breakpoints.down("md")]: {
+             width: "550px",
+             minHeight: "225px",
+         },
+         [theme.breakpoints.down("sm")]: {
+             width: "350px",
+             minHeight: "175px",
 
-        }
+         }
 
     }
-}});
+}));
 
+const imageKf = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const ImageElement = styled('img')(() => ({
     width: '100%',
     height: '100%',
     objectFit: "cover",
+    animation: `${imageKf} 1s`
 }))
 
 
-export type ImageData = {
-
-    id: string
+type ImagesType = {
     src: string,
     alt: string
-
-    dots?:DotsOrientation
 };
 
 
 type StyledHeroImgProps = {
-    image: ImageData,
+    images: Array<ImagesType>,
+    dots?: DotsOrientation
 }
 const StyledHeroImg: React.FC<StyledHeroImgProps> = ({
-                                                         image,
+                                                         images, dots = {
+        vertical: 'bottom',
+        horizontal: 'right',
+        orientation: "landscape"
+    }
                                                      }) => {
 
-    const dots = image?.dots ? image.dots : "bottom-right"
 
-    const anchorOrigin: BadgeOrigin | undefined = useMemo(() => {
+    const [state, setState] = useState<ImagesType | undefined>(images[0])
 
-        switch (dots) {
-            case "bottom-right":
-                return {
-                    vertical: "bottom",
-                    horizontal: "right"
-                }
 
-            case "bottom-left":
-                return {
-                    vertical: "bottom",
-                    horizontal: "left"
-                }
-
-            case "top-right":
-                return {
-                    vertical: "top",
-                    horizontal: "right"
-                }
-
-            case "top-left":
-                return {
-                    vertical: "top",
-                    horizontal: "left"
-                }
-
-            case "mobile":
-                return {
-                    vertical: "bottom",
-                    horizontal: "right"
-                }
-
-            default: {
-                return undefined
+    React.useEffect(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < images.length) {
+                setState(images[i])
+                i++;
+            } else {
+                i = 0;
+                setState(images[i])
+                i++;
             }
-        }
-    }, [dots])
+        }, 4000);
 
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (<BoxContainer dots={dots}>
-            <StyledBadge dots={dots} anchorOrigin={anchorOrigin}
-                         badgeContent={<ImageDots sx={{transform: dots === "mobile" ? "rotate(90deg)" : undefined}}/>}>
+        <StyledBadge anchorOrigin={{
+            vertical: dots.vertical,
+            horizontal: dots.horizontal,
+        }} badgeContent={<ImageDots sx={{transform: {xs: "rotate(90deg)", md: "rotate(0deg)"}}}/>}>
 
-                <BoxContainerImageElement>
-                                <ImageElement  {...image} style={{marginTop: "8px", marginLeft: "-8px"}}/>
+            <BoxContainerImageElement>
+                {
+                    images.map((image, i) => {
 
-                </BoxContainerImageElement>
-            </StyledBadge>
+
+                        return (<> {
+                            state?.src === image.src &&
+                            <ImageElement key={i} {...image} style={{marginTop: "8px", marginLeft: "-8px"}}/>
+                        }
+                        </>)
+                    })
+                }
+
+
+            </BoxContainerImageElement>
+        </StyledBadge>
 
         </BoxContainer>
     )

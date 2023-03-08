@@ -10,6 +10,7 @@ import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
 import StyledHeroImg from "@/components/StyledHeroImg";
+import HeroSection from "@/components/HeroSection";
 
 
 
@@ -95,21 +96,7 @@ export default function HomePage() {
                             <Box sx={{ display: "flex",
                                 width: "100%", flexDirection: "row", justifyContent: {xs: "flex-start", md: "flex-end"}}} >
 
-                                <StyledHeroImg images={[
-                                    {
-                                        src: 'https://statics.helpia.com/landing/home-1-min.jpg',
-                                        alt: 'alt 1'
-                                    },
-                                    {
-                                        src: 'https://statics.helpia.com/landing/home-2-min.jpg',
-                                        alt: 'alt 2'
-                                    },
-                                    {
-                                        src: 'https://statics.helpia.com/landing/home-3-min.jpg',
-                                        alt: 'alt 3'
-                                    },
-
-                                ]} />
+                                <HeroSection />
                             </Box>
                         </Grid>
                     </Grid>
