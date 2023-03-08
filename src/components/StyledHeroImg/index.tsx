@@ -1,8 +1,15 @@
-import React, {forwardRef, useEffect, useState, useCallback} from 'react'
+import React, {forwardRef, useEffect, useState, useCallback, memo} from 'react'
 import {Badge, BadgeProps, Box, styled} from '@mui/material';
 import {BoxProps} from "@mui/material/Box";
 import {keyframes} from "@emotion/react";
+import {DoDisturb} from "@mui/icons-material";
 
+
+type DotsOrientation = {
+    vertical: 'top' | 'bottom';
+    horizontal: 'left' | 'right';
+    orientation?: "normal" | "landscape"
+}
 
 const StyledBadge = styled(Badge)<BadgeProps>(() => ({
     '& .MuiBadge-badge': {
@@ -74,24 +81,71 @@ const ImageDots = forwardRef<any, Omit<BoxProps, "children">>((props, ref) => {
 ImageDots.displayName = "ImageDots"
 
 
+const BoxContainer = styled(Box)<BoxProps & {
+    dots: DotsOrientation
+}>(({theme, dots: {horizontal, vertical}}) => {
+
+    const factor = "48px"
+
+    let padding = factor;
+    if (horizontal === "right" && vertical === "bottom") {
+         padding = `0px ${factor} ${factor} 0px`
+    }
+
+    if (horizontal === "right" && vertical === "top") {
+        padding = `${factor} ${factor} 0px 0px`
+    }
+
+    if (horizontal === "left" && vertical === "bottom") {
+        padding = `0px 0px ${factor} ${factor}`
+    }
+
+    if (horizontal === "left" && vertical === "top") {
+        padding = `${factor} 0px 0px ${factor}`
+    }
+
+
+    return {
+        "&.MuiBox-root": {
+            borderRadius: '8px',
+            width: '452px',
+            minHeight: '655px',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "red",
+            padding,
+            [theme.breakpoints.down("md")]: {
+                width: "550px",
+                minHeight: "225px",
+            },
+            [theme.breakpoints.down("sm")]: {
+                width: "350px",
+                minHeight: "175px",
+            }
+        }
+    }
+});
+
+
 const BoxContainerImageElement = styled(Box)(({theme}) => ({
     "&.MuiBox-root": {
         border: '4px #22AD00 solid',
         borderRadius: '8px',
-        width: '452px',
-        minHeight: '655px',
+        width: '100%',
+        height: '100%',
         display: "flex",
         zIndex: 1,
 
-        [theme.breakpoints.down("md")]: {
-            width: "550px",
-            minHeight: "225px",
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "350px",
-            minHeight: "175px",
+        /* [theme.breakpoints.down("md")]: {
+             width: "550px",
+             minHeight: "225px",
+         },
+         [theme.breakpoints.down("sm")]: {
+             width: "350px",
+             minHeight: "175px",
 
-        }
+         }*/
 
     }
 }));
@@ -118,63 +172,71 @@ type ImagesType = {
     alt: string
 };
 
+
 type StyledHeroImgProps = {
-    images: Array<ImagesType>
+    images: Array<ImagesType>,
+    dots?: DotsOrientation
 }
-const StyledHeroImg: React.FC<StyledHeroImgProps> = ({images}) => {
+const StyledHeroImg: React.FC<StyledHeroImgProps> = ({
+                                                         images, dots = {
+        vertical: 'bottom',
+        horizontal: 'right',
+        orientation: "landscape"
+    }
+                                                     }) => {
 
 
     const [state, setState] = useState<ImagesType | undefined>(images[0])
 
 
-    useEffect(() => {
-        rotateImg()
-    }, [])
-
-    const rotateImg = useCallback(() => {
+    React.useEffect(() => {
         let i = 0;
-        setInterval(() => {
+        const interval = setInterval(() => {
             if (i < images.length) {
                 setState(images[i])
                 i++;
             } else {
                 i = 0;
+                setState(images[i])
+                i++;
             }
+        }, 4000);
 
-        }, 3000)
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
-
-    }, [images])
-
-    return (
-        <StyledBadge anchorOrigin={{
+    return (<BoxContainer dots={dots}>
+            {/* <StyledBadge anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'right',
-        }} badgeContent={<ImageDots sx={{transform: {xs: "rotate(90deg)", md: "rotate(0deg)"}}}/>}>
-            <BoxContainerImageElement>
-                {/*<Swiper style={{top: "8px", right: "16px"}}
-                    modules={[Autoplay]}
-                        effect="fade"
-                        breakpoints={{
+        }} badgeContent={<ImageDots sx={{transform: {xs: "rotate(90deg)", md: "rotate(0deg)"}}}/>}> */}
 
-                        }}
-                    autoplay={{
-                        delay: 1000
-                    }}
-                >
-                     {images.map( (img, i) => {
-                        return (
-                            <SwiperSlide key={i}>
-                            </SwiperSlide>
-                        )
-                    })}
-                </Swiper>*/}
-                {state &&
-                <ImageElement {...state} loading='lazy' style={{marginTop: "16px", marginLeft: "-16px"}}/>}
+            <BoxContainerImageElement>
+                {
+                    images.map((image, i) => {
+
+
+                        return (<> {
+                            state?.src === image.src &&
+                            <ImageElement key={i} {...image} style={{marginTop: "8px", marginLeft: "-8px"}}/>
+                        }
+                        </>)
+                    })
+                }
+
 
             </BoxContainerImageElement>
-        </StyledBadge>
+            {/*</StyledBadge>*/}
+
+        </BoxContainer>
     )
 }
 
 export default StyledHeroImg
+
+
+
+
+

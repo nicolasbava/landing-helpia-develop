@@ -84,7 +84,7 @@ export default function HomePage() {
                         <Grid item xs={12} md={8}>
                             <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}}}>
                                 <Typography sx={{color: "primary.dark", fontWeight:"bold", mb:2}}>Atención 24/7</Typography>
-                                <Typography variant="h2" sx={{ mb:4}}>Especialistas
+                                <Typography variant="h2" sx={{wordBreak: "break-word", mb:4}}>Especialistas
                                     en atención al cliente</Typography>
 
                                 <Button size="small" variant="contained" sx={{width: "128px", fontWeight:"bold", backgroundColor: "primary.light"}}>Ver planes</Button>
