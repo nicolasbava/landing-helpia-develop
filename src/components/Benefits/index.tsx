@@ -6,6 +6,13 @@ import { RevealUp } from "@/components/Reveal";
 
 interface Props {}
 
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  "&.MuiGrid-root": {
+    maxWidth: '250px', 
+    margin: 'auto'
+  }
+}));
+
 const BenefitsSection: FC<Props> = () => {
   return (
     <>
@@ -20,7 +27,7 @@ const BenefitsSection: FC<Props> = () => {
         Beneficios para ti
       </Typography>
       <Grid container >
-        <Grid item xs={12} md={3} >
+        <StyledGrid item xs={12} md={3}  >
           <RevealUp>
             <ImageWithInfo
               urlImage="https://statics.helpia.com/landing/icon-benefits-star.png"
@@ -28,8 +35,8 @@ const BenefitsSection: FC<Props> = () => {
               border
             />
           </RevealUp>
-        </Grid>
-        <Grid item xs={12} md={3}>
+        </StyledGrid>
+        <StyledGrid item xs={12} md={3}>
           <RevealUp>
             <ImageWithInfo
               urlImage="https://statics.helpia.com/landing/icon-benefits-price.png"
@@ -37,8 +44,8 @@ const BenefitsSection: FC<Props> = () => {
               border
             />
           </RevealUp>
-        </Grid>
-        <Grid item xs={12} md={3}>
+        </StyledGrid>
+        <StyledGrid item xs={12} md={3}>
           <RevealUp>
             <ImageWithInfo
               urlImage="https://statics.helpia.com/landing/icon-benefits-calendar.png"
@@ -46,8 +53,8 @@ const BenefitsSection: FC<Props> = () => {
               border
             />
           </RevealUp>
-        </Grid>
-        <Grid item xs={12} md={3}> 
+        </StyledGrid>
+        <StyledGrid item xs={12} md={3}> 
           <RevealUp>
             <ImageWithInfo
               urlImage="https://statics.helpia.com/landing/icon-benefits-three.png"
@@ -55,7 +62,7 @@ const BenefitsSection: FC<Props> = () => {
               border
             />
           </RevealUp>
-        </Grid>
+        </StyledGrid>
       </Grid>
       
     </> 

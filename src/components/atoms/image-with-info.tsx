@@ -22,7 +22,7 @@ const Image = styled("img")(() => ({
 const Title = styled(Typography)(() => ({
   "&.MuiTypography-root": {
     color: "#94FF7A",
-    fontSize: "min(7.5vw, 24px)",
+    fontSize: "min(7.5vw, 17px)",
   },
 }));
 

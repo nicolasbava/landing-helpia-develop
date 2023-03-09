@@ -148,13 +148,12 @@ export default function NewHomePage() {
                 La solución para tu Empresa
             </Typography>
             <Grid container sx={{mb: {xs: '20vh'}}}>
-                <Grid item xs={12} md={4} sx={{maxWidth: '250px', margin: 'auto'}}>
+                <Grid item xs={12} md={4}>
                     <RevealLeft>
                         <ImageWithInfo
-                            urlImage="https://statics.helpia.com/landing/Lateral.gif"
+                            urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
                             title={titleLeft}
                             text={textLeft}
-                            cssImage={{ marginTop: "0%", marginBottom: "-2%", width: "50%" }}
                         />
                     </RevealLeft>
                 </Grid>
@@ -171,16 +170,20 @@ export default function NewHomePage() {
                 <Grid item xs={12} md={4}>
 
                     <RevealRight>
-                        <ImageWithInfo
-                        urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
-                        title={titleRight}
-                        text={textRight}
+                        
+                         <ImageWithInfo
+                            urlImage="https://statics.helpia.com/landing/Lateral.gif"
+                            title={titleRight}
+                            text={textRight}
+                            cssImage={{ marginTop: "16px", marginBottom: "-16px", width: "50%" }}
                         />
                     </RevealRight>
                 </Grid>
             </Grid>
 
             <BenefitsSection />
+
+
         </HomeSection2Container>
 
         <HomeSection3Container>
