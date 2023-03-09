@@ -15,6 +15,7 @@ import SolutionItem from "@/components/SolutionItem";
 import Plans from "@/components/Plans";
 import Stack from "@mui/material/Stack";
 import Link from "next/link";
+import BenefitsSection from "@/components/Benefits";
 
 
 const HomeSection1Container = styled(Box)<BoxProps>(() => ({
@@ -34,7 +35,8 @@ const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
         width: "100%",
         minHeight: "400px",
         color: "#fff",
-        position: 'relative'
+        position: 'relative',
+        paddingBlock: '15vh'
     },
 }))
 
@@ -113,7 +115,7 @@ export default function HomePage() {
 
             <HomeSection2Container>
                 <PageSection>
-                    <Grid container sx={{py: 8}} rowSpacing={{xs: 4, md: 2}}>
+                    <Grid container sx={{pb: 8}} rowSpacing={{xs: 4, md: 2}}>
                         <Grid item xs={12} sx={{textAlign: "center"}}>
                             <Typography variant="h4">La solución para tu Empresa</Typography>
                         </Grid>
@@ -146,6 +148,9 @@ export default function HomePage() {
                         </Grid>
                     </Grid>
                 </PageSection>
+
+                <BenefitsSection />
+
             </HomeSection2Container>
 
 
