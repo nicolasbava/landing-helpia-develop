@@ -4,7 +4,6 @@ import * as yup from "yup";
 import Grid from "@mui/material/Grid";
 import {useFormik} from "formik";
 
-
 import {FormProps} from "@/types/form";
 import FormField from "@/components/FormField";
 import {Button, ButtonProps, styled} from "@mui/material";
@@ -48,6 +47,11 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
         }
     });
 
+    const StyledButton = styled(Button)(({ theme })=>({
+        background: theme.palette.primary.light,
+        color: theme.palette.secondary.dark
+    }));
+
     return (
         <form id={formId} onSubmit={handleSubmit}>
             <Grid container rowSpacing={3}>
@@ -61,13 +65,7 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         // label={"Nombre"}
                         placeholder={"Nombre y apellidos"}
                         error={!values.name}
-                        inputProps={{
-                            style: {
-                                background: '#D9D9D9',
-                                color: '#1E1E1E',
-                                borderRadius: '5px'
-                            }
-                        }}
+                       
                     />
                 </Grid>
 
@@ -81,13 +79,7 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         // label={"Correo"}
                         placeholder={"Correo"}
                         error={!values.email}
-                        inputProps={{
-                            style: {
-                                background: '#D9D9D9',
-                                color: '#1E1E1E',
-                                borderRadius: '5px'
-                            }
-                        }}
+                       
                     />
                 </Grid>
 
@@ -101,13 +93,6 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         // label={"Teléfono"}
                         placeholder={"Teléfono"}
                         error={!values.phone}
-                        inputProps={{
-                            style: {
-                                background: '#D9D9D9',
-                                color: '#1E1E1E',
-                                borderRadius: '5px'
-                            }
-                        }}
                     />
                 </Grid>
 
@@ -123,20 +108,13 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         // label={"Mensaje"}
                         placeholder={"Tu Mensage"}
                         error={!values.message}
-                        inputProps={{
-                            style: {
-                                background: '#D9D9D9',
-                                color: '#1E1E1E',
-                                borderRadius: '5px'
-                            }
-                        }}
-                    />
+                />
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Button disabled={!isValid || sending} sx={{background: '#94FF7A'}} size="large" variant="contained" type="submit">
+                    <StyledButton disabled={!isValid || sending} sx={{background: '#94FF7A'}} size="large" variant="contained" type="submit">
                         {sending ? "Enviando...": "Enviar"}
-                    </Button>
+                    </StyledButton>
                 </Grid>
             </Grid>
         </form>
