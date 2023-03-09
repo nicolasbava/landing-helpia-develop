@@ -14,9 +14,7 @@ export const StyledCTAHorizontal = () => {
     return (
         <Stack direction='row' py={{xs:4}} sx={{justifyContent: 'center', alignItems: 'center', gap: 3, position: 'sticky', top: '0px'}}>
             <Typography variant='h6' sx={{fontWeight: 'bold'}}>Sumate a Helpia y recibe 60 días gratis de servicio.</Typography>
-            <Link to=''>
                 <StyledButton>REGÍSTRATE</StyledButton>
-            </Link>
         </Stack>
     )
 }

@@ -208,6 +208,7 @@ const StyledHeroImg: React.FC<StyledHeroImgProps> = ({
         return () => {
             clearInterval(interval);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (<BoxContainer dots={dots}>

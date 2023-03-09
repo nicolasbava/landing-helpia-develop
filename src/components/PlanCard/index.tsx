@@ -41,7 +41,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(() => ({
 
 const StyledTag = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
-        backgroundColor: theme.palette.text.disabled,
+        background: '#e7e3e3',
         color: theme.palette.secondary.dark,
         width: "110px",
         height: "32px",

@@ -1,33 +1,17 @@
 import {Box, Button, Grid, styled, Typography} from "@mui/material";
 import PageContainer, {PageSection} from "@/components/PageContainer";
 import {BoxProps} from "@mui/material/Box";
-import Image from "next/image";
-import Contact, {ContactContainer, NewContact, NewContactContainer} from "@/components/Contact";
+import  {ContactContainer, Contact} from "@/components/Contact";
 import React from "react";
-import {RevealDown, RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
+import {RevealDown, RevealUp} from "@/components/Reveal";
 
 
-import ContactBanner from "@/components/ContactBanner";
-import StyledTitleElement from "@/components/StyledTitleElement";
-import StyledHeroImg from "@/components/StyledHeroImg";
 import HeroSection from "@/components/HeroSection";
 import SolutionItem from "@/components/SolutionItem";
 import Plans from "@/components/Plans";
 import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import BenefitsSection from "@/components/Benefits";
-
-
-const HomeSection1Container = styled(Box)<BoxProps>(() => ({
-    "&.MuiBox-root": {
-        backgroundImage: `url("https://statics.helpia.com/landing/Banner-home.jpg")`,
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        width: "100%",
-        minHeight: "90vh",
-    },
-}))
 
 const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
@@ -86,9 +70,8 @@ export default function HomePage() {
     return (
         <PageContainer title={"Inicio"}>
             <PageSection>
-
                 <Grid container sx={{py: {xs: 4, md: 2, lg: 1}}} rowSpacing={4}>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={8} mt={{xs: 3, md: '13vh'}}>
                         <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}, a: {textDecoration: "none"}}}>
                             <Typography sx={{color: "primary.dark", fontWeight: "bold", mb: 2}}>Atención
                                 24/7</Typography>
@@ -120,7 +103,7 @@ export default function HomePage() {
                 <PageSection>
                     <Grid container sx={{pb: 8}} rowSpacing={{xs: 4, md: 4}}>
                         <Grid item xs={12} sx={{textAlign: "center"}}>
-                            <Typography variant="h4">La solución para tu Empresa</Typography>
+                            <Typography variant="h4" sx={{pb: 4}}>La solución para tu Empresa</Typography>
                         </Grid>
 
                         <Grid item xs={12} md={4}>
@@ -145,7 +128,7 @@ export default function HomePage() {
                             <RevealUp>
                                 <SolutionItem
                                     title={"¿Para qué lo hacemos?"}
-                                    text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atendelos con Helpia los 365 días del año y sigamos creciendo juntos."}
+                                    text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiendelos con Helpia los 365 días del año y sigamos creciendo juntos."}
                                     src="https://statics.helpia.com/landing/Frente_1-1-422x600.png"/>
                             </RevealUp>
                         </Grid>
@@ -153,7 +136,7 @@ export default function HomePage() {
                 </PageSection>
 
                 <PageSection>
-                    <Box sx={{textAlign: "center", width: "100%", mt: 2}}>
+                    <Box sx={{textAlign: "center", width: "100%", mt: 2, }}>
                         <Typography variant="h4" sx={{mb: 4}}>Beneficios para ti</Typography>
                         <BenefitsSection/>
                     </Box>
@@ -161,8 +144,8 @@ export default function HomePage() {
             </HomeSection2Container>
 
             <PageSection>
-                <Stack alignItems="center" sx={{width: "100%", my: 8}}>
-                    <Typography id="plans" variant="h5" sx={{fontWeight: "bold", mb: 4}}>Planes Mensuales</Typography>
+                <Stack alignItems="center" sx={{width: "100%", my: 12}}>
+                    <Typography id="plans" variant='h4' sx={{fontSize: '24px', mb: {xs: 4, md: 7}}}>Planes Mensuales</Typography>
                     <Plans/>
                 </Stack>
             </PageSection>
@@ -188,13 +171,13 @@ export default function HomePage() {
             </HomeSection3Container>
 
 
-            <NewContactContainer>
+            <ContactContainer>
                 <PageSection>
                     <RevealUp>
-                        <NewContact />
+                        <Contact />
                     </RevealUp>
                 </PageSection>
-            </NewContactContainer>
+            </ContactContainer>
 
         </PageContainer>)
 }

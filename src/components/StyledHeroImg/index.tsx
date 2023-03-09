@@ -291,11 +291,10 @@ const StyledHeroImg = forwardRef<any, StyledHeroImgProps>( ({
 
     return (<BoxContainer dots={dots}>
             <StyledBadge dots={dots} anchorOrigin={anchorOrigin}
-                         badgeContent={<ImageDots sx={{transform: dots === "mobile" ? "rotate(90deg)" : undefined}}/>}>
-
+                         badgeContent={<ImageDots sx={{transform: dots === "mobile" ? "rotate(90deg)" : undefined}}/>}
+            >
                 <BoxContainerImageElement ref={ref} {...props} >
-                                <ImageElement  {...image} dots={dots} />
-
+                    <ImageElement  {...image} dots={dots} />
                 </BoxContainerImageElement>
             </StyledBadge>
 

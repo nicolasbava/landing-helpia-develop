@@ -160,10 +160,10 @@ export default function NewHomePage() {
                 <Grid item xs={12} md={4}>
                     <RevealUp>
                         <Index
-                        src="https://statics.helpia.com/landing/seccion-2-2.png"
-                        title={titleCenter}
-                        text={textCenter}
-                        cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
+                            src="https://statics.helpia.com/landing/seccion-2-2.png"
+                            title={titleCenter}
+                            text={textCenter}
+                            cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
                         />
                     </RevealUp>
                 </Grid>

@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
                 setState(images[i])
                 i++;
             }
-        }, 4000);
+        }, 15000);
 
         return () => {
             clearInterval(interval);
