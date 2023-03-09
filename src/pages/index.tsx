@@ -12,6 +12,8 @@ import StyledTitleElement from "@/components/StyledTitleElement";
 import StyledHeroImg from "@/components/StyledHeroImg";
 import HeroSection from "@/components/HeroSection";
 import SolutionItem from "@/components/SolutionItem";
+import Plans from "@/components/Plans";
+import Stack from "@mui/material/Stack";
 
 
 
@@ -106,7 +108,7 @@ export default function HomePage() {
 
             <HomeSection2Container>
                 <PageSection>
-                    <Grid container sx={{my:4}} rowSpacing={{xs:4, md:2}}>
+                    <Grid container sx={{py:8}} rowSpacing={{xs:4, md:2}}>
                         <Grid item xs={12} sx={{textAlign: "center"}}>
                             <Typography variant="h4">La solución para tu Empresa</Typography>
                         </Grid>
@@ -134,6 +136,17 @@ export default function HomePage() {
                     </Grid>
                 </PageSection>
             </HomeSection2Container>
+
+
+            <PageSection>
+                <Stack alignItems="center" sx={{width: "100%", my:8}}>
+                    <Typography id="plans" variant="h5" sx={{fontWeight: "bold", mb:4}}>Planes Mensuales</Typography>
+                    <Plans />
+                </Stack>
+            </PageSection>
+
+
+
 
             <PageSection>
                 <Grid container sx={{py: 8}} >

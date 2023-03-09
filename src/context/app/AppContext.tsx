@@ -27,11 +27,11 @@ export interface AppContextState {
 export const INITIAL_STATE: AppContextState = {
   menu: {
      open: false,
-      items: [  {id: "home", label: "Inicio", path: "/" },
-        {id: "about_us", label: "¿Quiénes Somos?", path: "/about" },
-        {id: "services", label: "Conócenos", path: "/know_us" },
-        {id: "plans", label: "Planes", path: "/plans" },
-        {id: "contact", label: "Contacto", path: "/contact" },
+      items: [  {id: "home", label: "INICIO", path: "/" },
+        {id: "about_us", label: "QUIÉNES SOMOS", path: "/about" },
+        {id: "services", label: "CONÓCENOS", path: "/know_us" },
+        {id: "plans", label: "PLANES", path: "#plans" },
+        {id: "contact", label: "CONTACTO", path: "#contact" },
       //  {id: "sign_in", label: "Iniciar Sesión", path: "https://app.helpia.com/auth/signin", external: true  },
       //  {id: "sign_up", label: "registrarsen", path: "https://app.helpia.com/auth/signup", external: true  },
 
