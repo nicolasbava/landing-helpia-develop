@@ -13,6 +13,7 @@ import  StyledHeroImg  from "@/components/StyledHeroImg";
 import BenefitsSection from "@/components/Benefits";
 import ImageWithInfo from "@/components/atoms/image-with-info";
 import StyledTitleElement from "@/components/StyledTitleElement";
+import { StyledCTAHorizontal } from "@/components/StyledCTAHorizontal";
 
 
 
@@ -41,7 +42,6 @@ const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
         background: theme.palette.primary.light,
         width: "100%",
-        minHeight: "100px",
         color: theme.palette.secondary.dark
     },
 }))
@@ -187,7 +187,7 @@ export default function NewHomePage() {
         </HomeSection2Container>
 
         <HomeSection3Container>
-            <PageSection>
+            {/* <PageSection>
                 <Box
                     sx={{
                     width: { xs: "100%", md: "80%" },
@@ -200,7 +200,9 @@ export default function NewHomePage() {
                     Sumate a Helpia y recibe 60 días gratis de servicio.
                     </Typography>
                 </Box>
-            </PageSection>
+            </PageSection> */}
+
+            <StyledCTAHorizontal />
 
         </HomeSection3Container>
 
