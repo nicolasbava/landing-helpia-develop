@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {Box, Grid, styled, Typography, Stack, StackProps} from "@mui/material";
+import { Box, Grid, styled, Typography, Stack, StackProps, Button } from "@mui/material";
 import PageContainer, {PageSection} from "@/components/PageContainer";
-import {BoxProps} from "@mui/material/Box";
+import { BoxProps } from "@mui/material/Box";
 import Image from "next/image";
-import Contact, {ContactContainer, NewContactContainer, NewContact} from "@/components/Contact";
+import Contact, { ContactContainer, NewContactContainer, NewContact } from "@/components/Contact";
 import { RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
+import HeroSection from "@/components/HeroSection";
 
 
 import ContactBanner from "@/components/ContactBanner";
-import StyledTitleElement from "@/components/StyledTitleElement";
-import StyledButton from "@/components/StyledButton";
 import  StyledHeroImg  from "@/components/StyledHeroImg";
-import BeneficesSection from "@/components/benefices/benefices-section";
+import BenefitsSection from "@/components/Benefits";
 import ImageWithInfo from "@/components/atoms/image-with-info";
+import StyledTitleElement from "@/components/StyledTitleElement";
 
 
 
@@ -31,7 +31,8 @@ const HomeSection2Container = styled(Box)<BoxProps>(({theme}) => ({
         width: "100%",
         minHeight: "400px",
         color: "#fff",
-        position: 'relative'
+        position: 'relative',
+        paddingBlock: '12vh',
     },
 }))
 
@@ -44,17 +45,6 @@ const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
         color: theme.palette.secondary.dark
     },
 }))
-
-const HomeSection2Box = styled(Box)<BoxProps>(({ theme }) => ({
-    "&.MuiBox-root": {
-        display: "grid",
-        gridTemplateColumns: "33% 33% 33%",
-        columnGap: "1%",
-        textAlign: "center",
-        justifyContent: "center",
-        marginTop: "6%",
-    },
-}));
 
 export const ImageElementFirst = styled('img')(() => ({
     margin:'auto',
@@ -84,7 +74,6 @@ export const ImageElementThird = styled('img')(() => ({
 }))
 
 export const Title = styled(StyledTitleElement)(() =>({
-    // paddingTop: '22vh', 
     color: 'white', 
     '&.MuiTypography-root': {
         fontSize: 'min(10vw, 44px)',
@@ -92,10 +81,9 @@ export const Title = styled(StyledTitleElement)(() =>({
     '@media (min-width: 600px)':{
         width: '60%'
     }    
-})) 
+}));
 
 export const SubTitle = styled(StyledTitleElement)(() =>({
-    // paddingTop: '22vh', 
     color: 'white', 
     '&.MuiTypography-root': {
         fontSize: 'min(10vw, 44px)',
@@ -103,7 +91,12 @@ export const SubTitle = styled(StyledTitleElement)(() =>({
     '@media (min-width: 600px)':{
         width: '60%'
     }    
-}))
+}));
+
+const ImageElement = styled('img')(() => ({
+
+
+}));
 
 
 
@@ -126,65 +119,68 @@ export default function NewHomePage() {
   return (
     <>
       <PageContainer title={"InicioNuevo"}>
-        <HomeSection1Container
-            direction={{ xs: "column-reverse", md: "row" }}
-            justifyContent={"center"}
-            alignItems="center"
-        >
-            {/* <PageSection> */}
-            <RevealLeft>
-            <Typography sx={{ color: "#22AD00", textTransform: "uppercase" }}>
-                ATENCIÓN 24/7
-            </Typography>
-            <Title variant="h1" fontSize={"44px"} sx={{ color: "#000" }}>
-                Especialistas en atención al cliente
-            </Title>
-            <StyledButton>VER PLANES</StyledButton>
-            </RevealLeft>
-            <RevealRight>
-                {/*<StyledHeroImg /> */}
-            </RevealRight>
-            {/* </PageSection> */}
-        </HomeSection1Container>
+      <PageSection>
+
+        <Grid container sx={{py: {xs: 4, md:2, lg: 1}}} rowSpacing={4} >
+            <Grid item xs={12} md={8}>
+                <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}}}>
+                    <Typography sx={{color: "primary.dark", fontWeight:"bold", mb:2}}>Atención 24/7</Typography>
+                    <Typography variant="h2" sx={{wordBreak: "break-word", mb:4}}>Especialistas
+                        en atención al cliente</Typography>
+
+                    <Button size="small" variant="contained" sx={{width: "128px", fontWeight:"bold", backgroundColor: "primary.light"}}>Ver planes</Button>
+                </Box>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+                <Box sx={{ display: "flex",
+                    width: "100%", flexDirection: "row", justifyContent: {xs: "flex-start", md: "flex-end"}}} >
+                    <HeroSection />
+                </Box>
+            </Grid>
+        </Grid>
+
+        </PageSection>
+
 
         <HomeSection2Container>
-            <Typography
-            sx={{
-                fontSize: "36px",
-                mb: -4,
-                fontFamily: "Poppins",
-                color: "#FFFFFF",
-            }}
-            >
-            La solución para tu Empresa
+            <Typography sx={{ fontSize: "30px", fontFamily: "Poppins", color: "#FFFFFF", textAlign: 'center', mb: {xs: '15vh', md: 4}}} >
+                La solución para tu Empresa
             </Typography>
-            <HomeSection2Box>
-            <RevealLeft>
-                <ImageWithInfo
-                urlImage="https://statics.helpia.com/landing/Lateral.gif"
-                title={titleLeft}
-                text={textLeft}
-                cssImage={{ marginTop: "0%", marginBottom: "-2%", width: "50%" }}
-                />
-            </RevealLeft>
-            <RevealUp>
-                <ImageWithInfo
-                urlImage="https://statics.helpia.com/landing/seccion-2-2.png"
-                title={titleCenter}
-                text={textCenter}
-                cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
-                />
-            </RevealUp>
-            <RevealRight>
-                <ImageWithInfo
-                urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
-                title={titleRight}
-                text={textRight}
-                />
-            </RevealRight>
-            </HomeSection2Box>
+            <Grid container sx={{mb: {xs: '20vh'}}}>
+                <Grid item xs={12} md={4} sx={{maxWidth: '250px', margin: 'auto'}}>
+                    <RevealLeft>
+                        <ImageWithInfo
+                            urlImage="https://statics.helpia.com/landing/Lateral.gif"
+                            title={titleLeft}
+                            text={textLeft}
+                            cssImage={{ marginTop: "0%", marginBottom: "-2%", width: "50%" }}
+                        />
+                    </RevealLeft>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <RevealUp>
+                        <ImageWithInfo
+                        urlImage="https://statics.helpia.com/landing/seccion-2-2.png"
+                        title={titleCenter}
+                        text={textCenter}
+                        cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
+                        />
+                    </RevealUp>
+                </Grid>
+                <Grid item xs={12} md={4}>
 
-            <BeneficesSection />
+                    <RevealRight>
+                        <ImageWithInfo
+                        urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
+                        title={titleRight}
+                        text={textRight}
+                        />
+                    </RevealRight>
+                </Grid>
+            </Grid>
+
+            <BenefitsSection />
         </HomeSection2Container>
 
         <HomeSection3Container>

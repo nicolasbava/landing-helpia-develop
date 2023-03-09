@@ -16,19 +16,13 @@ const Image = styled("img")(() => ({
   // margin: "auto",
   width: "min(80vw, 40%)",
   height: "auto",
-  "@media (min-width: 600px)": {
-    margin: 0,
-  },
+
 }));
 
-const Title = styled(StyledTitleElement)(() => ({
-  color: "#94FF7A",
-  fontFamily: "Poppins",
+const Title = styled(Typography)(() => ({
   "&.MuiTypography-root": {
-    fontSize: "min(1.5vw, 44px)",
-  },
-  "@media (min-width: 600px)": {
-    width: "100%",
+    color: "#94FF7A",
+    fontSize: "min(7.5vw, 24px)",
   },
 }));
 
@@ -57,6 +51,8 @@ const ImageWithInfo: FC<Props> = ({
           borderRadius: border ? "5%" : "0",
           padding: border ? "5% 0" : "0",
           width: border ? "90%" : "100%",
+          margin: 'auto',
+          marginBottom: {xs: '15vh', md: 0},
         }}
       >
         <Box
@@ -75,9 +71,9 @@ const ImageWithInfo: FC<Props> = ({
         <Title
           variant="h5"
           sx={{
-            fontWeight: "bold",
+            fontWeight: 500,
             mb: 2,
-            fontFamily: "Poppins",
+            mt: 3,
             color: "#94FF7A",
           }}
         >
@@ -85,7 +81,6 @@ const ImageWithInfo: FC<Props> = ({
         </Title>
         <Typography
           sx={{
-            fontFamily: "Poppins",
             color: "#D9D9D9",
           }}
         >
