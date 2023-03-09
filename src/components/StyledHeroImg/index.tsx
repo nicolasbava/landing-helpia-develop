@@ -37,6 +37,12 @@ const StyledBadge = styled(Badge)<BadgeProps & { dots: DotsOrientation }>(({dots
             styles.top = 70
             break
         }
+
+        case "mobile": {
+            styles.right = 30
+            styles.bottom = 20
+            break
+        }
     }
 
 
@@ -50,9 +56,10 @@ const StyledBadge = styled(Badge)<BadgeProps & { dots: DotsOrientation }>(({dots
 
 
 const ImageDots = forwardRef<any, Omit<BoxProps, "children">>((props, ref) => {
-
+     const factor = 2.17
+     const width = 90
     return (<Box ref={ref} {...props}>
-        <svg width="141" height="306" viewBox="0 0 141 306" fill="none">
+        <svg width={width} height={width*factor} viewBox="0 0 141 306" fill="none">
             <circle cx="4.5" cy="4.5" r="4.5" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 297)" fill="#22AD00"/>
             <circle cx="4.5" cy="4.5" r="4.5" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 264)" fill="#22AD00"/>
             <circle cx="4.5" cy="4.5" r="4.5" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 231)" fill="#22AD00"/>
@@ -117,8 +124,8 @@ const BoxContainer = styled(Box)<BoxProps & {
     dots: DotsOrientation
 }>(({ dots}) => {
 
-    const padding1 = "90px"
-    const padding2 = "55px"
+    const padding1 = "60px"
+    const padding2 = "25px"
 
     let padding = padding1;
 
@@ -141,7 +148,7 @@ const BoxContainer = styled(Box)<BoxProps & {
             break;
 
         case "mobile":
-            padding = `0px 0px ${padding1} ${padding1}`
+            padding = `0px ${padding2} ${padding1} 0px`
             break;
     }
 
@@ -152,17 +159,7 @@ const BoxContainer = styled(Box)<BoxProps & {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            //background: "yellow",
-
             padding,
-            /*[theme.breakpoints.down("md")]: {
-                width: "550px",
-                minHeight: "225px",
-            },
-            [theme.breakpoints.down("sm")]: {
-                width: "350px",
-                minHeight: "175px",
-            }*/
         }
     }
 });
@@ -170,36 +167,60 @@ const BoxContainer = styled(Box)<BoxProps & {
 
 const BoxContainerImageElement = styled(Box)(({theme}) => {
 
-    const factor = 1.41
-    const width = 350
+
     return {
     "&.MuiBox-root": {
         border: '4px #22AD00 solid',
         borderRadius: '8px',
-        width,
-        minHeight: width * factor,
         display: "flex",
         zIndex: 1,
-
-        [theme.breakpoints.down("md")]: {
-            width: "550px",
-            minHeight: "225px",
-        },
-        [theme.breakpoints.down("sm")]: {
-            width: "350px",
-            minHeight: "175px",
-
-        }
-
     }
 }});
 
 
-const ImageElement = styled('img')(() => ({
+const ImageElement = styled('img')<React.ImgHTMLAttributes<any> & {dots: DotsOrientation}>(({dots}) => {
+
+    const m = "8px"
+   // style={{marginTop: "8px", marginLeft: "-8px"}}
+    let margin = undefined
+    switch (dots) {
+        case "bottom-right":
+            margin = `${m} 0 0 ${m}`
+            break;
+
+        case "bottom-left":
+            margin = `${m} 0 0 -${m}`
+            break;
+
+        case "top-right":
+            margin = `-${m} 0 0 ${m}`
+            break;
+
+
+        case "top-left":
+            margin = `-${m}  0 0 -${m}`
+            break;
+
+        case "mobile":
+            margin = `${m} 0 0 ${m}`
+            break;
+
+        default: {
+            return undefined
+        }
+    }
+
+
+
+   return {
     width: '100%',
     height: '100%',
     objectFit: "cover",
-}))
+       margin
+}
+
+
+})
 
 
 export type ImageData = {
@@ -214,10 +235,15 @@ export type ImageData = {
 
 type StyledHeroImgProps = {
     image: ImageData,
-}
-const StyledHeroImg: React.FC<StyledHeroImgProps> = ({
+
+} & BoxProps
+
+
+
+const StyledHeroImg = forwardRef<any, StyledHeroImgProps>( ({
                                                          image,
-                                                     }) => {
+    ...props
+                                                     }, ref) => {
 
     const dots = image?.dots ? image.dots : "bottom-right"
 
@@ -261,20 +287,23 @@ const StyledHeroImg: React.FC<StyledHeroImgProps> = ({
     }, [dots])
 
 
+
+
     return (<BoxContainer dots={dots}>
             <StyledBadge dots={dots} anchorOrigin={anchorOrigin}
                          badgeContent={<ImageDots sx={{transform: dots === "mobile" ? "rotate(90deg)" : undefined}}/>}>
 
-                <BoxContainerImageElement>
-                                <ImageElement  {...image} style={{marginTop: "8px", marginLeft: "-8px"}}/>
+                <BoxContainerImageElement ref={ref} {...props} >
+                                <ImageElement  {...image} dots={dots} />
 
                 </BoxContainerImageElement>
             </StyledBadge>
 
         </BoxContainer>
     )
-}
+})
 
+StyledHeroImg.displayName = "StyledHeroImg"
 export default StyledHeroImg
 
 

@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import {Box, styled} from '@mui/material';
+import {Box, styled, useMediaQuery, useTheme} from '@mui/material';
 import StyledHeroImg, {ImageData} from "@/components/StyledHeroImg";
 import {keyframes} from "@emotion/react";
+import {useAppContext} from "@/context/app";
+import {isWidthDown} from "@mui/material/Hidden/withWidth";
 
 const animation = keyframes`
   from {
@@ -22,31 +24,38 @@ const ImageContainer = styled(Box)(({theme}) => ({
 
 const HeroSection: React.FC = () => {
 
-
+   const theme =  useTheme()
+    const mobile = useMediaQuery(theme.breakpoints.down("md"));
     const [images] = useState<Array<ImageData>>([
         {
             id: "1",
-            src: 'https://statics.helpia.com/landing/home-1-min.jpg',
-            alt: 'alt 1',
+            src: 'https://statics.helpia.com/landing/home-1-min.png',
+            alt: 'Hero 1',
             dots: "bottom-left"
         },
         {
             id: "2",
-            src: 'https://statics.helpia.com/landing/home-2-min.jpg',
-            alt: 'alt 2',
+            src: 'https://statics.helpia.com/landing/home-2-min.png',
+            alt: 'Hero 2',
             dots: "top-left"
 
         },
         {
             id: "3",
-            src: 'https://statics.helpia.com/landing/home-3-min.jpg',
-            alt: 'alt 3',
+            src: 'https://statics.helpia.com/landing/home-3-min.png',
+            alt: 'Hero 3',
             dots: "top-right"
         },
         {
             id: "4",
-            src: 'https://statics.helpia.com/landing/home-3-min.jpg',
-            alt: 'alt 4',
+            src: 'https://statics.helpia.com/landing/home-4-min.png',
+            alt: 'Hero4 4',
+            dots: "bottom-right"
+        },
+        {
+            id: "5",
+            src: 'https://statics.helpia.com/landing/home-5-min.png',
+            alt: 'Hero 5',
             dots: "bottom-right"
         },
     ])
@@ -71,14 +80,26 @@ const HeroSection: React.FC = () => {
         };
     }, []);
 
-    return (<Box>
+    return (<Box sx={{display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
 
         {
             images.map((image, i) => {
+
+                const factor = 1.41
+                const lg = 350
+                const md = 250
+                const sm = 450
+                const xs = 250
+                image.dots = mobile ? "mobile" : image.dots
                 return (<> {
                     state.id === image.id &&
-                    <ImageContainer key={i+1}>
-                        <StyledHeroImg image={image}/>
+
+
+                    <ImageContainer key={i}>
+                        <StyledHeroImg image={image} sx={{
+                            maxWidth: {xs: xs * factor, sm: sm * factor, md, lg},
+                            minHeight: {xs, sm, md: md * factor, lg: lg * factor}
+                        }}/>
                     </ImageContainer>
                 }
                 </>)

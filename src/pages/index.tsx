@@ -81,7 +81,7 @@ export default function HomePage() {
         <PageContainer title={"Inicio"}>
                 <PageSection>
 
-                    <Grid container sx={{py: 8}} rowSpacing={4} >
+                    <Grid container sx={{py: {xs: 4, md:2, lg: 1}}} rowSpacing={4} >
                         <Grid item xs={12} md={8}>
                             <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}}}>
                                 <Typography sx={{color: "primary.dark", fontWeight:"bold", mb:2}}>Atención 24/7</Typography>
@@ -95,7 +95,6 @@ export default function HomePage() {
                         <Grid item xs={12} md={4}>
                             <Box sx={{ display: "flex",
                                 width: "100%", flexDirection: "row", justifyContent: {xs: "flex-start", md: "flex-end"}}} >
-
                                 <HeroSection />
                             </Box>
                         </Grid>
