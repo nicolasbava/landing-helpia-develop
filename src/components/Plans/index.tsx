@@ -64,8 +64,8 @@ const Plans = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
                 item
                 key={key}
                 xs={12}
-                sm={6}
-                md={4}
+                md={6}
+                lg={4}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
                 <PlanCard plan={plan} />
