@@ -11,6 +11,7 @@ import ContactBanner from "@/components/ContactBanner";
 import StyledTitleElement from "@/components/StyledTitleElement";
 import StyledHeroImg from "@/components/StyledHeroImg";
 import HeroSection from "@/components/HeroSection";
+import SolutionItem from "@/components/SolutionItem";
 
 
 
@@ -101,6 +102,38 @@ export default function HomePage() {
                     </Grid>
 
                 </PageSection>
+
+
+            <HomeSection2Container>
+                <PageSection>
+                    <Grid container sx={{my:4}} rowSpacing={{xs:4, md:2}}>
+                        <Grid item xs={12} sx={{textAlign: "center"}}>
+                            <Typography variant="h4">La solución para tu Empresa</Typography>
+                        </Grid>
+
+                        <Grid item xs={12}  md={4}>
+                            <SolutionItem
+                                title={"¿Qué hacemos?"}
+                                text={"Te proporcionamos una plataforma que te ayude a la gestión de pre venta y post venta, minimizando los tiempos de respuesta y masificando tus ingresos."}
+                                src="https://statics.helpia.com/landing/Lateral.gif" />
+                        </Grid>
+
+                        <Grid item xs={12}  md={4}>
+                            <SolutionItem
+                                title={"¿Cómo lo hacemos?"}
+                                text={"Te conectamos a la primera plataforma multicanal, centralizando todos tus contactos en un solo lugar donde serán atendidos por cientos de expertos en atención al cliente."}
+                                src="https://statics.helpia.com/landing/seccion-2-2.png" />
+                        </Grid>
+
+                        <Grid item xs={12}  md={4}>
+                            <SolutionItem
+                                title={"¿Para qué lo hacemos?"}
+                                text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atendelos con Helpia los 365 días del año y sigamos creciendo juntos." }
+                                src="https://statics.helpia.com/landing/Frente_1-1-422x600.png" />
+                        </Grid>
+                    </Grid>
+                </PageSection>
+            </HomeSection2Container>
 
             <PageSection>
                 <Grid container sx={{py: 8}} >
