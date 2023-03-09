@@ -19,7 +19,7 @@ const StyledInputLabel = styled(InputLabel)<InputLabelProps>(({ theme  }) => ({
 
 const StyledTextField = styled(TextField)<TextFieldProps>(({ theme  }) => ({
     "&.MuiTextField-root": {
-         background: "#EDEDED",
+         background: "#D9D9D9",
 
         '& label.Mui-focused': {
             color: 'white',
@@ -32,7 +32,7 @@ const StyledTextField = styled(TextField)<TextFieldProps>(({ theme  }) => ({
             fontSize: 18,
         },
         '& .MuiInputBase-input': {
-            color: theme.palette.text.disabled,
+            color: theme.palette.text.primary,
             fontSize: 16
         },
         '& .MuiOutlinedInput-root': {
@@ -47,7 +47,12 @@ const StyledTextField = styled(TextField)<TextFieldProps>(({ theme  }) => ({
             },
         }
     },
-}))
+    'input::placeholder': {
+        color: "#000"
+    }
+}));
+
+
 
 const FormField = forwardRef<any, TextFieldProps>(({ className, label, type, size, variant, ...props }, ref) => {
     return (
@@ -67,7 +72,9 @@ const FormField = forwardRef<any, TextFieldProps>(({ className, label, type, siz
             />
         </Box>
     )
-})
+});
+
+
 
 FormField.displayName = "FormField"
 export default FormField

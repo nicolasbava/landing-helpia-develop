@@ -10,8 +10,9 @@ import StyledTitleElement from "../StyledTitleElement";
 
 const ImageElement = styled('img')(() => ({
     margin: 'auto',
-    maxWidth: '37vw'
-}))
+    maxWidth: '45vw'
+}));
+
 
 
 export const ContactContainer = styled(Box)<BoxProps>(() => ({
@@ -23,7 +24,7 @@ export const ContactContainer = styled(Box)<BoxProps>(() => ({
         backgroundSize: "cover",
         width: "100%",
     },
-}))
+}));
 
 export const NewContactContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
@@ -31,7 +32,14 @@ export const NewContactContainer = styled(Box)<BoxProps>(() => ({
         background: '#F5F5F5',
         paddingBottom: '5vh'
     },
-}))
+}));
+
+export const StyledStack = styled(Stack)(({theme})=> ({
+    // "&.MuiStack-root": {
+        color: theme.palette.secondary.dark,
+        marginBlock: '5vh'
+    // }
+}));
 
 const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
         const formId = "contact-form"
@@ -74,10 +82,6 @@ const Contact = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
 Contact.displayName = "Contact";
 
 
-
-export default Contact
-
-
 export const NewContact = () => {
     const formId = "contact-form"
         const {sendContactMail} = useMail()
@@ -99,7 +103,7 @@ export const NewContact = () => {
         }
 
     return (
-        <Stack my={5} >
+        <StyledStack>
             <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}}>
                 Contacto
             </Typography>
@@ -110,11 +114,13 @@ export const NewContact = () => {
                     <Typography variant='body1' mb={3} sx={{fontSize: '0.9rem'}}>Completa el formulario con tus consultas y uno de nuestros representantes se pondrá en contacto.</Typography>
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  
                 </Grid>
-                <Grid item xs={12} md={5} sx={{display: {xs: 'none', md: 'block'}}}>
-                        <ImageElement src={'https://statics.helpia.com/landing/contact-img.png'} />
+                <Grid item xs={12} md={6} sx={{display: {xs: 'none', md: 'block'}}}>
+                        <ImageElement src={'https://statics.helpia.com/landing/contact-img.png'} height='auto' width='auto' />
                 </Grid>
             </Grid>
-        </Stack>
+        </StyledStack>
     )
 
-}
+};
+
+export default Contact
