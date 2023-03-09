@@ -2,7 +2,7 @@ import {Box, Button, Grid, styled, Typography} from "@mui/material";
 import PageContainer, {PageSection} from "@/components/PageContainer";
 import {BoxProps} from "@mui/material/Box";
 import Image from "next/image";
-import Contact, {ContactContainer} from "@/components/Contact";
+import Contact, {ContactContainer, NewContact, NewContactContainer} from "@/components/Contact";
 import React from "react";
 import {RevealDown, RevealLeft, RevealRight, RevealUp} from "@/components/Reveal";
 
@@ -45,7 +45,10 @@ const HomeSection3Container = styled(Box)<BoxProps>(({theme}) => ({
     "&.MuiBox-root": {
         background: theme.palette.primary.light,
         width: "100%",
-        minHeight: "400px",
+        minHeight: "150px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
         color: theme.palette.secondary.dark
     },
 }))
@@ -115,7 +118,7 @@ export default function HomePage() {
 
             <HomeSection2Container>
                 <PageSection>
-                    <Grid container sx={{pb: 8}} rowSpacing={{xs: 4, md: 2}}>
+                    <Grid container sx={{pb: 8}} rowSpacing={{xs: 4, md: 4}}>
                         <Grid item xs={12} sx={{textAlign: "center"}}>
                             <Typography variant="h4">La solución para tu Empresa</Typography>
                         </Grid>
@@ -149,10 +152,13 @@ export default function HomePage() {
                     </Grid>
                 </PageSection>
 
-                <BenefitsSection />
-
+                <PageSection>
+                    <Box sx={{textAlign: "center", width: "100%", mt: 2}}>
+                        <Typography variant="h4" sx={{mb: 4}}>Beneficios para ti</Typography>
+                        <BenefitsSection/>
+                    </Box>
+                </PageSection>
             </HomeSection2Container>
-
 
             <PageSection>
                 <Stack alignItems="center" sx={{width: "100%", my: 8}}>
@@ -162,125 +168,33 @@ export default function HomePage() {
             </PageSection>
 
 
-            <PageSection>
-                <Grid container sx={{py: 8}}>
-                    <Grid item xs={12} md={6}>
-                        <RevealLeft>
-                            <Box sx={{
-                                width: {xs: "100%", md: "80%"},
-                                mt: {xs: 0, md: 8},
-                                textAlign: {xs: "center", md: "left"}
-                            }}>
-                                <StyledTitleElement variant="h4" sx={{fontWeight: "bold", mb: 2}}>¿Qué
-                                    hacemos?</StyledTitleElement>
-                                <Typography>Brindamos una solución para tu emprendimiento,
-                                    proporcionando una plataforma que te ayude
-                                    a la gestión de pre venta y post venta,
-                                    minimizando los tiempos de respuesta
-                                    y masificando tus ingresos.</Typography>
-                            </Box>
-                        </RevealLeft>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <RevealRight>
-                            <Box sx={{display: "flex", justifyContent: {xs: "center", md: 'flex-end'}}}>
-                                <ImageElementFirst src={"https://statics.helpia.com/landing/Lateral.gif"}
-                                                   alt={"Celular mostrando gráficos y chats mostrando éxito por usar Helpia"}
-                                                   width={364} height={422} loading="lazy"/>
-                            </Box>
-                        </RevealRight>
-                    </Grid>
-                </Grid>
-            </PageSection>
-
-            <HomeSection2Container>
-                <PageSection>
-                    <Grid container sx={{py: 8}}>
-
-                        <Grid item xs={12} md={6}>
-                            <RevealLeft>
-                                <Box sx={{display: "flex", justifyContent: {xs: "center", md: "flex-start"}}}>
-                                    <ImageElementSecond
-                                        src={"https://statics.helpia.com/landing/Frente_1-1-422x600.png"}
-                                        alt={"Celular mostrando el inicio de sesión de Helpia"} width={360}
-                                        height={511}/>
-                                </Box>
-                            </RevealLeft>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <RevealRight>
-                                <Box sx={{
-                                    width: {xs: "100%", md: "80%"},
-                                    mt: {xs: 0, md: 8},
-                                    textAlign: {xs: "center", md: "left"}
-                                }}>
-                                    <StyledTitleElement variant="h4"
-                                                        sx={{color: "primary.light", fontWeight: "bold", mb: 2}}>¿Cómo
-                                        lo hacemos?</StyledTitleElement>
-                                    <Typography mb={{xs: 3, md: 0}}>Te conectamos a la primera plataforma multicanal,
-                                        centralizando todos tus contactos en un solo lugar
-                                        donde serán atendidos por cientos
-                                        de expertos en atención al cliente.</Typography>
-                                </Box>
-                            </RevealRight>
-                        </Grid>
-                    </Grid>
-                </PageSection>
-            </HomeSection2Container>
-
             <HomeSection3Container>
                 <PageSection>
-                    <Grid container sx={{py: 8}}>
-                        <Grid item xs={12} md={6}>
-                            <RevealLeft>
-                                <Box sx={{
-                                    width: {xs: "100%", md: "80%"},
-                                    mt: {xs: 0, md: 8},
-                                    textAlign: {xs: "center", md: "left"}
-                                }}>
+                    <Grid container justifyContent="space-evenly" alignItems="center" rowSpacing={{xs:2, md:0}}
+                          sx={{height: "min-content", a: {textDecoration: "none"}  }}>
+                        <Grid item xs={12} md={8} sx={{textAlign: "center"}}>
+                            <Typography id="plans" variant="h5" sx={{fontWeight: "bold"}}>Sumate a Helpia y recibe 60 días gratis de servicio</Typography>
+                        </Grid>
 
-                                    <StyledTitleElement variant="h4" sx={{fontWeight: "800", mb: 2}}>Disponibilidad
-                                        24/7</StyledTitleElement>
-                                    <Typography>Respondemos a todas las consultas de tus clientes
-                                        los 365 días del año, mientras vos
-                                        conquistas nuevos productos y clientes,
-                                        nosotros te potenciamos las ventas!!!</Typography>
-                                </Box>
-                            </RevealLeft>
+                        <Grid item xs={12} md={4} sx={{textAlign: {xs: "center", md: "left"}}}>
+                            <Link href="https://app.helpia.com/auth/signup" target="_blank">
+                                <Button variant="contained"
+                                        sx={{width: "150px", fontWeight: "bold", backgroundColor: "secondary.dark", color: "#fff"}}>REGÍSTRATE</Button>
+                            </Link>
                         </Grid>
-                        <Grid item xs={12} md={6} sx={{textAlign: 'center', justifyContent: 'center'}}>
-                            <RevealRight>
-                                <Box sx={{
-                                    display: 'flex',
-                                    mb: {xs: 4, md: 0},
-                                    justifyContent: {xs: 'center', sm: 'center'},
-                                    ml: {xs: 0, sm: 9},
-                                    mt: {xs: 6, md: 0}
-                                }}>
-                                    <ImageElementThird src={"https://statics.helpia.com/landing/Frente_3-1-1.png"}
-                                                       alt={"Un hombre dibujado mostrando lo util que seria usar Helpia y como lo ha ayudado en su negocio"}
-                                                       width={350} height={522}
-                                    />
-                                </Box>
-                            </RevealRight>
-                        </Grid>
+
                     </Grid>
                 </PageSection>
             </HomeSection3Container>
 
-            <ContactBanner>
-                <PageSection>
-                    <StyledTitleElement variant="h4" sx={{fontWeight: "bold"}}>Contactanos</StyledTitleElement>
-                </PageSection>
-            </ContactBanner>
 
-            <ContactContainer>
+            <NewContactContainer>
                 <PageSection>
                     <RevealUp>
-                        <Contact sx={{py: 4}}/>
+                        <NewContact />
                     </RevealUp>
                 </PageSection>
-            </ContactContainer>
+            </NewContactContainer>
 
         </PageContainer>)
 }

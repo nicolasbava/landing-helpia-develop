@@ -11,7 +11,7 @@ import HeroSection from "@/components/HeroSection";
 import ContactBanner from "@/components/ContactBanner";
 import  StyledHeroImg  from "@/components/StyledHeroImg";
 import BenefitsSection from "@/components/Benefits";
-import ImageWithInfo from "@/components/atoms/image-with-info";
+import Index from "@/components/BenefitItem";
 import StyledTitleElement from "@/components/StyledTitleElement";
 
 
@@ -150,8 +150,8 @@ export default function NewHomePage() {
             <Grid container sx={{mb: {xs: '20vh'}}}>
                 <Grid item xs={12} md={4}>
                     <RevealLeft>
-                        <ImageWithInfo
-                            urlImage="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
+                        <Index
+                            src="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
                             title={titleLeft}
                             text={textLeft}
                         />
@@ -159,8 +159,8 @@ export default function NewHomePage() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <RevealUp>
-                        <ImageWithInfo
-                        urlImage="https://statics.helpia.com/landing/seccion-2-2.png"
+                        <Index
+                        src="https://statics.helpia.com/landing/seccion-2-2.png"
                         title={titleCenter}
                         text={textCenter}
                         cssImage={{ marginTop: "3%", marginBottom: "4%", width: "50%" }}
@@ -171,8 +171,8 @@ export default function NewHomePage() {
 
                     <RevealRight>
                         
-                         <ImageWithInfo
-                            urlImage="https://statics.helpia.com/landing/Lateral.gif"
+                         <Index
+                            src="https://statics.helpia.com/landing/Lateral.gif"
                             title={titleRight}
                             text={textRight}
                             cssImage={{ marginTop: "16px", marginBottom: "-16px", width: "50%" }}
