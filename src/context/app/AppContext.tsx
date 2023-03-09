@@ -29,7 +29,7 @@ export const INITIAL_STATE: AppContextState = {
      open: false,
       items: [  {id: "home", label: "Inicio", path: "/" },
         {id: "about_us", label: "¿Quiénes Somos?", path: "/about" },
-        {id: "services", label: "Conócenos", path: "/know_us" },
+        {id: "services", label: "Conócenos", path: "/know-us" },
         {id: "plans", label: "Planes", path: "/plans" },
         {id: "contact", label: "Contacto", path: "/contact" },
       //  {id: "sign_in", label: "Iniciar Sesión", path: "https://app.helpia.com/auth/signin", external: true  },
