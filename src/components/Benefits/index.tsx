@@ -1,82 +1,46 @@
-import React, { FC } from "react";
-import { Box, styled, Typography, Grid } from "@mui/material";
-import { BoxProps } from "@mui/material/Box";
-import ImageWithInfo from "@/components/atoms/image-with-info";
-import { RevealUp } from "@/components/Reveal";
+import React, {FC, useState} from "react";
+import {Grid} from "@mui/material";
+import BenefitItem, {BenefitItemProps} from "@/components/BenefitItem";
+import {RevealUp} from "@/components/Reveal";
 
-interface Props {}
 
-const StyledGrid = styled(Grid)(({ theme }) => ({
-  "&.MuiGrid-root": {
-    maxWidth: '250px', 
-    margin: 'auto'
-  }
-}));
+const BenefitsSection: FC = () => {
 
-const BenefitsSection: FC<Props> = () => {
-  return (
-    <>
-      <Typography
-        sx={{
-          fontSize: "24px",
-          color: "#FFFFFF",
-          textAlign: 'center',
-          mb: '10vh'
-        }}
-      >
-        Beneficios para ti
-      </Typography>
-      <Grid container >
-        <StyledGrid item xs={12} md={3}  >
-          <RevealUp>
-            <ImageWithInfo
-              urlImage="https://statics.helpia.com/landing/icon-benefits-star.png"
-              title="Primeros 60 días gratis"
-              border
-            />
-          </RevealUp>
-        </StyledGrid>
-        <StyledGrid item xs={12} md={3}>
-          <RevealUp>
-            <ImageWithInfo
-              urlImage="https://statics.helpia.com/landing/icon-benefits-price.png"
-              title="Pagarás por lo que uses"
-              border
-            />
-          </RevealUp>
-        </StyledGrid>
-        <StyledGrid item xs={12} md={3}>
-          <RevealUp>
-            <ImageWithInfo
-              urlImage="https://statics.helpia.com/landing/icon-benefits-calendar.png"
-              title="Atención 24hs, los 365 días del año"
-              border
-            />
-          </RevealUp>
-        </StyledGrid>
-        <StyledGrid item xs={12} md={3}> 
-          <RevealUp>
-            <ImageWithInfo
-              urlImage="https://statics.helpia.com/landing/icon-benefits-three.png"
-              title="Plataforma multicanal"
-              border
-            />
-          </RevealUp>
-        </StyledGrid>
-      </Grid>
-      
-    </> 
-  );
+
+    const [benefits] = useState<Array<BenefitItemProps>>([
+
+        {
+            src: "https://statics.helpia.com/landing/icon-benefits-star.png",
+            title: "Primeros 60 días gratis"
+        },
+        {
+            src: "https://statics.helpia.com/landing/icon-benefits-price.png",
+            title: "Pagarás por lo que uses"
+        },
+
+        {
+            src: "https://statics.helpia.com/landing/icon-benefits-calendar.png",
+            title: "Atención 24hs, los 365 días del año"
+        },
+        {
+            src: "https://statics.helpia.com/landing/icon-benefits-three.png",
+            title: "Plataforma multicanal"
+        }
+    ])
+    return (
+        <Grid container justifyContent="space-around" >
+            {benefits.map((props, i)=>{
+               return (
+                   <Grid item key={i} xs={12}  md={6} lg={3} sx={{p: 4, display:"flex", justifyContent: "center"}}>
+                       <RevealUp>
+                           <BenefitItem {...props} />
+                       </RevealUp>
+                   </Grid>
+               )
+            })}
+        </Grid>
+    );
 };
 
 export default BenefitsSection;
 
-
-const Container = styled(Box)<BoxProps>(({ theme }) => ({
-  "&.MuiBox-root": {
-    display: "grid",
-    gridTemplateColumns: "20% 20% 20% 20%",
-    columnGap: "5%",
-    textAlign: "center",
-  },
-}));

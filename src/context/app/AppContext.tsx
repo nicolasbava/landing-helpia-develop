@@ -33,7 +33,7 @@ export const INITIAL_STATE: AppContextState = {
         {id: "plans", label: "PLANES", path: "#plans" },
         {id: "contact", label: "CONTACTO", path: "#contact" },
       //  {id: "sign_in", label: "Iniciar Sesión", path: "https://app.helpia.com/auth/signin", external: true  },
-      //  {id: "sign_up", label: "registrarsen", path: "https://app.helpia.com/auth/signup", external: true  },
+      //  {id: "sign_up", label: "registrarse", path: "https://app.helpia.com/auth/signup", external: true  },
 
       ]
   },
