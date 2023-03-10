@@ -136,7 +136,7 @@ export default function HomePage() {
                 </PageSection>
 
                 <PageSection>
-                    <Box sx={{textAlign: "center", width: "100%", mt: 2, }}>
+                    <Box sx={{textAlign: "center", width: "100%", mt: 2, mb: 2}}>
                         <Typography variant="h4" sx={{mb: 4}}>Beneficios para ti</Typography>
                         <BenefitsSection/>
                     </Box>
@@ -171,8 +171,8 @@ export default function HomePage() {
             </HomeSection3Container>
 
 
-            <ContactContainer>
-                <PageSection>
+            <ContactContainer >
+                <PageSection >
                     <RevealUp>
                         <Contact />
                     </RevealUp>

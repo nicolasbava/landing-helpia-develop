@@ -16,10 +16,11 @@ const ImageElement = styled('img')(() => ({
 
 export const ContactContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
-        width: "100%",
         background: '#F5F5F5',
         paddingBottom: '5vh',
-        paddingTop: '7vh'
+        paddingTop: '7vh',
+        margin: 'auto',
+
     },
 }));
 
@@ -54,12 +55,12 @@ export const Contact = () => {
 
     return (
         <StyledStack>
-            <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}}>
+            <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}} id='contact'>
                 Contacto
             </Typography>
-            <Grid  sx={{ justifyContent: 'space-between'}} container mt={5}>
+            <Grid  sx={{ justifyContent: 'space-between', maxWidth: {xs: '450px', md: '100vw'}, }} container mt={5}>
                 
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={5} >
                     <Typography mb={2} sx={{fontWeight: '600', fontSize: '1.2rem'}}>¿Alguna duda?</Typography>
                     <Typography variant='body1' mb={3} sx={{fontSize: '0.9rem'}}>Completa el formulario con tus consultas y uno de nuestros representantes se pondrá en contacto.</Typography>
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  

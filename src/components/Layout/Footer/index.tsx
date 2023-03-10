@@ -85,7 +85,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Trabajá con nosotros</StyledTitleElement>
                             <Typography variant="caption" sx={{mb:2}}>Si te interesa formar parte de nuestro equipo, envianos tu CV</Typography>
 
-                            <FooterContactLink type="mail" label="vacantes@helpia.com"  href="mailto:vacantes@helpia.com" />
+                            <FooterContactLink type="mail" label="reclutamiento@helpia.com"  href="mailto:reclutamiento@helpia.com" />
 
                         </StyledFooterSection>
                     </Grid>
