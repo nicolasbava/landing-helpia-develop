@@ -10,7 +10,8 @@ import CircleIcon from '@mui/icons-material/Circle';
 const PlanCardContainer = styled(Card)<CardProps & { popular: boolean }>(({theme, popular}) => ({
     "&.MuiCard-root": {
         background: popular ? theme.palette.primary.light : "#F2F2F2",
-        width: "380px",
+        minWidth: '150px',
+        maxWidth: '380px',
         color: "#000",
         wordBreak: "break-word",
         height: "405px",

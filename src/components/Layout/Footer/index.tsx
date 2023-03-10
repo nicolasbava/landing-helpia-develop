@@ -33,7 +33,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     </Grid>
 
                     <Grid item xs={12} md={3}>
-                        <StyledFooterSection sx={{mt: 4, mx:1}}>
+                        <StyledFooterSection sx={{mt: 4, mx:{xs: 0, md: 1}}}>
 
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Contáctanos</StyledTitleElement>
 
