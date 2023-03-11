@@ -26,18 +26,26 @@ const StyledDialog = styled(Dialog)<DialogProps>(({theme}) => ({
             minWidth: "250px"
         }
     },
-}))
+}));
 
+const StyledButton = styled(Button)(({theme}) => ({
+    '&.Mui-disabled' :{
+        background: theme.palette.text.disabled
+    }
+}));
 
 type SubscriptionStore = {
     opened: boolean
     subscribed: boolean
-
-}
+};
 
 type SubscriptionDialogFormFields = {
     email: string
-}
+};
+
+
+
+
 const SubscriptionDialog: React.FC = () => {
 
     const key = "newsletter"
@@ -137,9 +145,9 @@ const SubscriptionDialog: React.FC = () => {
                                    ),
                                }}
                     />
-                        <Button disabled={!isValid } size="small" variant="contained" type="submit" sx={{fontWeight: "bold"}}>
+                        <StyledButton disabled={!isValid } size="small" variant="contained" type="submit" sx={{fontWeight: "bold"}}>
                             {loading ? "Subscríbase...": "Subscríbase"}
-                        </Button>
+                        </StyledButton>
                     </Stack>
                 </form>
             </Stack>
