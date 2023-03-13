@@ -17,7 +17,7 @@ const ImageElement = styled('img')(() => ({
 export const ContactContainer = styled(Box)<BoxProps>(() => ({
     "&.MuiBox-root": {
         background: '#F5F5F5',
-        paddingBottom: '5vh',
+        paddingBottom: '10vh',
         paddingTop: '7vh',
         margin: 'auto',
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box, styled, Grid } from "@mui/material";
 import { BoxProps } from "@mui/material/Box";
-import PageContainer, { PageSection } from "@/components/PageContainer";
+import PageContainer from "@/components/PageContainer";
 import KnowUsItem from "@/components/KnowUsItem";
 import { Contact, ContactContainer } from "@/components/Contact";
 
@@ -36,7 +36,6 @@ const KnowUs = () => {
           <Typography
             sx={{
               fontSize: "36px",
-              fontFamily: "Poppins",
               color: "#FFFFFF",
               textAlign: "center",
               mb: { xs: "15vh", md: "4%" },
@@ -77,7 +76,7 @@ const KnowUs = () => {
             <Grid item xs={12} md={6} lg={3} mb={{xs: 8, sm: 0}}>
               <KnowUsItem
                 urlImage="https://statics.helpia.com/landing/conocenos-4.png"
-                title="Tecnología e Ignovación"
+                title="Tecnología e Innovación"
                 name="Orlando Nogales"
                 text={infoTecInn}
                 urlContact="https://www.linkedin.com/in/orlando-jose-nogales-alcantara-a662b78a/"
