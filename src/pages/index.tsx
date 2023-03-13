@@ -121,7 +121,7 @@ export default function HomePage() {
                             <RevealDown>
                                 <SolutionItem
                                     title={"¿Cómo lo hacemos?"}
-                                    text={"Te conectamos a la primera plataforma multicanal, centralizando todos tus contactos en un solo lugar donde serán atendidos por cientos de expertos en atención al cliente."}
+                                    text={"Te conectamos a la primera plataforma multicanal con agentes certificados, centralizando todos tus contactos en un solo lugar donde serán atendidos por cientos de expertos en atención al cliente."}
                                     src="https://statics.helpia.com/landing/seccion-2-2.png"/>
                             </RevealDown>
                         </Grid>
