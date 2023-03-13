@@ -1,7 +1,7 @@
 import PageContainer, {PageSection} from "@/components/PageContainer";
 
 import React from "react";
-import Contact, {ContactContainer} from "@/components/Contact";
+import { ContactContainer, Contact } from "@/components/Contact";
 
 
 export default function ContactPage() {
@@ -11,7 +11,7 @@ export default function ContactPage() {
 
             <ContactContainer>
                 <PageSection>
-                    <Contact sx={{py: 4}}/>
+                    <Contact />
                 </PageSection>
             </ContactContainer>
         </PageContainer>
