@@ -66,7 +66,8 @@ const KnowUsItem: FC<Props> = ({ urlImage, title, text, name, urlContact }) => {
             lineHeight: "20px",
             color: theme.palette.background.default,
             maxHeight: { xs: "100px", md: "100%" },
-            height: { xs: "110px", md: "100px" },
+            height: { xs: "auto", md: "100px" },
+            mb: {xs: 3, md: 0}
           }}
         >
           {text}
