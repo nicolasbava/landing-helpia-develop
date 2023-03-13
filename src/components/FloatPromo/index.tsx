@@ -40,13 +40,13 @@ const FloatPromo: React.FC = () => {
         const data = getData<FloatPromoStore>(key)
         if(!data  || (data && !data.closed)){
             setShow(true)
-            putData<FloatPromoStore>(key, {closed: false})
+            // putData<FloatPromoStore>(key, {closed: false})
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const handleClose = ()=>{
-        putData<FloatPromoStore>(key, {closed: true})
+        // putData<FloatPromoStore>(key, {closed: true})
         setShow(false)
     }
 

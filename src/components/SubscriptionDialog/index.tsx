@@ -94,7 +94,8 @@ const SubscriptionDialog: React.FC = () => {
         if(!data  || (data && !data.opened && !data.subscribed)){
             setTimeout(()=>{
                 setOpen(true)
-                putData<SubscriptionStore>(key, {opened: true, subscribed: false})
+                // orlando sugirio que quede siempre abierto
+                // putData<SubscriptionStore>(key, {opened: true, subscribed: false})
             }, 15000)
 
         }
@@ -129,7 +130,7 @@ const SubscriptionDialog: React.FC = () => {
         <DialogContent sx={{px: 2}}>
             <Stack gap={1}>
                 <Typography variant="caption" sx={{mb: 2}}>Subscríbete y recibe recomendaciones de nuestro equipo
-                    para <strong>potenciar tu emprendimiento.</strong></Typography>
+                    para <strong>potenciar tu negocio.</strong></Typography>
                 <form id={formId} onSubmit={handleSubmit}>
                     <Stack gap={2}>
                     <FormField fullWidth size="small" placeholder="mail@example.com"
