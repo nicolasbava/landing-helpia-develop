@@ -46,7 +46,7 @@ export default function ServicesPage() {
                                     Tu tiempo y tus clientes son nuestra prioridad.
                                 </Typography>
                                 <Typography>
-                                    Atendelos con Helpia los 365 días del año y sigamos creciendo juntos.
+                                    Atiéndelos con Helpia los 365 días del año y sigamos creciendo juntos.
                                 </Typography>
                             </Box>
                         </RevealRight>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
                                         <Typography >Primeros 60 días gratis</Typography>
                                     </BenefitsListItem>
                                     <BenefitsListItem>
-                                        <Typography >Pagás por lo que usas</Typography>
+                                        <Typography >Pagas por lo que usas</Typography>
                                     </BenefitsListItem>
                                     <BenefitsListItem>
                                         <Typography >Atención los 365 días del año</Typography>

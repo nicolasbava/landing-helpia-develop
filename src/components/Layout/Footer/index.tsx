@@ -27,10 +27,10 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     <Grid item xs={12}  md={3}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <Link href='/'>
-                                <Logo alt={"footer-logo"} width={178} height={80}/>
+                                <Logo alt={"footer-logo"}  width={178} height={80}/>
                             </Link>
                             <Typography variant="caption" sx={{maxWidth: '350px'}}>Somos especialistas en atención al cliente online.
-                                Conocenos.</Typography>
+                                Conócenos.</Typography>
                         </StyledFooterSection>
                     </Grid>
 
@@ -87,7 +87,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     <Grid item xs={12}  md={3} mb={{xs:7, md:4}}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Trabajá con nosotros</StyledTitleElement>
-                            <Typography variant="caption" sx={{mb:2, maxWidth: '300px'}}>Si te interesa formar parte de nuestro equipo, envianos tu CV</Typography>
+                            <Typography variant="caption" sx={{mb:2, maxWidth: '300px'}}>Si te interesa formar parte de nuestro equipo, envíanos tu CV</Typography>
 
                             <FooterContactLink type="mail" label="reclutamiento@helpia.com"  href="mailto:reclutamiento@helpia.com" />
 

@@ -73,8 +73,10 @@ export default function HomePage() {
                 <Grid container sx={{py: {xs: 4, md: 2, lg: 1}}} rowSpacing={4}>
                     <Grid item xs={12} md={8} mt={{xs: 3, md: '13vh'}}>
                         <Box sx={{width: {xs: "100%", md: "95%", lg: "90%"}, a: {textDecoration: "none"}}}>
+                            <Typography variant="h1" sx={{position: 'absolute', opacity: 0}}>Helpia</Typography>
                             <Typography sx={{color: "primary.dark", fontWeight: "bold", mb: 2}}>Atención
                                 24/7</Typography>
+                                
                             <Typography variant="h2" sx={{wordBreak: "break-word", mb: 4}}>Especialistas
                                 en atención al cliente</Typography>
 
@@ -128,7 +130,7 @@ export default function HomePage() {
                             <RevealUp>
                                 <SolutionItem
                                     title={"¿Para qué lo hacemos?"}
-                                    text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiendelos con Helpia los 365 días del año y sigamos creciendo juntos."}
+                                    text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiéndelos con Helpia los 365 días del año y sigamos creciendo juntos."}
                                     src="https://statics.helpia.com/landing/Frente_1-1-422x600.png"/>
                             </RevealUp>
                         </Grid>
@@ -156,7 +158,7 @@ export default function HomePage() {
                     <Grid container justifyContent="space-evenly" alignItems="center" rowSpacing={{xs:2, md:0}}
                           sx={{height: "min-content", a: {textDecoration: "none"}  }}>
                         <Grid item xs={12} md={8} sx={{textAlign: "center"}}>
-                            <Typography id="plans" variant="h5" sx={{fontWeight: "bold"}}>Sumate a Helpia y recibe 60 días gratis de servicio</Typography>
+                            <Typography id="plans" variant="h5" sx={{fontWeight: "bold"}}>Súmate a Helpia y recibe 60 días gratis de servicio</Typography>
                         </Grid>
 
                         <Grid item xs={12} md={4} sx={{textAlign: {xs: "center", md: "left"}}}>
