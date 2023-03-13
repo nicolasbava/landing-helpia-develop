@@ -174,11 +174,9 @@ export default function HomePage() {
 
 
             <ContactContainer >
-                <PageSection >
                     <RevealUp>
                         <Contact />
                     </RevealUp>
-                </PageSection>
             </ContactContainer>
 
         </PageContainer>)

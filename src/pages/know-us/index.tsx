@@ -3,6 +3,7 @@ import { Typography, Box, styled, Grid } from "@mui/material";
 import { BoxProps } from "@mui/material/Box";
 import PageContainer, { PageSection } from "@/components/PageContainer";
 import KnowUsItem from "@/components/KnowUsItem";
+import { Contact, ContactContainer } from "@/components/Contact";
 
 const Container = styled(Box)<BoxProps>(({ theme }) => ({
   "&.MuiBox-root": {
@@ -85,6 +86,9 @@ const KnowUs = () => {
           </Grid>
         </Container>
       </PageContainer>
+      <ContactContainer>
+          <Contact />
+      </ContactContainer>
     </>
   );
 };

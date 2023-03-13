@@ -106,7 +106,7 @@ const ProfileForm: FC<ContactFormProps> = ({formId, submitAction, sending}) => {
                         value={values.message}
                         required
                         // label={"Mensaje"}
-                        placeholder={"Tu Mensage"}
+                        placeholder={"Tu Mensaje"}
                         error={!values.message}
                 />
                 </Grid>

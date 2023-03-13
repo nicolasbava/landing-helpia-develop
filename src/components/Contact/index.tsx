@@ -58,9 +58,9 @@ export const Contact = () => {
             <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}} id='contact'>
                 Contacto
             </Typography>
-            <Grid  sx={{ justifyContent: 'space-between', maxWidth: {xs: '450px', md: '100vw'}, }} container mt={5}>
+            <Grid  sx={{ justifyContent: 'space-between', maxWidth: {xs: '450px', md: '100vw'}, marginInline: 'auto' }} container mt={5}>
                 
-                <Grid item xs={12} md={5} >
+                <Grid item xs={12} md={5} ml={{xs: 0, md: '5vw'}}>
                     <Typography mb={2} sx={{fontWeight: '600', fontSize: '1.2rem'}}>¿Alguna duda?</Typography>
                     <Typography variant='body1' mb={3} sx={{fontSize: '0.9rem'}}>Completa el formulario con tus consultas y uno de nuestros representantes se pondrá en contacto.</Typography>
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  
