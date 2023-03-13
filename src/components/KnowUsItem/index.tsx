@@ -1,16 +1,8 @@
 import React, { FC } from "react";
 import { BoxProps } from "@mui/material/Box";
-import { Grid, Box, styled, Typography } from "@mui/material";
+import { Grid, Box, styled, Typography, Stack } from "@mui/material";
 import StyledFooterIcon from "@/components/Layout/Footer/StyledFooterIcon";
-
-const Container = styled(Box)<BoxProps>(({ theme }) => ({
-  "&.MuiBox-root": {
-    display: "grid",
-    gridTemplateColumns: "80%",
-    columnGap: "6%",
-    textAlign: "center",
-  },
-}));
+import { useTheme } from '@mui/material';
 
 const Image = styled("img")(() => ({
   "@media (min-width: 600px)": {
@@ -27,34 +19,28 @@ interface Props {
 }
 
 const KnowUsItem: FC<Props> = ({ urlImage, title, text, name, urlContact }) => {
+  const theme = useTheme();
+
   return (
     <>
-      <Container
+      <Box
         sx={{
-          display: "flex",
-          justifyContent: { xs: "center" },
-          width: { xs: "100%" },
+          textAlign: 'center',
+          maxWidth: '300px',
+          margin: 'auto',
+          mb: 6
         }}
       >
-        <Grid
-          sx={{
-            justifyContent: { xs: "center" },
-            height: { xs: "50%" },
-            mb: { xs: "4%" },
-          }}
-        >
           <Image src={urlImage} alt={title} loading="lazy" />
-        </Grid>
-
         <Typography
           variant="h5"
           sx={{
-            fontFamily: "Poppins",
             fontWeight: 500,
             lineHeight: "28px",
-            color: "#94FF7A",
+            color: theme.palette.primary.light,
             fontSize: "20px",
             mb: { xs: "2%" },
+            mt: 1
           }}
         >
           {title}
@@ -62,10 +48,9 @@ const KnowUsItem: FC<Props> = ({ urlImage, title, text, name, urlContact }) => {
 
         <Typography
           sx={{
-            fontFamily: "Poppins",
-            color: "#D9D9D9",
+            color: theme.palette.background.default,
             mb: { xs: "3%" },
-            mt: { md: "10%", lg: 0 },
+            mt: { md: "10%", lg: 0 },            
             fontWeight: 700,
             fontSize: "16px",
             lineHeight: "24px",
@@ -76,11 +61,10 @@ const KnowUsItem: FC<Props> = ({ urlImage, title, text, name, urlContact }) => {
 
         <Typography
           sx={{
-            fontFamily: "Poppins",
             fontWeight: 400,
             fontSize: "14px",
             lineHeight: "20px",
-            color: "#D9D9D9",
+            color: theme.palette.background.default,
             maxHeight: { xs: "100px", md: "100%" },
             height: { xs: "110px", md: "100px" },
           }}
@@ -89,36 +73,28 @@ const KnowUsItem: FC<Props> = ({ urlImage, title, text, name, urlContact }) => {
         </Typography>
 
         {urlContact && (
-          <Grid container justifyContent="center">
-            <Grid item xs={1} md={1} lg={1}>
+          <Stack direction="row" justifyContent="center" spacing={1}>
               <StyledFooterIcon
                 className="fa-brands fa-linkedin"
-                sx={{
-                  ml: { md: "50px", lg: "1%" },
-                }}
               />
-            </Grid>
-            <Grid item xs={6} md={6} lg={6}>
               <a href={urlContact}>
                 <Typography
                   sx={{
-                    fontFamily: "Poppins",
                     fontWeight: 400,
                     fontSize: "14px",
                     lineHeight: "20px",
-                    color: "#D9D9D9",
+                    color: theme.palette.background.default,
                     textDecorationLine: "underline",
                     mt: "2%",
-                    mb: { xs: "20%" },
+                    mb: "20%" ,
                   }}
                 >
                   {name}
                 </Typography>
               </a>
-            </Grid>
-          </Grid>
+          </Stack>
         )}
-      </Container>
+      </Box>
     </>
   );
 };

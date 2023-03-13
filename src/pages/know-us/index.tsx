@@ -17,20 +17,20 @@ const Container = styled(Box)<BoxProps>(({ theme }) => ({
 
 const KnowUs = () => {
   const infoCeo =
-    "Digital Transformation I Entrepreneur | Sales I Operations & Customer Service I Business Development I CX-UX-CS | Team Mentor";
+    "Digital Transformation | Entrepreneur | Sales | Operations & Customer Service | Business Development | CX-UX-CS | Team Mentor";
 
   const infoComercial =
-    "Inteligencia de Negocios  I  Sales  I   Customer Service  I  Especialista en procesos de contact center  I Travel";
+    "Inteligencia de Negocios  |  Sales  |   Customer Service  |  Especialista en procesos de contact center  |  Travel";
 
   const infoOpCal =
-    "Customer Experience  I  Operaciones  I  Calidad y Procesos  I Sales";
+    "Customer Experience  |  Operaciones  |  Calidad y Procesos  |   Sales";
 
   const infoTecInn =
-    "Transformación Digital  I Enterprise Agile Coach  I Especialista en Procesos  I  Gestión del Cambio  I Gestión de Proyectos  I Coach Personal y de Equipos.";
+    "Transformación Digital  |   Enterprise Agile Coach  |   Especialista en Procesos  |  Gestión del Cambio  | Gestión de Proyectos  |   Coach Personal y de Equipos.";
 
   return (
     <>
-      <PageContainer title="Conocenos">
+      <PageContainer title="Conócenos">
         <Container>
           <Typography
             sx={{
@@ -46,7 +46,7 @@ const KnowUs = () => {
           </Typography>
 
           <Grid container>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3} mb={{xs: 8, sm: 0}}>
               <KnowUsItem
                 urlImage="https://statics.helpia.com/landing/conocenos-1.png"
                 title="CEO"
@@ -55,16 +55,16 @@ const KnowUs = () => {
                 urlContact="https://www.linkedin.com/in/horaciocanavesi/"
               />
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3} mb={{xs: 8, sm: 0}}>
               <KnowUsItem
                 urlImage="https://statics.helpia.com/landing/conocenos-2.png"
                 title={"Comercial"}
-                name="Soledad Rabado"
+                name="Soledad Robado"
                 text={infoComercial}
                 urlContact="https://www.linkedin.com/in/soledad-robado-84008a8b/"
               />
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3} mb={{xs: 8, sm: 0}}>
               <KnowUsItem
                 urlImage="https://statics.helpia.com/landing/conocenos-3.png"
                 title="Operaciones y Calidad"
@@ -73,7 +73,7 @@ const KnowUs = () => {
                 urlContact="https://www.linkedin.com/in/facundo-gentile-a39821170/"
               />
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3} mb={{xs: 8, sm: 0}}>
               <KnowUsItem
                 urlImage="https://statics.helpia.com/landing/conocenos-4.png"
                 title="Tecnología e Ignovación"
