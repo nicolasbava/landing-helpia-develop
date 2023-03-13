@@ -134,7 +134,7 @@ const PlanCard: React.FC<PlanCardProps> = ({plan}) => {
                     <Button variant="contained"
                             size="large"
                             sx={{color: hasPopular ? "#fff" : "inherit",
-                                backgroundColor: hasPopular ? "secondary.dark" : "primary.dark", fontWeight: "bold", width: "150px"}}
+                                backgroundColor: hasPopular ? "secondary.dark" : "#94FF7A", fontWeight: "bold", width: "150px"}}
                             onClick={handleClick}>CONTRATAR</Button>
                 </CardActions>
             </PlanCardContainer>
