@@ -130,7 +130,7 @@ export default function HomePage() {
                             <RevealUp>
                                 <SolutionItem
                                     title={"¿Para qué lo hacemos?"}
-                                    text={"Para cambiar la vida de los emprendedores en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiéndelos con Helpia los 365 días del año y sigamos creciendo juntos."}
+                                    text={"Para cambiar la vida de los emprendedores y las empresas en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiéndelos con Helpia los 365 días del año y sigamos creciendo juntos."}
                                     src="https://statics.helpia.com/landing/Frente_1-1-422x600.png"/>
                             </RevealUp>
                         </Grid>

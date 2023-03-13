@@ -92,12 +92,12 @@ const PlanCard: React.FC<PlanCardProps> = ({plan}) => {
                     <Typography variant="h6" sx={{
                         color: hasPopular ? "inherit" : "primary.dark",
                         fontWeight: "bold", mt: 4, mb: 2}}>{plan.name}</Typography>
-                    <Box sx={{display: "flex", height: "60px"}}>
+                    <Box sx={{display: "flex", height: "60px", ml: 2}}>
                         <Typography>{getPlanCurrency(plan.currency)}</Typography>
-                        <Typography sx={{fontSize: "60px", mt: -2}}>
-                            {plan.subscription_base_cost.toFixed(2)}
+                        <Typography sx={{fontSize: "60px", mt: -2, ml: 1}}>
+                            {plan.subscription_base_cost}
                         </Typography>
-                        <Typography variant="caption" sx={{fontWeight: 'bold', mt: 4}}>+imp</Typography>
+                        <Typography variant="caption" sx={{fontWeight: 'bold', mt: 4, ml: 1}}>+ imp.</Typography>
                     </Box>
                     {/*<Typography sx={{
                         px: 1,

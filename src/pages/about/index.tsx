@@ -155,7 +155,7 @@ export default function AboutUsPage() {
                             <Typography variant="h4" sx={{marginTop: 3, marginBottom: 1}}>
                                 Misión
                             </Typography>
-                            <Typography variant="body1" >Cambiar la vida de los emprendedores en un solo click.</Typography>
+                            <Typography variant="body1" >Cambiar la vida de los emprendedores y empresas en un solo click.</Typography>
                         </Grid>
                         <Grid item xs={12} sm={4} sx={boxStyle} py={4} px={2} >
                             <ImageBoxContainer >

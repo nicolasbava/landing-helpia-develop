@@ -50,7 +50,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                             <Box sx={{mb: 2}}>
                                 <Typography sx={{fontWeight: 600}}>{"Teléfono"}:</Typography>
 
-                                <FooterContactLink type={"phone"} flag="ar" label="+549 11 310 04593" href="tel:+5491131004593"  />
+                                {/* <FooterContactLink type={"phone"} flag="ar" label="+549 11 310 04593" href="tel:+5491131004593"  /> */}
                                 <FooterContactLink type={"phone"} flag="uy" label="+598 94 602 736" href="tel+59894602736"  />
                             </Box>
 
