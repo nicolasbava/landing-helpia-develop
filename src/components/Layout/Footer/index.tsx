@@ -21,7 +21,9 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
             <StyledFooterContainer ref={ref} {...props}>
                 <Grid container columnSpacing={{xs: 0, md: 2, lg:0}}
-                      justifyContent={{xs: "center", md: "space-evenly", lg: "space-between"}}>
+                      justifyContent={{xs: "center", md: "space-evenly", lg: "space-between"}}
+                      pt={{xs:6, md:
+                >
                     <Grid item xs={12}  md={3}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <Link href='/'>
@@ -39,20 +41,22 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
 
 
                             <Box sx={{mb: 2}}>
-                                <Typography sx={{fontWeight: 'bold'}}>{"Whatsapp"}:</Typography>
+                                <Typography sx={{fontWeight: 600}}>{"Whatsapp"}:</Typography>
 
                                 <FooterContactLink type={"whatsapp"} flag="ar" label="+549 11 310 04593" href="https://wa.me/5491131004593"  />
                                 <FooterContactLink type={"whatsapp"} flag="uy" label="+598 94 602 736" href="https://wa.me/59894602736"  />
 
                             </Box>
                             <Box sx={{mb: 2}}>
-                                <Typography sx={{fontWeight: 'bold'}}>{"Teléfono"}:</Typography>
+                                <Typography sx={{fontWeight: 600}}>{"Teléfono"}:</Typography>
 
                                 <FooterContactLink type={"phone"} flag="ar" label="+549 11 310 04593" href="tel:+5491131004593"  />
                                 <FooterContactLink type={"phone"} flag="uy" label="+598 94 602 736" href="tel+59894602736"  />
                             </Box>
 
                             <Box sx={{mb: 0}}>
+                                <Typography sx={{fontWeight: 600}}>{"Email"}:</Typography>
+
                                 <FooterContactLink type={"mail"} label="info@helpia.com" href="mailto:info@helpia.com"/>
                             </Box>
                         </StyledFooterSection>
@@ -80,7 +84,7 @@ const Footer = forwardRef<any, BoxProps>((props, ref) => {
                     </Grid>
 
 
-                    <Grid item xs={12}  md={3}>
+                    <Grid item xs={12}  md={3} mb={{xs:7, md:4}}>
                         <StyledFooterSection sx={{mt: 4}}>
                             <StyledTitleElement variant='h6' mb={2} sx={{fontWeight: "bold", mt: 2}}>Trabajá con nosotros</StyledTitleElement>
                             <Typography variant="caption" sx={{mb:2}}>Si te interesa formar parte de nuestro equipo, envianos tu CV</Typography>
