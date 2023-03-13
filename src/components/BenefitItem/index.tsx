@@ -10,8 +10,8 @@ const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
       alignItems: "center",
       borderRadius: "8px",
       maxWidth: "240px",
-      minHeight: "190px",
-      padding: "0 8px 0 8px",
+      // minHeight: "200px",
+      padding: "16px 8px 8px 8px",
       border : `2px solid ${theme.palette.primary.dark}`
   },
 }));
