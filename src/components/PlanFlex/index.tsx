@@ -45,7 +45,7 @@ const PlanFlex = () => {
 
 
   return (
-    <StyledBox sx={{ width: { xs: "60%", md: "95%",  } }}>
+    <StyledBox sx={{ width: { xs: "60%", md: "100%",  } }}>
       <Grid container>
         <Grid item sm={12} md={7} lg={9} sx={{ padding: { xs: "3%", md: "0%" },}} > 
           <Stack direction="row" spacing={1} sx={{ mt: { xs: "4%", md: "0" }, }}> 
