@@ -2,6 +2,7 @@ import React from "react";
 
 import { Box, Grid, styled, Typography, Button, Stack, useTheme } from "@mui/material";
 import { BoxProps } from "@mui/material/Box";
+import Link from "next/link";
 
 const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
   "&.MuiBox-root": {
@@ -38,7 +39,7 @@ const ImageLogo = styled("img")(() => ({
 
 const PlanFlex = () => {
   const handleClick = () => {
-    window.open("https://app.helpia.com/auth/signup", "_blank");
+    window.location.href = '/#contact';
   };
 
   const theme = useTheme()

@@ -54,7 +54,7 @@ export const Contact = () => {
         }
 
     return (
-        <StyledStack>
+        <StyledStack id='contact'>
             <Typography variant='h4' sx={{textAlign:'center', fontSize: '1.5rem', fontWeight: '500',}} id='contact'>
                 Contacto
             </Typography>

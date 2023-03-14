@@ -29,7 +29,7 @@ import {Button} from "@mui/material";
 
            <Stack gap={1} direction="row" sx={{ml:1}} >
                <Link href="https://app.helpia.com/auth/signin" target={"_blank"}>
-                   <Button size="small" variant="contained" sx={{backgroundColor: "primary.light", width: "125px"}}>INICIAR SESSIÓN</Button>
+                   <Button size="small" variant="contained" sx={{backgroundColor: "primary.light", width: "125px"}}>INICIAR SESIÓN</Button>
 
                </Link>
 

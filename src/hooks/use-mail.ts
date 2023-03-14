@@ -51,8 +51,8 @@ const useMail = (): UseMailHook => {
   const sendSubscriptionMail = (email: string) => {
     return new Promise<void>((resolve, reject) => {
       const mailMsg: ApiMailUp = {
-        subject: "[Helpia] Nueva subscripción!",
-        body: `<p style="text-align: justify;"> El usuario ${email} se ha subscrito desde el sitio de Helpia:
+        subject: "[Helpia] Nueva suscripción!",
+        body: `<p style="text-align: justify;"> El usuario ${email} se ha suscrito al servicio de Newsletter desde el sitio de Helpia.
                         <br />
                         <br />
                    </p>`,
