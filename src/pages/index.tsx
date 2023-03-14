@@ -7,7 +7,7 @@ import { RevealDown, RevealUp } from "@/components/Reveal";
 
 import HeroSection from "@/components/HeroSection";
 import SolutionItem from "@/components/SolutionItem";
-import Plans from "@/components/Plans";
+import Plans, { PlansContainer } from "@/components/Plans";
 import PlanFlex from "@/components/PlanFlex";
 import Stack from "@mui/material/Stack";
 import Link from "next/link";
@@ -62,6 +62,7 @@ export const ImageElementThird = styled("img")(() => ({
     margin: 0,
   },
 }));
+
 
 export default function HomePage() {
   return (
@@ -178,8 +179,9 @@ export default function HomePage() {
         </PageSection>
       </HomeSection2Container>
 
-      <PageSection>
-        <Stack alignItems="center" sx={{ width: "100%", my: 12 }}>
+      <PlansContainer>
+
+        <Stack alignItems="center" sx={{ width: "100%", my: 12, }}>
           <Typography
             id="plans"
             variant="h4"
@@ -188,10 +190,13 @@ export default function HomePage() {
             Planes Mensuales
           </Typography>
           <Plans />
-        </Stack>
-      </PageSection>
+          <PlanFlex />
 
-      <PageSection>
+        </Stack>
+      </ PlansContainer>
+
+
+      {/* <PageSection>
         <Stack
           alignItems="center"
           sx={{
@@ -201,9 +206,8 @@ export default function HomePage() {
             ml: { xs: "20%", md: "2px" },
           }}
         >
-          <PlanFlex />
         </Stack>
-      </PageSection>
+      </PageSection> */}
 
       <HomeSection3Container>
         <PageSection>

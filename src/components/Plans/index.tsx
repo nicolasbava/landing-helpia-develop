@@ -1,9 +1,19 @@
 import React, { forwardRef } from "react";
 import Grid, { GridProps } from "@mui/material/Grid";
-import { Stack, LinearProgress } from "@mui/material";
+import { Stack, LinearProgress, styled, Box, BoxProps  } from "@mui/material";
 import useHelpiaApi from "@/hooks/use-helpia-api";
 import { ApiPlanDescription, ApiPlanType } from "@/types/api";
 import PlanCard from "@/components/PlanCard";
+
+
+export const PlansContainer = styled(Box)<BoxProps>(() => ({
+  "&.MuiBox-root": {
+      background: '#F5F5F5',
+      paddingBottom: '10vh',
+      paddingTop: '7vh',
+      margin: 'auto',
+  },
+}));
 
 const Plans = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -72,6 +82,7 @@ const Plans = forwardRef<any, Pick<GridProps, "sx">>((props, ref) => {
               </Grid>
             );
           })}
+          
         </>
       )}
     </Grid>

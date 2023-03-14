@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Grid, styled, Typography, Button } from "@mui/material";
+import { Box, Grid, styled, Typography, Button, Stack } from "@mui/material";
 import { BoxProps } from "@mui/material/Box";
 
 const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
@@ -10,21 +10,26 @@ const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "20px",
-    padding: "2%",
     border: `2px solid #000`,
-    background: "#F2F2F2",
+    // background: "#F2F2F2",
+    background: theme.palette.background.default,
     cursor: "pointer",
     "&:hover": {
       background: "#c6c2c2",
     },
     transition: "1.2s",
     minWidth: "360px",
+    padding: '24px',
+    marginTop: '12vh'
   },
 }));
 
 const Image = styled("img")(() => ({
-  width: "292px",
-  height: "176px",
+  width: "200px",
+  height: "auto",
+  borderRadius: '6px',
+  marginLeft: '3vw',
+  marginTop: '13px',
 }));
 
 const ImageLogo = styled("img")(() => ({
@@ -33,42 +38,28 @@ const ImageLogo = styled("img")(() => ({
 
 const PlanFlex = () => {
   const handleClick = () => {
-    window.open("https://app.helpia.com/auth/signin", "_self");
+    window.open("https://app.helpia.com/auth/signup", "_self");
   };
   return (
-    <StyledBox sx={{ width: { xs: "60%", md: "95%", lg: "95%" } }}>
+    <StyledBox sx={{ width: { xs: "60%", md: "95%",  } }}>
       <Grid container>
-        <Grid
-          item
-          sm={12}
-          md={7}
-          lg={9}
-          sx={{
-            padding: { xs: "3%", md: "0%" },
-          }}
-        >
-          <Grid
-            container
-            sx={{
-              mt: { xs: "4%", md: "0" },
-            }}
-          >
+        <Grid item sm={12} md={7} lg={9} sx={{ padding: { xs: "3%", md: "0%" },}} > 
+          <Stack direction="row" spacing={1} sx={{ mt: { xs: "4%", md: "0" }, }}> 
             <ImageLogo
               src="https://statics.helpia.com/landing/helpia-plan-flex.png"
               alt="plan-flex-logo"
               loading="lazy"
             />
-            <Typography
-              sx={{
-                fontWeight: 500,
-                fontSize: "24px",
-                color: "#22AD00",
-                ml: "1%",
-              }}
+            <Typography sx={{
+                            fontWeight: 500,
+                            fontSize: "24px",
+                            color: "#22AD00",
+                            ml: "1%",
+                          }}
             >
               Plan flex
             </Typography>
-          </Grid>
+          </Stack>
           <Typography
             sx={{
               fontWeight: 700,
@@ -98,7 +89,7 @@ const PlanFlex = () => {
               backgroundColor: "#94FF7A",
               fontWeight: "bold",
               width: "150px",
-              mt: { xs: "5%", md: "3%" },
+              mt: { xs: "24px", md: "3%" },
               mb: { xs: "6%", md: "0" },
             }}
             onClick={handleClick}
@@ -113,7 +104,7 @@ const PlanFlex = () => {
             loading="lazy"
             sx={{
               display: { xs: "none", md: "block" },
-              ml: { md: "30%", lg: "15%" },
+              // ml: { md: "30%", lg: "15%" },
             }}
           />
         </Grid>
