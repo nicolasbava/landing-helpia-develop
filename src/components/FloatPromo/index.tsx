@@ -59,7 +59,7 @@ const FloatPromo: React.FC = () => {
 
         <CloseIcon fontSize="small" sx={{cursor: "pointer"}} onClick={handleClose} />
         </Stack>
-        <Link href={"https://app.helpia.com/auth/signin"} target="_blank">
+        <Link href={"https://app.helpia.com/auth/signup"} target="_blank">
             <Typography variant="caption" sx={{fontWeight: "bold"}}>Súmate  a Helpia y recibe  60 días gratis de servicio</Typography>
         </Link>
     </FloatPromoContainer>)

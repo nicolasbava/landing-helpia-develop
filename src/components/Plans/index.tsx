@@ -6,12 +6,15 @@ import { ApiPlanDescription, ApiPlanType } from "@/types/api";
 import PlanCard from "@/components/PlanCard";
 
 
-export const PlansContainer = styled(Box)<BoxProps>(() => ({
+export const PlansContainer = styled(Box)<BoxProps>(({theme}) => ({
   "&.MuiBox-root": {
       background: '#F5F5F5',
       paddingBottom: '10vh',
       paddingTop: '7vh',
       margin: 'auto',
+      [theme.breakpoints.up('md')]: {
+        paddingInline: '9vw'
+      }
   },
 }));
 

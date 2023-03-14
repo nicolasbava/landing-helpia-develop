@@ -136,7 +136,7 @@ export default function HomePage() {
                 <SolutionItem
                   title={"¿Qué hacemos?"}
                   text={
-                    "Te proporcionamos una plataforma que te ayude a la gestión de pre venta y post venta, minimizando los tiempos de respuesta y masificando tus ingresos."
+                    "Te proporcionamos una plataforma con agentes certificados que te ayude a la gestión de pre venta y post venta, minimizando los tiempos de respuesta y masificando tus ingresos."
                   }
                   src="https://statics.helpia.com/landing/Lateral.gif"
                 />
