@@ -13,7 +13,8 @@ export const PlansContainer = styled(Box)<BoxProps>(({theme}) => ({
       paddingTop: '7vh',
       margin: 'auto',
       [theme.breakpoints.up('md')]: {
-        paddingInline: '9vw'
+        paddingInline: '9vw',
+        display: 'none'
       }
   },
 }));
