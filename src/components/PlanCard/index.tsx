@@ -83,13 +83,13 @@ const PlanCard: React.FC<PlanCardProps> = ({plan}) => {
     const hasPopular = (plan.description as ApiPlanDescription).popular
     const description = (plan.description as ApiPlanDescription).description
     const handleClick = () => {
-        window.open("https://app.helpia.com/auth/signin", "_self")
+        window.open("https://app.helpia.com/auth/signup", "_blank")
     }
     return (<StyledBadge badgeContent={hasPopular ? <PopularTag/> : null}>
 
             <PlanCardContainer elevation={2} popular={hasPopular}>
                 <CardContent sx={{minHeight: "230px",}}>
-                    <Typography variant="h6" sx={{
+                    <Typography variant="h5" sx={{
                         color: hasPopular ? "inherit" : "primary.dark",
                         fontWeight: "bold", mt: 4, mb: 2}}>{plan.name}</Typography>
                     <Box sx={{display: "flex", height: "60px", ml: 2}}>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Grid, styled, Typography, Button, Stack } from "@mui/material";
+import { Box, Grid, styled, Typography, Button, Stack, useTheme } from "@mui/material";
 import { BoxProps } from "@mui/material/Box";
 
 const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
@@ -38,8 +38,12 @@ const ImageLogo = styled("img")(() => ({
 
 const PlanFlex = () => {
   const handleClick = () => {
-    window.open("https://app.helpia.com/auth/signup", "_self");
+    window.open("https://app.helpia.com/auth/signup", "_blank");
   };
+
+  const theme = useTheme()
+
+
   return (
     <StyledBox sx={{ width: { xs: "60%", md: "95%",  } }}>
       <Grid container>
@@ -53,7 +57,7 @@ const PlanFlex = () => {
             <Typography sx={{
                             fontWeight: 500,
                             fontSize: "24px",
-                            color: "#22AD00",
+                            color: theme.palette.primary.dark,
                             ml: "1%",
                           }}
             >
@@ -64,7 +68,7 @@ const PlanFlex = () => {
             sx={{
               fontWeight: 700,
               fontSize: "15px",
-              color: "#000000",
+              color: theme.palette.text.primary,
               mt: { xs: "4%", md: "0" },
             }}
           >
@@ -74,7 +78,7 @@ const PlanFlex = () => {
             sx={{
               fontWeight: 400,
               fontSize: "16px",
-              color: "#000000",
+              color: theme.palette.text.primary,
               mt: { xs: "4%", md: "1%" },
             }}
           >
@@ -86,7 +90,7 @@ const PlanFlex = () => {
             size="large"
             sx={{
               color: "inherit",
-              backgroundColor: "#94FF7A",
+              backgroundColor: theme.palette.primary.light,
               fontWeight: "bold",
               width: "150px",
               mt: { xs: "24px", md: "3%" },
@@ -100,7 +104,7 @@ const PlanFlex = () => {
         <Grid item xs={0} md={1}>
           <Image
             src="https://statics.helpia.com/landing/home-5-min.png"
-            alt="plan-flex"
+            alt="Hombre pensando frente a su computadora"
             loading="lazy"
             sx={{
               display: { xs: "none", md: "block" },
