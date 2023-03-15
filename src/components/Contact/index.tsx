@@ -20,7 +20,8 @@ export const ContactContainer = styled(Box)<BoxProps>(() => ({
         paddingBottom: '10vh',
         paddingTop: '7vh',
         margin: 'auto',
-
+        paddingInline: '5vw',
+        
     },
 }));
 
@@ -66,7 +67,7 @@ export const Contact = () => {
                     <ContactForm sending={sending} submitAction={handleSend} formId={formId}/>  
                 </Grid>
                 <Grid item xs={12} md={5} sx={{display: {xs: 'none', md: 'block'}}}>
-                        <ImageElement src={'https://statics.helpia.com/landing/contact-img.png'} height='auto' width='auto' />
+                        <ImageElement src={'https://statics.helpia.com/landing/contact-img.png'} height='auto' width='auto' alt="Persona escribiendo en una computadora" loading="lazy" />
                 </Grid>
             </Grid>
         </StyledStack>

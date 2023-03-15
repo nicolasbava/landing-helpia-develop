@@ -26,7 +26,8 @@ const SolutionItem:FC<SolutionItemProps> = ({src, title, text})=> {
             src={src}
             alt={title}
             loading="lazy"
-
+            height='129'
+            width='auto'
         />
 
         <Typography variant="h5" sx={{fontWeight: "bold", color: "primary.light", my:2}}>{title}</Typography>

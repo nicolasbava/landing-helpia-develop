@@ -38,6 +38,8 @@ const BenefitItem: FC<BenefitItemProps> = ({
             src={src}
             alt={title}
             loading="lazy"
+            height='129'
+            width='150'
           />
         <Typography
           variant="h6"

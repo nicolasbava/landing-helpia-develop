@@ -100,7 +100,7 @@ const FooterContactLink: React.FC<FooterContactLinkProps> = ({type, flag, label,
             <StyledStack direction="row" gap={1} alignItems="center">
                 {!hasFlag && <Icon className={data.iconClass}/>}
                 {hasFlag &&
-                    <StyledFlag src={data.src} width={20} height={20} alt={data.alt}/>
+                    <StyledFlag src={data.src} width={20} height={20} alt={data.alt} loading="lazy" />
                 }
                 <Typography>{data.label}</Typography>
             </StyledStack>

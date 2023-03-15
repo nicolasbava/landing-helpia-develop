@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
         {
             id: "1",
             src: 'https://statics.helpia.com/landing/home-1-min.png',
-            alt: 'Hero 1',
+            alt: 'Dos compañeros de trabajo festejando chocando las palmas',
             dots: "bottom-left"
         },
         {
