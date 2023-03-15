@@ -96,7 +96,7 @@ const FooterContactLink: React.FC<FooterContactLinkProps> = ({type, flag, label,
 
 
     return (
-        <Link href={data.href} target='_blank'>
+        <Link href={data.href} target='_blank'> 
             <StyledStack direction="row" gap={1} alignItems="center">
                 {!hasFlag && <Icon className={data.iconClass}/>}
                 {hasFlag &&
