@@ -15,10 +15,10 @@ export default class MyDocument extends Document {
                     <meta charSet="UTF-8"/>
 
                     <meta name="theme-color" content={theme.palette.primary.main}/>
-                    <meta property="title" content="Helpia"/>
-                    <meta property="og:title" content="Helpia"/>
+                    <meta property="title" content="Helpia | Atención al cliente"/>
+                    <meta property="og:title" content="Helpia | Atención al cliente"/>
                     <meta property="og:url" content="https://helpia.com"/>
-                    <meta property="og:site_name" content="Helpia"/>
+                    <meta property="og:site_name" content="Helpia | Atención al cliente"/>
                     <meta property="og:locale" content="es"/>
                     <meta property="og:locale:alternate" content="es_AR"/>
                     <meta name='author' content='Helpia'  />
