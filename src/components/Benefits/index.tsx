@@ -24,7 +24,7 @@ const BenefitsSection: FC = () => {
         },
         {
             src: "https://statics.helpia.com/landing/icon-benefits-three.png",
-            title: "Plataforma multicanal"
+            title: "Planes a medida"
         }
     ])
     return (

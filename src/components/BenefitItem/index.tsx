@@ -6,12 +6,14 @@ const StyledBox = styled(Box)<BoxProps>(({ theme }) => ({
   "&.MuiBox-root": {
     display: "flex",
     flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "8px",
-      maxWidth: "240px",
-      padding: "16px 8px 8px 8px",
-      border : `2px solid ${theme.palette.primary.dark}`
+    justifyContent: "flex-start",
+    alignItems: "center",
+    borderRadius: "8px",
+    minWidth: '235px',
+    maxWidth: "240px",
+    minHeight: '200px',
+    padding: "16px 8px 8px 8px",
+    border : `2px solid ${theme.palette.primary.dark}`,
   },
 }));
 
