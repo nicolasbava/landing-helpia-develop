@@ -20,15 +20,12 @@ const StyledImage1 = styled('img')(({theme})=>({
     position: 'absolute',
     left: '0px',
     top: '0px',
-    transform: 'translateY(-10px)',
     zIndex: '0',
     minWidth: '70px',
     display: 'none',
     maxWidth: '300px',
-
     [theme.breakpoints.up('md')]: {
         display: 'block',
-        
     }
 }));
 
@@ -40,10 +37,8 @@ const StyledImage2 = styled('img')(({theme})=>({
     width: '50%',
     display: 'none',
     maxWidth: '300px',
-
     [theme.breakpoints.up('md')]: {
         display: 'block',
-        
     }
 }));
 
@@ -55,13 +50,9 @@ const StyledImage3 = styled('img')(({theme})=>({
     width: '50%',
     display: 'none',
     maxWidth: '300px',
-
     [theme.breakpoints.up('md')]: {
         display: 'block',
-        
     }
-
-
 }));
 
 const StyledImage4 = styled('img')(({theme})=>({
@@ -72,7 +63,6 @@ const StyledImage4 = styled('img')(({theme})=>({
     maxWidth: '300px',
     [theme.breakpoints.up('md')]: {
         right: '0px',
-        
     }
 }));
 

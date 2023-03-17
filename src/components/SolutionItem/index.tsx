@@ -31,7 +31,7 @@ const SolutionItem:FC<SolutionItemProps> = ({src, title, text})=> {
         />
 
         <Typography variant="h5" sx={{fontWeight: "bold", color: "primary.light", my:2}}>{title}</Typography>
-        <Box sx={{width: {xs:"100%", sm: "80%", lg: "75%"}, textAlign: "center"}}>
+        <Box sx={{width: {xs:"100%", sm: "80%", lg: "82%"}, textAlign: "center"}}>
             <Typography >{text}</Typography>
         </Box>
     </Stack>)

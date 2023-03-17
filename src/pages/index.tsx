@@ -136,7 +136,7 @@ export default function HomePage() {
                 <SolutionItem
                   title={"¿Qué hacemos?"}
                   text={
-                    "Te proporcionamos una plataforma con agentes certificados que te ayude a la gestión de pre venta y post venta, minimizando los tiempos de respuesta y masificando tus ingresos."
+                    "Gestionamos el proceso de preventa y postventa de tu negocio, minimizando los tiempos de respuestas de tus clientes y masificando tus ingresos. Contamos con una plataforma multicanal y agentes altamente calificados disponibles para ti 24/7."
                   }
                   src="https://statics.helpia.com/landing/Lateral.gif"
                 />
@@ -148,7 +148,7 @@ export default function HomePage() {
                 <SolutionItem
                   title={"¿Cómo lo hacemos?"}
                   text={
-                    "Te conectamos a la primera plataforma multicanal con agentes certificados, centralizando todos tus contactos en un solo lugar donde serán atendidos por cientos de expertos en atención al cliente."
+                    "Combinando la inteligencia artificial con el recurso humano de nuestros agentes para brindarle una excelente atención a tus clientes, centralizando todo el proceso de atención en nuestra plataforma multicanal."
                   }
                   src="https://statics.helpia.com/landing/seccion-2-2.png"
                 />
@@ -160,7 +160,7 @@ export default function HomePage() {
                 <SolutionItem
                   title={"¿Para qué lo hacemos?"}
                   text={
-                    "Para cambiar la vida de los emprendedores y las empresas en un solo click. Tu tiempo y tus clientes son nuestra prioridad. Atiéndelos con Helpia los 365 días del año y sigamos creciendo juntos."
+                    "Para acompañarte en el proceso de crecimiento de tu negocio, profesionalizando el área de atención al cliente brindándote un soporte 24/7 los 365 días del año. Tu tiempo y tus clientes son nuestra prioridad."
                   }
                   src="https://statics.helpia.com/landing/Frente_1-1-422x600.png"
                 />
